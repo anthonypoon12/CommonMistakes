@@ -1,6 +1,7 @@
 "use strict"
 var correct = 0;
 var trueOrFalse = false;
+var problemDiv;
 //Makes array of indexes for sentences
 const setOfSentences = [];
 var problemContainer = document.getElementById("problemContainer");
@@ -9,6 +10,7 @@ for (let i = 0 ; i < 18; i++){
 }
 //loads the first sentence
 window.addEventListener('load', loadSentence);
+$("#score").text("Score: " + correct.toString() + "/9");
 function loadSentence(){ 
     $("#questions").text("Question: " + (10-(setOfSentences.length/2)).toString() + "/9");
     problemContainer.innerHTML="";
@@ -36,7 +38,7 @@ function loadSentence(){
     $('#problemContainer').prepend(createProblemDiv(sentencePart1, sentencePart2, specialword, meaning));
 }
 function createProblemDiv(sentencePart1, sentencePart2, specialword, meaning){
-    let problemDiv = document.createElement('div');
+    problemDiv = document.createElement('div');
     problemDiv.id = ('problem');
     problemDiv.classList.add('english');
     problemDiv.classList.add('border-bottom');
@@ -44,6 +46,7 @@ function createProblemDiv(sentencePart1, sentencePart2, specialword, meaning){
     problemDiv.appendChild(createTargetWordSpan(specialword));
     problemDiv.innerHTML = problemDiv.innerHTML + sentencePart2;
     problemDiv.innerHTML = problemDiv.innerHTML + "<br>";
+    // problemDiv.innerHTML =`<span id="correct" style="color: blue; font-size:1.5rem; ">&#10004;</span>` + problemDiv.innerHTML;
     problemDiv.appendChild(createMeaningSpan(meaning));
     return problemDiv;
 }
@@ -60,16 +63,33 @@ function createMeaningSpan(meaning){
     return meaningSpan;
 }
 $( "#correct" ).click(function() {
-    alert(true===trueOrFalse);
-    if (true==trueOrFalse)
+    if (true==trueOrFalse){
         correct++;
-    });
-    $( "#incorrect" ).click(function() {
-        alert(false===trueOrFalse);
-        if (false==trueOrFalse)
-            correct++;
+    }
+    $(this).css("border", "3px solid black");
+    $('#incorrect').prop('disabled', true);
+    $("#score").text("Score: " + correct.toString() + "/9");
+    check();
+});
+$( "#incorrect" ).click(function() {
+    if (false==trueOrFalse){
+        correct++;
+    }
+    $(this).css("border", "3px solid black");
+    $('#correct').prop('disabled', true);
+    $("#score").text("Score: " + correct.toString() + "/9");
+    check();
 });
 $( "#next" ).click(function() {
-    if(setOfSentences.length>0)
+    if(setOfSentences.length>0){
         loadSentence();
+        $('#correct').prop('disabled', false);
+        $('#incorrect').prop('disabled', false);
+    }
 });
+function check(){
+    if (trueOrFalse)
+        problemDiv.innerHTML = `<span id="correct" style="color: green; font-size:1.5rem; ">&#10004;</span> ` + problemDiv.innerHTML;
+    else
+        problemDiv.innerHTML = `<span id="correct" style="color: red; font-size:1.5rem; ">&#10008;</span> ` + problemDiv.innerHTML;
+}
