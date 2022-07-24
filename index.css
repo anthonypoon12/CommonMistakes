@@ -2,6 +2,22 @@
     font-size:40px;
     color: #9841d8;
 }
+#problemContainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 #meaning{
     color: black;
+}
+#choiceContainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.yesorno{
+    margin-left: 1px;
+    margin-right: 1px;
+    width: 20vw;
+    height: 5vh;
 }
