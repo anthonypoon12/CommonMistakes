@@ -1,5 +1,16 @@
 "use strict"
+const setOfSentences = [];
+for (let i = 0 ; i < 18; i++){
+    setOfSentences.push(i);
+}
 let specialnumber = Math.floor(Math.random()*18);
+let indexToRemoveFromSet;
+indexToRemoveFromSet = setOfSentences.indexOf(specialnumber);
+if(specialnumber%2==1)
+indexToRemoveFromSet--;
+if (indexToRemoveFromSet !== -1) {
+    setOfSentences.splice(indexToRemoveFromSet, 2);
+}
 let sentence = sentences[Math.floor(specialnumber/2)];
 let sentencePart1=sentence.partOne;
 let sentencePart2=sentence.partTwo;
