@@ -53,12 +53,6 @@
 
     <title>Common Mistakes</title>
   </head>
-  <style>
-    .yesorno{
-      width: 20vw;
-      height: 10vh;
-    }
-  </style>
   <body>
     <div class="container" style="font-family: 'Times New Roman', Times, serif">
       <button type="button" class="btn btn-primary btn-lg btn-convert">
@@ -76,9 +70,9 @@
         group="2"
         style="max-width: 600px; margin: 0 auto"
       >
-      <div id="problemContainer" style="display:flex; justify-content: center; align-items: center;">
+      <div id="problemContainer">
       </div>
-        <div>
+        <div id="choiceContainer">
           <button id="correct" class="yesorno" onclick="isTrue()">Correct</button>
           <button id="incorrect" class="yesorno" onclick="isFalse()">Incorrect</button>
         </div>
