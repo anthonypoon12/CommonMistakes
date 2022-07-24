@@ -10,6 +10,8 @@ for (let i = 0 ; i < 18; i++){
 //loads the first sentence
 window.addEventListener('load', loadSentence);
 function loadSentence(){ 
+    $("#questions").text("Question: " + (10-(setOfSentences.length/2)).toString() + "/9");
+    problemContainer.innerHTML="";
     let index = Math.floor(Math.random()*setOfSentences.length);
     let specialnumber = setOfSentences[index];
     let indexToRemoveFromSet=index;
@@ -59,7 +61,15 @@ function createMeaningSpan(meaning){
 }
 $( "#correct" ).click(function() {
     alert(true===trueOrFalse);
+    if (true==trueOrFalse)
+        correct++;
+    });
+    $( "#incorrect" ).click(function() {
+        alert(false===trueOrFalse);
+        if (false==trueOrFalse)
+            correct++;
 });
-$( "#incorrect" ).click(function() {
-    alert(false===trueOrFalse);
+$( "#next" ).click(function() {
+    if(setOfSentences.length>0)
+        loadSentence();
 });
