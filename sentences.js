@@ -1,7 +1,7 @@
 sentences = {
     Original: {
         0: {
-            wrong: "美國十大。",
+            wrong: "美國是大。",
             right: "美國很大。",
             meaning:"The United States is very big."
         },
