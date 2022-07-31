@@ -76,7 +76,7 @@ $( "#correct" ).click(function() {
     $("#score").text("Score: " + correct.toString() + "/9");
     check();
     if (setOfSentences.length<=0)
-    clearTimer();
+        clearTimer();
 });
 $( "#incorrect" ).click(function() {
     $(this).addClass("chosen");
@@ -90,7 +90,7 @@ $( "#incorrect" ).click(function() {
     $("#score").text("Score: " + correct.toString() + "/9");
     check();
     if (setOfSentences.length<=0)
-    clearTimer();
+        clearTimer();
 });
 $( "#next" ).click(function() {
     $( "#next" ).text("Skip");

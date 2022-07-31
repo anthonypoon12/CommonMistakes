@@ -54,30 +54,29 @@
     <title>Common Mistakes</title>
   </head>
   <body>
-    <div class="container" style="font-family: 'Times New Roman', Times, serif">
+    <div class="container">
       <button type="button" class="btn btn-primary btn-lg btn-convert">
         Traditional
       </button>
       <h2 class="text-center mt-5">Common Mistakes</h2>
       <h2 class="text-center mt-5" id="questions">Question:</h2>
-      <h2 class="text-center mt-5" id="score">Score:</h2>
-      <h4 class="text-center mt-5">
-        Is this sentence correct?
-      </h4>
       <h4 class="question_count text-center mt-3"></h4>
       <br>
       <div
-        id="quiz"
-        lesson="B"
-        group="2"
-        style="max-width: 600px; margin: 0 auto"
+      id="quiz"
+      lesson="B"
+      group="2"
+      style="max-width: 600px; margin: 0 auto"
       >
       <div id="problemContainer">
       </div>
-        <div id="choiceContainer">
-          <button id="correct" class="yesorno   rounded">Correct</button>
-          <button id="incorrect" class="yesorno   rounded" >Incorrect</button>
-        </div>
+      <h2 class="text-center mt-5" id="mainquestion">
+        Is this sentence correct?
+      </h2>
+      <div id="choiceContainer">
+        <button id="correct" class="yesorno   rounded">Correct</button>
+        <button id="incorrect" class="yesorno   rounded" >Incorrect</button>
+      </div>
       <div class="row mt-3 py-3 border-top border-secondary border-3">
         <div class="col d-flex justify-content-center">
           <h2 id="score">Score: N/A</h2>
@@ -89,30 +88,30 @@
         </div>
         <div class="col d-flex justify-content-center">
           <button
-            type="button"
-            id="next"
-            class="btn btn-secondary btn-lg"
-            style="margin-top: 0px !important"
+          type="button"
+          id="next"
+          class="btn btn-secondary btn-lg"
+          style="margin-top: 0px !important"
           >
-            Skip
-          </button>
-        </div>
-        <div>
-          <!-- <h4
-            class="ex-back"
-            onclick="location.href='exercises/wordCompoundEx/B-WordEx-Home.html'"
+          Skip
+        </button>
+      </div>
+      <div>
+        <!-- <h4
+          class="ex-back"
+          onclick="location.href='exercises/wordCompoundEx/B-WordEx-Home.html'"
           >
-            Back
-          </h4> -->
-        </div>
+          Back
+        </h4> -->
       </div>
     </div>
-    <script src="timer.js"></script>
-    <script src="sentences.js"></script>
-    <script src="app.js"></script>
-    <script src="simpTradConversion.js"></script>
-    <!-- <script src="navbar.js"></script> -->
-    <script
+  </div>
+  <script src="timer.js"></script>
+  <script src="sentences.js"></script>
+  <script src="app.js"></script>
+  <script src="simpTradConversion.js"></script>
+  <!-- <script src="navbar.js"></script> -->
+  <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
