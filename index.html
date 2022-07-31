@@ -12,7 +12,8 @@
     />
     <link rel="stylesheet" href="css/index.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  </head>
+    <script src="sentences.js"></script>  
+</head>
   <body>
     <div class="container main" style="border-radius: 20px;">
       <div class="row align-items-center" >
@@ -20,43 +21,7 @@
           <div class="row text-center my-4" ></div>
             <div class="row justify-content-center">
               <div class="col-4">
-                <div>
-                  <button
-                  id="instructions"
-                  onclick="location.href='exercises/fallingWordEx/how.html'"
-                  class="col-12 btn-index"
-                  >
-                  <h2>Instructions</h2>
-                </button>
-              </div>
                 <div class="buttons-container row" id="buttoncont">
-                  <button
-                  id="Original"
-                  onclick="buttonValue(this.id)"
-                  class="col-12 btn-index"
-                  >
-                  <h2>Original</h2>
-                </button>
-                <button
-                id="ErrorsInAdjectives"
-                onclick="buttonValue(this.id)"
-                class="col-12 btn-index"
-                >
-                <h2>Adjectives</h2>
-              </button>
-                <button
-                id="ErrorsInMeasureWord"
-                onclick="buttonValue(this.id)"
-                class="col-12 btn-index"
-                >
-                <h2>Measure Words</h2>
-              </button>
-              <button
-              id="elementaryindex"
-              onclick="location.href='lessons.html'"
-              class="col-12 btn-index"
-              >
-              <h2>Elementary Index</h2>
             </div>
           </div>
           </div>
@@ -69,6 +34,20 @@
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
     crossorigin="anonymous"
     ></script>
+    <script>
+        var buttons="";
+        Object.keys(sentences).forEach(function(item){
+            buttons +=` <button
+            id="${item}"
+            onclick="buttonValue(this.id)"
+            class="col-12 btn-index"
+            >
+            <h2>${item}</h2>
+            </button>`
+        });
+        $("#buttoncont").append(buttons);
+        console.log(buttons);
+    </script>
     <script>
       // PASS THROUGH HTTP GET LEVEL, TRAD/SIMP, AND LESSON NUM SELECTED
       function buttonValue(btnID) {
