@@ -24,39 +24,29 @@ function loadSentence(){
     if (indexToRemoveFromSet !== -1) {
         setOfSentences.splice(indexToRemoveFromSet, 2);
     }
-    let sentence = sentences[Math.floor(specialnumber/2)];
-    let sentencePart1=sentence.partOne;
-    let sentencePart2=sentence.partTwo;
+    let sentence = sentences["Original"][Math.floor(specialnumber/2)];
+    console.log(sentence);
     let meaning=sentence.meaning;
-    let specialword="";
+    let sentencetoDisplay="";
     if (specialnumber%2==0){
-        specialword=sentence.wrong;
+        sentencetoDisplay=sentence.wrong;
         trueOrFalse = false;
     }
     else{
-        specialword=sentence.right;
+        sentencetoDisplay=sentence.right;
         trueOrFalse = true;
     }
-    $('#problemContainer').prepend(createProblemDiv(sentencePart1, sentencePart2, specialword, meaning));
+    $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning));
 }
-function createProblemDiv(sentencePart1, sentencePart2, specialword, meaning){
+function createProblemDiv(sentencetoDisplay, meaning){
     problemDiv = document.createElement('div');
     problemDiv.id = ('problem');
     problemDiv.classList.add('english');
     problemDiv.classList.add('border-bottom');
-    problemDiv.innerHTML = sentencePart1;
-    problemDiv.appendChild(createTargetWordSpan(specialword));
-    problemDiv.innerHTML = problemDiv.innerHTML + sentencePart2;
+    problemDiv.innerHTML = sentencetoDisplay;
     problemDiv.innerHTML = problemDiv.innerHTML + "<br>";
-    // problemDiv.innerHTML =`<span id="correct" style="color: blue; font-size:1.5rem; ">&#10004;</span>` + problemDiv.innerHTML;
     problemDiv.appendChild(createMeaningSpan(meaning));
     return problemDiv;
-}
-function createTargetWordSpan(specialword){
-    let targetWordSpan = document.createElement('span');
-    targetWordSpan.id = 'specialword';
-    targetWordSpan.innerHTML = specialword;
-    return targetWordSpan;
 }
 function createMeaningSpan(meaning){
     let meaningSpan = document.createElement('span');
@@ -100,7 +90,7 @@ $( "#next" ).click(function() {
         $('#incorrect').prop('disabled', false);
         $('#correct').html("Correct");
         $('#incorrect').html("Incorrect");
-        $("#Correct").removeClass("chosen");
+        $("#correct").removeClass("chosen");
         $("#incorrect").removeClass("chosen");
     }
 });
@@ -110,3 +100,4 @@ function check(){
     else
     $(currentbutton).append(`<span id="correct" style="color: red; font-size:1.5rem; ">&#10008;</span> `);
 }
+
