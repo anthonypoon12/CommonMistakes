@@ -2,6 +2,8 @@
 var correct = 0;
 var trueOrFalse = false;
 var problemDiv;
+var currentchoice=false;
+var currentbutton="";
 //Makes array of indexes for sentences
 const setOfSentences = [];
 var problemContainer = document.getElementById("problemContainer");
@@ -63,37 +65,48 @@ function createMeaningSpan(meaning){
     return meaningSpan;
 }
 $( "#correct" ).click(function() {
+    $(this).addClass("chosen");
+    $( "#next" ).text("Next");
+    currentbutton="#correct";
     if (true==trueOrFalse){
         correct++;
     }
-    $(this).css("border", "3px solid black");
+    currentchoice=true;
     $('#incorrect').prop('disabled', true);
     $("#score").text("Score: " + correct.toString() + "/9");
     check();
     if (setOfSentences.length<=0)
-        clearTimer();
-    });
-    $( "#incorrect" ).click(function() {
+    clearTimer();
+});
+$( "#incorrect" ).click(function() {
+    $(this).addClass("chosen");
+    $( "#next" ).text("Next");
+    currentbutton="#incorrect";
     if (false==trueOrFalse){
         correct++;
     }
-    $(this).css("border", "3px solid black");
+    currentchoice=false;
     $('#correct').prop('disabled', true);
     $("#score").text("Score: " + correct.toString() + "/9");
     check();
     if (setOfSentences.length<=0)
-        clearTimer();
+    clearTimer();
 });
 $( "#next" ).click(function() {
+    $( "#next" ).text("Skip");
     if(setOfSentences.length>0){
         loadSentence();
         $('#correct').prop('disabled', false);
         $('#incorrect').prop('disabled', false);
+        $('#correct').html("Correct");
+        $('#incorrect').html("Incorrect");
+        $("#Correct").removeClass("chosen");
+        $("#incorrect").removeClass("chosen");
     }
 });
 function check(){
-    if (trueOrFalse)
-        problemDiv.innerHTML = `<span id="correct" style="color: green; font-size:1.5rem; ">&#10004;</span> ` + problemDiv.innerHTML;
+    if (trueOrFalse==currentchoice)
+    $(currentbutton).append(`<span id="correct" style="color: green; font-size:1.5rem; ">&#10004;</span> `);
     else
-        problemDiv.innerHTML = `<span id="correct" style="color: red; font-size:1.5rem; ">&#10008;</span> ` + problemDiv.innerHTML;
+    $(currentbutton).append(`<span id="correct" style="color: red; font-size:1.5rem; ">&#10008;</span> `);
 }
