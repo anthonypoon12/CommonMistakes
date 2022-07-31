@@ -70,8 +70,10 @@ $( "#correct" ).click(function() {
     $('#incorrect').prop('disabled', true);
     $("#score").text("Score: " + correct.toString() + "/9");
     check();
-});
-$( "#incorrect" ).click(function() {
+    if (setOfSentences.length<=0)
+        clearTimer();
+    });
+    $( "#incorrect" ).click(function() {
     if (false==trueOrFalse){
         correct++;
     }
@@ -79,6 +81,8 @@ $( "#incorrect" ).click(function() {
     $('#correct').prop('disabled', true);
     $("#score").text("Score: " + correct.toString() + "/9");
     check();
+    if (setOfSentences.length<=0)
+        clearTimer();
 });
 $( "#next" ).click(function() {
     if(setOfSentences.length>0){
