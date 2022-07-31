@@ -1,4 +1,6 @@
 "use strict"
+const params = new URLSearchParams(window.location.search);
+const DICTIONARY = params.get('dict');
 var correct = 0;
 var trueOrFalse = false;
 var problemDiv;
@@ -24,7 +26,7 @@ function loadSentence(){
     if (indexToRemoveFromSet !== -1) {
         setOfSentences.splice(indexToRemoveFromSet, 2);
     }
-    let sentence = sentences["Original"][Math.floor(specialnumber/2)];
+    let sentence = sentences[DICTIONARY][Math.floor(specialnumber/2)];
     console.log(sentence);
     let meaning=sentence.meaning;
     let sentencetoDisplay="";
