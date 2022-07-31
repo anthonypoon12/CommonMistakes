@@ -8,15 +8,16 @@ var currentchoice=false;
 var currentbutton="";
 //Makes array of indexes for sentences
 const setOfSentences = [];
+const dictlength = Object.keys(sentences[DICTIONARY]).length;
 var problemContainer = document.getElementById("problemContainer");
-for (let i = 0 ; i < 18; i++){
+for (let i = 0 ; i < dictlength * 2; i++){
     setOfSentences.push(i);
 }
 //loads the first sentence
 window.addEventListener('load', loadSentence);
-$("#score").text("Score: " + correct.toString() + "/9");
+$("#score").text("Score: " + correct.toString() + "/" + dictlength);
 function loadSentence(){ 
-    $("#questions").text("Question: " + (10-(setOfSentences.length/2)).toString() + "/9");
+    $("#questions").text("Question: " + (dictlength-(setOfSentences.length/2) + 1).toString() + "/" + dictlength);
     problemContainer.innerHTML="";
     let index = Math.floor(Math.random()*setOfSentences.length);
     let specialnumber = setOfSentences[index];
@@ -65,7 +66,7 @@ $( "#correct" ).click(function() {
     }
     currentchoice=true;
     $('#incorrect').prop('disabled', true);
-    $("#score").text("Score: " + correct.toString() + "/9");
+    $("#score").text("Score: " + correct.toString() + "/" + dictlength);
     check();
     if (setOfSentences.length<=0)
         clearTimer();
@@ -79,7 +80,7 @@ $( "#incorrect" ).click(function() {
     }
     currentchoice=false;
     $('#correct').prop('disabled', true);
-    $("#score").text("Score: " + correct.toString() + "/9");
+    $("#score").text("Score: " + correct.toString() + "/" + dictlength);
     check();
     if (setOfSentences.length<=0)
         clearTimer();
