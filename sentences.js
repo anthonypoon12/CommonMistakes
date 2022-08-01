@@ -1,5 +1,5 @@
 sentences = {
-    Original: {
+    Miscellaneous: {
         0: {
             wrong: "美國是大。",
             right: "美國很大。",
@@ -46,7 +46,7 @@ sentences = {
             meaning: "I can't speak Chinese."
         },
     },
-    ErrorsInAdjectives: {
+    "Adjectives": {
         0:{
             wrong: "我的學生都是好。",
             right: "我的學生都很好。",
@@ -140,7 +140,7 @@ sentences = {
 			meaning: "That restuarant is a little dirty.",
 		},
     },
-    ErrorsInMeasureWord: {
+    "Measure Word": {
         0:{
             wrong: "你有機個狗？",
             right: "你有機隻狗？",
@@ -233,7 +233,7 @@ sentences = {
 			meaning: "He took some cakes.",
 		},
     },
-    ErrorsInPairADV: {
+    "Pair ADV": {
 		0:{
 			wrong: "雖然我喜歡他，他不喜歡我。",
 			right: "雖然我喜歡他，但是他不喜歡我。",
@@ -255,7 +255,7 @@ sentences = {
 			meaning: "Because he is a college student, his friends are also college students.",
 		},
     },
-    ErrorsInVandO: {
+    "Verb+Object": {
 		0:{
 			wrong: "雖然我是學生，但是我喜歡教。",
 			right: "雖然我是學生，但是我喜歡教書。",
@@ -297,7 +297,7 @@ sentences = {
 			meaning: "I slept eight hours yesterday.",
 		},
     },
-    ErrorsInWordOrderADV: {
+    "Word Order: ADV": {
 		0:{
 			wrong: "都我的學生喜歡學中文。",
 			right: "都我的學生喜歡學中文。",
@@ -319,7 +319,7 @@ sentences = {
 			meaning: "When I asked him to treat me to dinner, he said he had no money",
 		},
     },
-    ErrorsInWordOrderPlace: {
+    "Word Order: Place": {
 		0:{
 			wrong: "我工作在大學。",
 			right: "我在大學工作。",
@@ -341,7 +341,7 @@ sentences = {
 			meaning: "He also teaches French at this school.",
 		},
     },
-    ErrorsInWordOrderLocalizer: {
+    "Word Order: Localizer": {
 		0:{
 			wrong: "學校是我們的宿舍旁邊。",
 			right: "學校旁邊是我們的宿舍。",
@@ -353,7 +353,7 @@ sentences = {
 			meaning: "Where is he? He is at home.",
 		},
     },
-    ErrorsInWordOrderPreposition: {
+    "Word Order: Preposition": {
 		0:{
 			wrong: "我不喜歡旅遊跟家人。",
 			right: "我不喜歡跟家人旅遊。",
@@ -365,7 +365,7 @@ sentences = {
 			meaning: "How do we get to Canada from here?",
 		},
     },
-    ErrorsInWordOrderModifier的: {
+    "Word Order: Modifier": {
         0:{
             wrong: "我不能去地方我喜歡。",
             right: "我不能去我喜歡的地方。",
@@ -377,7 +377,7 @@ sentences = {
             meaning: "I can't eat what I like.",
         },
     },
-    ErrorsInWordOrderQuestion都: {
+    "Word Order: Question Word + 都": {
         0:{
             wrong: "他喜歡吃什麼都。",
             right: "他什麼都喜歡吃。",
@@ -389,7 +389,7 @@ sentences = {
             meaning: "You can go anywhere today.",
         },
     },
-    ErrorsInIf: {
+    "I don’t know if...": {
 		0:{
 			wrong: "他的屋子又整齊又乾淨。我不知道如果他住在那兒。",
 			right: "他的屋子又整齊又乾淨。我不知道他是不是住在那兒。",
