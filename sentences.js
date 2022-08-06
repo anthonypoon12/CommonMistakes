@@ -401,4 +401,76 @@ sentences = {
 			meaning: "He wants me to ask if you follow him to the gym.",
 		},
     },
+	"Word Order": {
+		0:{
+			wrong: "我學中文在紐約。",
+			right: "我在紐約學中文。",
+			meaning: "",
+		},
+		1:{
+			wrong: "書在旁邊電腦。",
+			right: "書在電腦旁邊。",
+			meaning: "",
+		},
+		2:{
+			wrong: "我一叫他請我吃飯，就他說沒錢。",
+			right: "我一叫他請我吃飯，他就說沒錢。",
+			meaning: "",
+		},
+		3:{
+			wrong: "我喜歡吃飯中國。",
+			right: "我喜歡吃中國飯。",
+			meaning: "",
+		},
+		4:{
+			wrong: "他喜歡什麼都。",
+			right: "他什麼都喜歡。",
+			meaning: "",
+		},
+		5:{
+			wrong: "都我們喜歡學中文。",
+			right: "我們都喜歡學中文。",
+			meaning: "",
+		},
+		6:{
+			wrong: "書我喜歡看是歷史書。",
+			right: "我喜歡看的書是歷史書。",
+			meaning: "",
+		},
+		7:{
+			wrong: "除了英語，以外我也會說法語。",
+			right: "除了英語以外，我也會說法語。",
+			meaning: "",
+		},
+		8:{
+			wrong: "我見你星期三。",
+			right: "星期三見。",
+			meaning: "",
+		},
+	},
+	"Missing Word": { // should i keep the same format or make user type out?
+		0:{
+			wrong: "我沒學中文。",
+			right: "我沒學過中文。",
+			meaning: "",
+		},
+		1:{
+			wrong: "因為我的朋友是中國人，我學中文。",
+			right: "因為我的朋友是中國人，所以我學中文。",
+			meaning: "",
+		},
+		2:{
+			wrong: "雖然你不喜歡我，我喜歡你。",
+			right: "雖然你不喜歡我，但是我喜歡你。",
+			meaning: "",
+		},
+	},
+	
+	"Others": {
+		0:{
+			wrong: "我天天沒有課。",
+			right: "我不是天天有課。",
+			meaning: "",
+		},
+	},
 };
