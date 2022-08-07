@@ -69,7 +69,7 @@ $( "#correct" ).click(function() {
     $("#score").text("Score: " + correct.toString() + "/" + dictlength);
     check();
     if (currentquestion+1>=dictlength)
-        clearTimer();
+        gameOverfunc();
 });
 $( "#incorrect" ).click(function() {
     $(this).addClass("chosen");
@@ -83,7 +83,7 @@ $( "#incorrect" ).click(function() {
     $("#score").text("Score: " + correct.toString() + "/" + dictlength);
     check();
     if (currentquestion+1>=dictlength)
-        clearTimer();
+        gameOverfunc();
     });
     $( "#next" ).click(function() {
         $( "#next" ).text("Skip");
@@ -97,7 +97,7 @@ $( "#incorrect" ).click(function() {
             currentquestion++;
         }
         if (currentquestion>=dictlength){
-            clearTimer();
+            gameOverfunc();
             $('#correct').prop('disabled', true);
             $('#incorrect').prop('disabled', true);
         }
@@ -110,4 +110,30 @@ function check(){
     else
     $(currentbutton).append(`<span id="correct" style="color: red; font-size:1.5rem; ">&#10008;</span> `);
 }
-
+// GAMEOVER MODAL
+function gameOverfunc(){
+    clearTimer();
+    modalGameOver();
+  }
+function modalGameOver() {
+    console.log("Hi");
+    let message = "Game Over";
+    if (correct==dictlength){
+      message = "You won!";
+    }
+    $("#modalending").html(`
+        <h1> ${message} </h2>
+        <h2> Score: ${correct}/${dictlength} </h2>
+        <h2> Time: ${$("#minutes").text()}:${$("#seconds").text()} </h2>
+        <button id="Restart" class="my-2 btn-modal">
+          <a onclick="location.reload()">
+            <h6>Restart</h6>
+          </a>
+        </button>
+        <button id="Menu" class="my-2 btn-modal">
+          <a href="index.html">
+            <h6>Back to menu</h6>
+          </a>
+        </button>
+    `);
+  }
