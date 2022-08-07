@@ -10,24 +10,30 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="index.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="sentences.js"></script>  
 </head>
   <body>
+    <div class="title"><h3>Chinese Literacy Vol. 1</h3></div>
     <div class="container main" style="border-radius: 20px;">
       <div class="row align-items-center" >
         <div class="col-12">
           <div class="row text-center my-4" ></div>
             <div class="row justify-content-center">
               <div class="col-4">
-                <div class="buttons-container row" id="buttoncont">
+                <table cellspacing="20">
+                  <tbody class="buttons-container row" id="buttoncont">
+
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
     </div>
+    </body>
     <base href="../../" />
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
@@ -37,13 +43,12 @@
     <script>
         var buttons="";
         Object.keys(sentences).forEach(function(item){
-            buttons +=` <button
+            buttons +=` <tr><td
             id="${item}"
             onclick="buttonValue(this.id)"
-            class="col-12 btn-index"
             >
             <h2>${item}</h2>
-            </button>`
+            </td></tr>`
         });
         $("#buttoncont").append(buttons);
         console.log(buttons);

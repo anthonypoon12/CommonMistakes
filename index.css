@@ -1,0 +1,43 @@
+.title {
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 10px;
+	text-overflow: clip;
+	overflow: hidden;
+	white-space: nowrap;
+	background-color: rgb(74, 74, 74);
+	color: white;
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+}
+td{
+	letter-spacing: 1px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgb(26, 190, 187);
+    color: white;
+    cursor: pointer;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 10px;
+    border-spacing: 50px;
+	box-sizing: border-box;
+	display: table-cell;
+	width: 20vw;
+	margin-left: auto;
+	margin-right: auto;
+}
+table{
+	border-collapse: separate;
+    max-width: 320px;
+    width: 90%;
+	text-align: center;
+}
+h2{
+	font-size: 2vw;
+}

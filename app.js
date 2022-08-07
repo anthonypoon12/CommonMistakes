@@ -6,6 +6,7 @@ var trueOrFalse = false;
 var problemDiv;
 var currentchoice=false;
 var currentbutton="";
+var currentquestion = 0;//starts at 0
 //Makes array of indexes for sentences
 const setOfSentences = [];
 const dictlength = Object.keys(sentences[DICTIONARY]).length;
@@ -28,7 +29,6 @@ function loadSentence(){
         setOfSentences.splice(indexToRemoveFromSet, 2);
     }
     let sentence = sentences[DICTIONARY][Math.floor(specialnumber/2)];
-    console.log(sentence);
     let meaning=sentence.meaning;
     let sentencetoDisplay="";
     if (specialnumber%2==0){
@@ -68,8 +68,8 @@ $( "#correct" ).click(function() {
     $('#incorrect').prop('disabled', true);
     $("#score").text("Score: " + correct.toString() + "/" + dictlength);
     check();
-    if (setOfSentences.length<=0)
-        clearTimer();
+    if (currentquestion+1>=dictlength)
+        gameOverfunc();
 });
 $( "#incorrect" ).click(function() {
     $(this).addClass("chosen");
@@ -82,20 +82,27 @@ $( "#incorrect" ).click(function() {
     $('#correct').prop('disabled', true);
     $("#score").text("Score: " + correct.toString() + "/" + dictlength);
     check();
-    if (setOfSentences.length<=0)
-        clearTimer();
-});
-$( "#next" ).click(function() {
-    $( "#next" ).text("Skip");
-    if(setOfSentences.length>0){
-        loadSentence();
-        $('#correct').prop('disabled', false);
-        $('#incorrect').prop('disabled', false);
-        $('#correct').html("Correct");
-        $('#incorrect').html("Incorrect");
-        $("#correct").removeClass("chosen");
-        $("#incorrect").removeClass("chosen");
-    }
+    if (currentquestion+1>=dictlength)
+        gameOverfunc();
+    });
+    $( "#next" ).click(function() {
+        $( "#next" ).text("Skip");
+        if(currentquestion<dictlength){
+            $('#correct').prop('disabled', false);
+            $('#incorrect').prop('disabled', false);
+            $('#correct').html("Correct");
+            $('#incorrect').html("Incorrect");
+            $("#correct").removeClass("chosen");
+            $("#incorrect").removeClass("chosen");
+            currentquestion++;
+        }
+        if (currentquestion>=dictlength){
+            gameOverfunc();
+            $('#correct').prop('disabled', true);
+            $('#incorrect').prop('disabled', true);
+        }
+        else
+            loadSentence();
 });
 function check(){
     if (trueOrFalse==currentchoice)
@@ -103,4 +110,30 @@ function check(){
     else
     $(currentbutton).append(`<span id="correct" style="color: red; font-size:1.5rem; ">&#10008;</span> `);
 }
-
+// GAMEOVER MODAL
+function gameOverfunc(){
+    clearTimer();
+    modalGameOver();
+  }
+function modalGameOver() {
+    console.log("Hi");
+    let message = "Game Over";
+    if (correct==dictlength){
+      message = "You won!";
+    }
+    $("#modalending").html(`
+        <h1> ${message} </h2>
+        <h2> Score: ${correct}/${dictlength} </h2>
+        <h2> Time: ${$("#minutes").text()}:${$("#seconds").text()} </h2>
+        <button id="Restart" class="my-2 btn-modal">
+          <a onclick="location.reload()">
+            <h6>Restart</h6>
+          </a>
+        </button>
+        <button id="Menu" class="my-2 btn-modal">
+          <a href="index.html">
+            <h6>Back to menu</h6>
+          </a>
+        </button>
+    `);
+  }
