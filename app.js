@@ -6,6 +6,7 @@ var trueOrFalse = false;
 var problemDiv;
 var currentchoice=false;
 var currentbutton="";
+var currentquestion = 0;//starts at 0
 //Makes array of indexes for sentences
 const setOfSentences = [];
 const dictlength = Object.keys(sentences[DICTIONARY]).length;
@@ -28,7 +29,6 @@ function loadSentence(){
         setOfSentences.splice(indexToRemoveFromSet, 2);
     }
     let sentence = sentences[DICTIONARY][Math.floor(specialnumber/2)];
-    console.log(sentence);
     let meaning=sentence.meaning;
     let sentencetoDisplay="";
     if (specialnumber%2==0){
@@ -68,7 +68,7 @@ $( "#correct" ).click(function() {
     $('#incorrect').prop('disabled', true);
     $("#score").text("Score: " + correct.toString() + "/" + dictlength);
     check();
-    if (setOfSentences.length<=0)
+    if (currentquestion+1>=dictlength)
         clearTimer();
 });
 $( "#incorrect" ).click(function() {
@@ -82,20 +82,27 @@ $( "#incorrect" ).click(function() {
     $('#correct').prop('disabled', true);
     $("#score").text("Score: " + correct.toString() + "/" + dictlength);
     check();
-    if (setOfSentences.length<=0)
+    if (currentquestion+1>=dictlength)
         clearTimer();
-});
-$( "#next" ).click(function() {
-    $( "#next" ).text("Skip");
-    if(setOfSentences.length>0){
-        loadSentence();
-        $('#correct').prop('disabled', false);
-        $('#incorrect').prop('disabled', false);
-        $('#correct').html("Correct");
-        $('#incorrect').html("Incorrect");
-        $("#correct").removeClass("chosen");
-        $("#incorrect").removeClass("chosen");
-    }
+    });
+    $( "#next" ).click(function() {
+        $( "#next" ).text("Skip");
+        if(currentquestion<dictlength){
+            $('#correct').prop('disabled', false);
+            $('#incorrect').prop('disabled', false);
+            $('#correct').html("Correct");
+            $('#incorrect').html("Incorrect");
+            $("#correct").removeClass("chosen");
+            $("#incorrect").removeClass("chosen");
+            currentquestion++;
+        }
+        if (currentquestion>=dictlength){
+            clearTimer();
+            $('#correct').prop('disabled', true);
+            $('#incorrect').prop('disabled', true);
+        }
+        else
+            loadSentence();
 });
 function check(){
     if (trueOrFalse==currentchoice)
