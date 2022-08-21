@@ -10,32 +10,3 @@
 	font-family: "Open Sans", sans-serif;
 	font-weight: bold;
 }
-td{	
-	letter-spacing: 1px;
-    text-align: center;
-    vertical-align: middle;
-    background-color: rgb(26, 190, 187);
-    color: white;
-    cursor: pointer;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent;
-    border-radius: 10px;
-    border-spacing: 50px;
-	box-sizing: border-box;
-	display: table-cell;
-	width: 20vw;
-	margin-left: auto;
-	margin-right: auto;
-	white-space: nowrap;
-	text-align: center;
-}
-table{
-	border-collapse: separate;
-    max-width: 320px;
-    width: 90%;
-	text-align: center;
-}
-td h2{
-	font-size: 2vw;
-}
