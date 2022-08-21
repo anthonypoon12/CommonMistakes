@@ -2,7 +2,7 @@ body{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 #problem{
-    font-size:40px;
+    /* font-size:3vw; */
     color: #9841d8;
 }
 #problemContainer{
@@ -24,12 +24,12 @@ body{
     margin-right: 1px;
     margin-top:1vh;
     margin-bottom:1vh;
+    padding-top: auto;
+    padding-bottom: auto;
     width: 20vw;
-    height: 5vh;
     background-color: white;
     color: black;
-}
-button{
+    font-size: 3vw;
     border-color: -internal-light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
 }
 .disabled-button{
@@ -53,4 +53,10 @@ button{
     flex-direction: column;
     -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
+}
+h1{
+    font-size: 2.5vw;
+}
+h2{
+    font-size: 2vw;
 }
