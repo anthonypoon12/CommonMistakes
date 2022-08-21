@@ -16,22 +16,9 @@
 </head>
   <body>
     <div class="title"><h3>Chinese Literacy Vol. 1</h3></div>
-    <div class="container main" style="border-radius: 20px;">
-      <div class="row align-items-center" >
-        <div class="col-12">
-          <div class="row text-center my-4" ></div>
-            <div class="row justify-content-center">
-              <div class="col-4">
-                <table cellspacing="20">
-                  <tbody class="buttons-container row" id="buttoncont">
-
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="container-fluid">
+      <div class="row my-3 justify-content-center" id="buttoncont"></div>
+    </div>
     </div>
     </body>
     <base href="../../" />
@@ -42,16 +29,23 @@
     ></script>
     <script>
         var buttons="";
+        var buttonname="";
         Object.keys(sentences).forEach(function(item){
-            buttons +=` <tr><td
-            id="${item}"
-            onclick="buttonValue(this.id)"
-            >
-            <h2>${item}</h2>
-            </td></tr>`
+          if ((item=="Miscellaneous")||(item=="Other")){
+            buttonname=item + " Errors";
+          }
+          else{
+            buttonname="Errors in " + item;
+          }
+            buttons +=`
+        <div class="col-7 rounded sections text-center my-2"
+        id="${item}"
+        onclick="buttonValue(this.id)">
+          <h2>${buttonname}</h2>
+      </div>
+  <div class="w-100"></div>`
         });
         $("#buttoncont").append(buttons);
-        console.log(buttons);
     </script>
     <script>
       // PASS THROUGH HTTP GET LEVEL, TRAD/SIMP, AND LESSON NUM SELECTED

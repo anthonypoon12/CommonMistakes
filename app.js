@@ -46,13 +46,13 @@ function createProblemDiv(sentencetoDisplay, meaning){
     problemDiv.id = ('problem');
     problemDiv.classList.add('english');
     problemDiv.classList.add('border-bottom');
-    problemDiv.innerHTML = sentencetoDisplay;
+    problemDiv.innerHTML = "<h1>" + sentencetoDisplay + "</h1>";
     problemDiv.innerHTML = problemDiv.innerHTML + "<br>";
     problemDiv.appendChild(createMeaningSpan(meaning));
     return problemDiv;
 }
 function createMeaningSpan(meaning){
-    let meaningSpan = document.createElement('span');
+    let meaningSpan = document.createElement('h1');
     meaningSpan.id = 'meaning';
     meaningSpan.innerHTML = meaning;
     return meaningSpan;
@@ -106,9 +106,9 @@ $( "#incorrect" ).click(function() {
 });
 function check(){
     if (trueOrFalse==currentchoice)
-    $(currentbutton).append(`<span id="correct" style="color: green; font-size:1.5rem; ">&#10004;</span> `);
+    $(currentbutton).append(`<span id="correct" style="color: green; font-size:3rem; ">&#10004;</span> `);
     else
-    $(currentbutton).append(`<span id="correct" style="color: red; font-size:1.5rem; ">&#10008;</span> `);
+    $(currentbutton).append(`<span id="correct" style="color: red; font-size:3rem; ">&#10008;</span> `);
 }
 // GAMEOVER MODAL
 function gameOverfunc(){
