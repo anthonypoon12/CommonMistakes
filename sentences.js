@@ -466,7 +466,7 @@ sentences = {
 		},
 	},
 	
-	"Others": {
+	"Other": {
 		0:{
 			wrong: "我天天沒有課。",
 			right: "我不是天天有課。",
