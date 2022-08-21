@@ -10,3 +10,10 @@
 	font-family: "Open Sans", sans-serif;
 	font-weight: bold;
 }
+.sections{
+	background-color: rgb(26, 190, 187);
+    color: white;
+}
+.sections h2{
+	font-size: 3vw;
+}
