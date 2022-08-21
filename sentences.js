@@ -28,7 +28,7 @@ sentences = {
         5: {
             wrong: "我的高中有十五千個學生。",
             right: "我的高中有一萬五千個學生。",
-            meaning: "My high chool has 15,000 students."
+            meaning: "My high school has 15,000 students."
         },
         6: {
             wrong: "中國菜還是美國才都很好吃。",
