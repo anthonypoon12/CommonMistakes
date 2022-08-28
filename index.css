@@ -9,6 +9,7 @@
 	color: white;
 	font-family: "Open Sans", sans-serif;
 	font-weight: bold;
+	height: 55px;
 }
 .sections{
 	background-color: rgb(26, 190, 187);
@@ -16,4 +17,13 @@
 }
 .sections h2{
 	font-size: 3vw;
+}
+@media only screen and (max-width: 374px){
+	.title h3{
+		font-size: 1.5rem;
+	}
+} 
+h3{
+	font-size: 1.75rem;
+	line-height: 1.2;
 }
