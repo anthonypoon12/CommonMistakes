@@ -6,10 +6,11 @@ var trueOrFalse = false;
 var problemDiv;
 var currentchoice=false;
 var currentbutton="";
-var currentquestion = 0;//starts at 0
+var currentquestion;
+var currentquestioncount = 0;//starts at 0;
 //Makes array of indexes for sentences
 const setOfSentences = [];
-const dictlength = Object.keys(sentences[DICTIONARY]).length;
+const dictlength = Object.keys(sentences[$(".btn-convert").text()][DICTIONARY]).length;
 var problemContainer = document.getElementById("problemContainer");
 for (let i = 0 ; i < dictlength * 2; i++){
     setOfSentences.push(i);
@@ -22,13 +23,14 @@ function loadSentence(){
     problemContainer.innerHTML="";
     let index = Math.floor(Math.random()*setOfSentences.length);
     let specialnumber = setOfSentences[index];
+    currentquestion = Math.floor(specialnumber/2)
     let indexToRemoveFromSet=index;
     if(index%2==1)
         indexToRemoveFromSet--;
     if (indexToRemoveFromSet !== -1) {
         setOfSentences.splice(indexToRemoveFromSet, 2);
     }
-    let sentence = sentences[DICTIONARY][Math.floor(specialnumber/2)];
+    let sentence = sentences[$(".btn-convert").text()][DICTIONARY][currentquestion];
     let meaning=sentence.meaning;
     let sentencetoDisplay="";
     if (specialnumber%2==0){
@@ -68,7 +70,7 @@ $( "#correct" ).click(function() {
     $('#incorrect').prop('disabled', true);
     $("#score").text("Score: " + correct.toString() + "/" + dictlength);
     check();
-    if (currentquestion+1>=dictlength)
+    if (currentquestioncount+1>=dictlength)
         gameOverfunc();
 });
 $( "#incorrect" ).click(function() {
@@ -84,25 +86,25 @@ $( "#incorrect" ).click(function() {
     check();
     if (currentquestion+1>=dictlength)
         gameOverfunc();
-    });
-    $( "#next" ).click(function() {
-        $( "#next" ).text("Skip");
-        if(currentquestion<dictlength){
-            $('#correct').prop('disabled', false);
-            $('#incorrect').prop('disabled', false);
-            $('#correct').html("Correct");
-            $('#incorrect').html("Incorrect");
-            $("#correct").removeClass("chosen");
-            $("#incorrect").removeClass("chosen");
-            currentquestion++;
-        }
-        if (currentquestion>=dictlength){
-            gameOverfunc();
-            $('#correct').prop('disabled', true);
-            $('#incorrect').prop('disabled', true);
-        }
-        else
-            loadSentence();
+});
+$( "#next" ).click(function() {
+    $( "#next" ).text("Skip");
+    if(currentquestioncount<dictlength){
+        $('#correct').prop('disabled', false);
+        $('#incorrect').prop('disabled', false);
+        $('#correct').html("Correct");
+        $('#incorrect').html("Incorrect");
+        $("#correct").removeClass("chosen");
+        $("#incorrect").removeClass("chosen");
+        currentquestioncount++;
+    }
+    if (currentquestioncount>=dictlength){
+        gameOverfunc();
+        $('#correct').prop('disabled', true);
+        $('#incorrect').prop('disabled', true);
+    }
+    else
+    loadSentence();
 });
 function check(){
     if (trueOrFalse==currentchoice)
@@ -119,21 +121,33 @@ function modalGameOver() {
     console.log("Hi");
     let message = "Game Over";
     if (correct==dictlength){
-      message = "You won!";
+        message = "You won!";
     }
     $("#modalending").html(`
-        <h1> ${message} </h2>
-        <h2> Score: ${correct}/${dictlength} </h2>
-        <h2> Time: ${$("#minutes").text()}:${$("#seconds").text()} </h2>
-        <button id="Restart" class="my-2 btn-modal">
-          <a onclick="location.reload()">
-            <h6>Restart</h6>
-          </a>
-        </button>
-        <button id="Menu" class="my-2 btn-modal">
-          <a href="index.html">
-            <h6>Back to menu</h6>
-          </a>
-        </button>
+    <h1> ${message} </h2>
+    <h2> Score: ${correct}/${dictlength} </h2>
+    <h2> Time: ${$("#minutes").text()}:${$("#seconds").text()} </h2>
+    <button id="Restart" class="my-2 btn-modal">
+    <a onclick="location.reload()">
+    <h3>Restart</h3>
+    </a>
+    </button>
+    <button id="Menu" class="my-2 btn-modal">
+    <a href="index.html">
+    <h3>Back to menu</h3>
+    </a>
+    </button>
     `);
-  }
+}
+function reloadSentence(){
+    let sentence = sentences[$(".btn-convert").text()][DICTIONARY][currentquestion];
+    console.log($(".btn-convert").text());
+    let meaning=sentence.meaning;
+    let sentencetoDisplay="";
+    if (trueOrFalse)
+    sentencetoDisplay=sentence.right;
+    else
+    sentencetoDisplay=sentence.wrong;
+    $('#problemContainer').text("");
+    $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning));
+}

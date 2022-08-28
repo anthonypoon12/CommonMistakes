@@ -15,7 +15,7 @@
     <script src="sentences.js"></script>  
 </head>
   <body>
-    <div class="title"><h3>Chinese Literacy Vol. 1</h3></div>
+    <div class="title"><h3>Common Mistakes</h3></div>
     <div class="container-fluid">
       <div class="row my-3 justify-content-center" id="buttoncont"></div>
     </div>
@@ -29,19 +29,12 @@
     ></script>
     <script>
         var buttons="";
-        var buttonname="";
-        Object.keys(sentences).forEach(function(item){
-          if ((item=="Miscellaneous")||(item=="Other")){
-            buttonname=item + " Errors";
-          }
-          else{
-            buttonname="Errors in " + item;
-          }
+        Object.keys(sentences["Traditional"]).forEach(function(item){
             buttons +=`
         <div class="col-7 rounded sections text-center my-2"
         id="${item}"
         onclick="buttonValue(this.id)">
-          <h2>${buttonname}</h2>
+          <h2>${item}</h2>
       </div>
   <div class="w-100"></div>`
         });

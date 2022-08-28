@@ -1,8 +1,8 @@
 var traditional;
 $(document).ready(function () {
-  if (localStorage.getItem("Simplifed") == "true") {
+  if (localStorage.getItem("Simplified") == "true") {
     traditional = false;
-    $(".btn-convert").text("Simplifed");
+    $(".btn-convert").text("Simplified");
   } else {
     traditional = true;
     $(".btn-convert").text("Traditional");
@@ -11,17 +11,19 @@ $(document).ready(function () {
   //trad <-> simp conversion on click
   $(".btn-convert").click(function () {
     if (traditional) {
-      $(".btn-convert").text("Simplifed");
-      localStorage.setItem("Simplifed", "true");
+      $(".btn-convert").text("Simplified");
+      localStorage.setItem("Simplified", "true");
       $(".traditional").hide();
       $(".simplified").show();
     } else {
       $(".btn-convert").text("Traditional");
-      localStorage.setItem("Simplifed", "false");
+      localStorage.setItem("Simplified", "false");
       $(".traditional").show();
       $(".simplified").hide();
     }
     traditional = !traditional;
+    //for common mistakes
+    reloadSentence();
   });
 });
 
