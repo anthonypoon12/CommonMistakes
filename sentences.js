@@ -1,93 +1,46 @@
 sentences = {
-    Miscellaneous: {
-        0: {
-            wrong: "美國是大。",
-            right: "美國很大。",
-            meaning:"The United States is very big."
-        },
-        1: {
-            wrong: "我是大學二年級。",
-            right: "我上大學二年級。",
-            meaning:"I am a sophomore in college."
-        },
-        2: {
-            wrong: "你有幾個狗。",
-            right: "你有幾隻狗。",
-            meaning: "You have a few dogs."
-        },
-        3: {
-            wrong: "你有不有中國朋友。",
-            right: "你有沒有中國朋友。",
-            meaning: "Do you have Chinese friends?"
-        },
-        4: {
-            wrong: "學校是我們的宿舍旁邊。",
-            right: "學校在我們的宿舍旁邊。",
-            meaning:"The school is next to our dormitory."
-        },
-        5: {
-            wrong: "我的高中有十五千個學生。",
-            right: "我的高中有一萬五千個學生。",
-            meaning: "My high school has 15,000 students."
-        },
-        6: {
-            wrong: "中國菜還是美國才都很好吃。",
-            right: "中國菜或是美國才都很好吃。",
-            meaning: "Chinese food and American food are both very good."
-        },
-        7: {
-            wrong: "我喜歡吃中國飯和喜歡學中文。",
-            right: "我喜歡吃中國飯也喜歡學中文。",
-            meaning:"I like to eat Chinese food and I like to learn Chinese."
-        },
-        8: {
-            wrong: "我不可以説中文。",
-            right: "我不會説中文。",
-            meaning: "I can't speak Chinese."
-        },
-    },
-    "Adjectives": {
-        0:{
-            wrong: "我的學生都是好。",
+    "Errors in Adjectives": {
+		0:{
+			wrong: "我的學生都是好。",
             right: "我的學生都很好。",
             meaning: "My students are very good.",
-
+			
         },
         1:{
-            wrong: "我的中文名字是美。",
+			wrong: "我的中文名字是美。",
             right: "我的中文名字很美。",
             meaning: "My Chinese name is very pretty",
-
+			
         },
         2:{
-            wrong: "你的狗叫什麼？因為他是白，所以我們叫他小白。",
+			wrong: "你的狗叫什麼？因為他是白，所以我們叫他小白。",
             right: "你的狗叫什麼？因為他白，所以我們叫他小白。",
             meaning: "What is your dog called? Because he is white, we call him Xiao Bai (Little White).",
-
+			
         },
         3:{
             wrong: "我的太太說美國飯是貴。",
             right: "我的太太說美國飯很貴。",
             meaning: "My wife says American food is expensive.",
-
+			
         },
         4:{
-            wrong: "學校是大。一個月兩千塊錢。",
+			wrong: "學校是大。一個月兩千塊錢。",
             right: "學校很大。一個月兩千塊錢。",
             meaning: "The school is very big. One month costs two thousand dollars.",
-
+			
         },
         5:{
-            wrong: "跟家人旅遊不是方便。",
+			wrong: "跟家人旅遊不是方便。",
             right: "跟家人旅遊不方便。",
             meaning: "Traveling with family is inconvenient.",
-
+			
         },
         6:{
-            wrong: "坐飛機是方便，但是貴。",
+			wrong: "坐飛機是方便，但是貴。",
             right: "坐飛機很方便，但是貴。",
             meaning: "Flying in a plane is convenient, but it is expensive.",
-
+			
         },
         7:{
 			wrong: "他的書新。",
@@ -140,50 +93,50 @@ sentences = {
 			meaning: "That restuarant is a little dirty.",
 		},
     },
-    "Measure Word": {
-        0:{
-            wrong: "你有機個狗？",
+    "Errors in Measure Words": {
+		0:{
+			wrong: "你有機個狗？",
             right: "你有機隻狗？",
             meaning: "How many dogs do you have?",
-
+			
         },
         1:{
-            wrong: "你隻狗是大狗還是小狗",
+			wrong: "你隻狗是大狗還是小狗",
             right: "你的狗是大狗還是小狗",
             meaning: "Is your dog a big dog or a small dog?",
         },
         2:{
-            wrong: "我家有兩個貓。一是大，另一是小。",
+			wrong: "我家有兩個貓。一是大，另一是小。",
             right: "我家有兩隻貓。一隻大，另隻是小。",
             meaning: "I have two cats in my house. One is big, the other is small.",
         },
         3:{
-            wrong: "我有三個中文書",
+			wrong: "我有三個中文書",
             right: "我有三本中文書",
             meaning: "I have three Chinese books.",
         },
         4:{
-            wrong: "你有多少錢？我有二十錢。",
+			wrong: "你有多少錢？我有二十錢。",
             right: "你有多少錢？我有二十塊錢。",
             meaning: "How much money do you have? I have twenty dollars.",
         },
         5:{
-            wrong: "我有三中國朋友。",
+			wrong: "我有三中國朋友。",
             right: "我有三個中國朋友。",
             meaning: "I have three Chinese friends.",
         },
         6:{
-            wrong: "我在高中學了三個年中文。",
+			wrong: "我在高中學了三個年中文。",
             right: "我在高中學了三年中文。",
             meaning: "I learned three years of Chinese in high school.",
         },
         7:{
-            wrong: "我一個星期上中文課一次。",
+			wrong: "我一個星期上中文課一次。",
             right: "我一個星期上一次中文課。",
             meaning: "I attend Chinese class once a week.",
         },
         8:{
-            wrong: "他一個月一次吃中國飯。",
+			wrong: "他一個月一次吃中國飯。",
             right: "他一個月吃一次中國飯。",
             meaning: "He eats Chinese food once a month.",
         },
@@ -233,7 +186,7 @@ sentences = {
 			meaning: "He took some cakes.",
 		},
     },
-    "Pair ADV": {
+    "Errors in Conjunctions": {
 		0:{
 			wrong: "雖然我喜歡他，他不喜歡我。",
 			right: "雖然我喜歡他，但是他不喜歡我。",
@@ -254,8 +207,18 @@ sentences = {
 			right: "因為他是大學生，所以他的朋友也是大學生。",
 			meaning: "Because he is a college student, his friends are also college students.",
 		},
+		4:{
+			wrong: "他的屋子又整齊又乾淨。我不知道如果他住在那兒。",
+			right: "他的屋子又整齊又乾淨。我不知道他是不是住在那兒。",
+			meaning: "His house was neat and clean. I don't know if he lives there.",
+		},
+		5:{
+			wrong: "他要我問你如果你去體育館跟他。",
+			right: "他要我問你跟不跟他去體育館。",
+			meaning: "He wants me to ask if you follow him to the gym.",
+		},
     },
-    "Verb+Object": {
+    "Errors in Verbs": {
 		0:{
 			wrong: "雖然我是學生，但是我喜歡教。",
 			right: "雖然我是學生，但是我喜歡教書。",
@@ -296,8 +259,13 @@ sentences = {
 			right: "我昨天睡八個鐘頭覺。",
 			meaning: "I slept eight hours yesterday.",
 		},
+		7:{
+			wrong: "我的姓是王。",
+			right: "我姓王。",
+			meaning: "My surname is Wang.",
+		},
     },
-    "Word Order: ADV": {
+    "Errors in Adverbs": {
 		0:{
 			wrong: "都我的學生喜歡學中文。",
 			right: "都我的學生喜歡學中文。",
@@ -319,7 +287,7 @@ sentences = {
 			meaning: "When I asked him to treat me to dinner, he said he had no money",
 		},
     },
-    "Word Order: Place": {
+    "Errors in Nouns (Time, Place, Localizer)": {
 		0:{
 			wrong: "我工作在大學。",
 			right: "我在大學工作。",
@@ -340,20 +308,18 @@ sentences = {
 			right: "他也在這個學校教法文。",
 			meaning: "He also teaches French at this school.",
 		},
-    },
-    "Word Order: Localizer": {
-		0:{
+		4:{
 			wrong: "學校是我們的宿舍旁邊。",
 			right: "學校旁邊是我們的宿舍。",
 			meaning: "Next to the school is our dormitory.",
 		},
-		1:{
+		5:{
 			wrong: "他在哪兒？他在裏家。",
 			right: "他在哪兒？他在裏家。",
 			meaning: "Where is he? He is at home.",
 		},
     },
-    "Word Order: Preposition": {
+    "Errors in Prepositions": {
 		0:{
 			wrong: "我不喜歡旅遊跟家人。",
 			right: "我不喜歡跟家人旅遊。",
@@ -364,10 +330,15 @@ sentences = {
 			right: "我們怎麼從這兒去加拿大？",
 			meaning: "How do we get to Canada from here?",
 		},
+		2:{
+			wrong: "除了英文，以外我也會說中文。",
+			right: "除了英文以外，我也會說中文。",
+			meaning: "Besides English, I can also speak Chinese.",
+		},
     },
-    "Word Order: Modifier": {
+    "Errors in Particles": {
         0:{
-            wrong: "我不能去地方我喜歡。",
+			wrong: "我不能去地方我喜歡。",
             right: "我不能去我喜歡的地方。",
             meaning: "I can't go where I like.",
         },
@@ -376,101 +347,37 @@ sentences = {
             right: "我不可以吃我喜歡的東西。",
             meaning: "I can't eat what I like.",
         },
+        2:{
+            wrong: "他說中文說的很好。",
+            right: "他說中文說得很好。",
+            meaning: "He speaks Chinese very well.",
+        },
+        3:{
+            wrong: "我從來沒學義大利文。我不會說義大利文。",
+            right: "我從來沒學過義大利文。我不會說義大利文。",
+            meaning: "I have never learned Italian. I don't speak Italian.",
+        },
+        4:{
+            wrong: "他以前很喜歡了她，可是現在不喜歡了。",
+            right: "他以前很喜歡她，可是現在不喜歡了。",
+            meaning: "He used to like her very much, but now he doesn't.",
+        },
     },
-    "Word Order: Question Word + 都": {
-        0:{
+    "Errors in Pronouns (Question Words,Demonstrative Pronoun)": {
+		0:{
             wrong: "他喜歡吃什麼都。",
             right: "他什麼都喜歡吃。",
             meaning: "He likes to eat anything.",
         },
         1:{
-            wrong: "你今天可以去哪兒都。",
+			wrong: "你今天可以去哪兒都。",
             right: "你今天哪兒都可以去。",
             meaning: "You can go anywhere today.",
         },
+        2:{
+			wrong: "他在這。",
+            right: "他在這裏。",
+            meaning: "He is here.",
+        },
     },
-    "I don’t know if...": {
-		0:{
-			wrong: "他的屋子又整齊又乾淨。我不知道如果他住在那兒。",
-			right: "他的屋子又整齊又乾淨。我不知道他是不是住在那兒。",
-			meaning: "His house was neat and clean. I don't know if he lives there.",
-		},
-		1:{
-			wrong: "他要我問你如果你去體育館跟他。",
-			right: "他要我問你跟不跟他去體育館。",
-			meaning: "He wants me to ask if you follow him to the gym.",
-		},
-    },
-	"Word Order": {
-		0:{
-			wrong: "我學中文在紐約。",
-			right: "我在紐約學中文。",
-			meaning: "",
-		},
-		1:{
-			wrong: "書在旁邊電腦。",
-			right: "書在電腦旁邊。",
-			meaning: "",
-		},
-		2:{
-			wrong: "我一叫他請我吃飯，就他說沒錢。",
-			right: "我一叫他請我吃飯，他就說沒錢。",
-			meaning: "",
-		},
-		3:{
-			wrong: "我喜歡吃飯中國。",
-			right: "我喜歡吃中國飯。",
-			meaning: "",
-		},
-		4:{
-			wrong: "他喜歡什麼都。",
-			right: "他什麼都喜歡。",
-			meaning: "",
-		},
-		5:{
-			wrong: "都我們喜歡學中文。",
-			right: "我們都喜歡學中文。",
-			meaning: "",
-		},
-		6:{
-			wrong: "書我喜歡看是歷史書。",
-			right: "我喜歡看的書是歷史書。",
-			meaning: "",
-		},
-		7:{
-			wrong: "除了英語，以外我也會說法語。",
-			right: "除了英語以外，我也會說法語。",
-			meaning: "",
-		},
-		8:{
-			wrong: "我見你星期三。",
-			right: "星期三見。",
-			meaning: "",
-		},
-	},
-	"Missing Word": { // should i keep the same format or make user type out?
-		0:{
-			wrong: "我沒學中文。",
-			right: "我沒學過中文。",
-			meaning: "",
-		},
-		1:{
-			wrong: "因為我的朋友是中國人，我學中文。",
-			right: "因為我的朋友是中國人，所以我學中文。",
-			meaning: "",
-		},
-		2:{
-			wrong: "雖然你不喜歡我，我喜歡你。",
-			right: "雖然你不喜歡我，但是我喜歡你。",
-			meaning: "",
-		},
-	},
-	
-	"Other": {
-		0:{
-			wrong: "我天天沒有課。",
-			right: "我不是天天有課。",
-			meaning: "",
-		},
-	},
 };
