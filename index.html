@@ -29,19 +29,12 @@
     ></script>
     <script>
         var buttons="";
-        var buttonname="";
         Object.keys(sentences).forEach(function(item){
-          if ((item=="Miscellaneous")||(item=="Other")){
-            buttonname=item + " Errors";
-          }
-          else{
-            buttonname="Errors in " + item;
-          }
             buttons +=`
         <div class="col-7 rounded sections text-center my-2"
         id="${item}"
         onclick="buttonValue(this.id)">
-          <h2>${buttonname}</h2>
+          <h2>${item}</h2>
       </div>
   <div class="w-100"></div>`
         });
