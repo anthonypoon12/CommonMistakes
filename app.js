@@ -9,7 +9,7 @@ var currentbutton="";
 var currentquestion = 0;//starts at 0
 //Makes array of indexes for sentences
 const setOfSentences = [];
-const dictlength = Object.keys(sentences[DICTIONARY]).length;
+const dictlength = Object.keys(sentences[$(".btn-convert").text()][DICTIONARY]).length;
 var problemContainer = document.getElementById("problemContainer");
 for (let i = 0 ; i < dictlength * 2; i++){
     setOfSentences.push(i);
@@ -28,7 +28,7 @@ function loadSentence(){
     if (indexToRemoveFromSet !== -1) {
         setOfSentences.splice(indexToRemoveFromSet, 2);
     }
-    let sentence = sentences[DICTIONARY][Math.floor(specialnumber/2)];
+    let sentence = sentences[$(".btn-convert").text()][DICTIONARY][Math.floor(specialnumber/2)];
     let meaning=sentence.meaning;
     let sentencetoDisplay="";
     if (specialnumber%2==0){
