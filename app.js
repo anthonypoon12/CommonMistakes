@@ -127,12 +127,12 @@ function modalGameOver() {
         <h2> Time: ${$("#minutes").text()}:${$("#seconds").text()} </h2>
         <button id="Restart" class="my-2 btn-modal">
           <a onclick="location.reload()">
-            <h6>Restart</h6>
+            <h3>Restart</h3>
           </a>
         </button>
         <button id="Menu" class="my-2 btn-modal">
           <a href="index.html">
-            <h6>Back to menu</h6>
+            <h3>Back to menu</h3>
           </a>
         </button>
     `);
