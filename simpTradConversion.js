@@ -22,6 +22,8 @@ $(document).ready(function () {
       $(".simplified").hide();
     }
     traditional = !traditional;
+    //for common mistakes
+    reloadSentence();
   });
 });
 
