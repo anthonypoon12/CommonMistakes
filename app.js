@@ -108,9 +108,9 @@ $( "#next" ).click(function() {
 });
 function check(){
     if (trueOrFalse==currentchoice)
-    $(currentbutton).append(`<span id="correct" style="color: green; font-size:3rem; ">&#10004;</span> `);
+    $(currentbutton).append(`<span id="correct" style="color: green;" class:"fs-4">&#10004;</span> `);
     else
-    $(currentbutton).append(`<span id="correct" style="color: red; font-size:3rem; ">&#10008;</span> `);
+    $(currentbutton).append(`<span id="correct" style="color: red;" class:"fs-4">&#10008;</span> `);
 }
 // GAMEOVER MODAL
 function gameOverfunc(){
