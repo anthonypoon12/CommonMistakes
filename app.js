@@ -61,7 +61,7 @@ function createMeaningSpan(meaning){
 }
 $( "#correct" ).click(function() {
     $(this).addClass("chosen");
-    $( "#next" ).text("Next");
+    $( "#next" ).html("<h2>Next</h2>");
     currentbutton="#correct";
     if (true==trueOrFalse){
         correct++;
@@ -71,11 +71,11 @@ $( "#correct" ).click(function() {
     $("#score").text("Score: " + correct.toString() + "/" + dictlength);
     check();
     if (currentquestioncount+1>=dictlength)
-        gameOverfunc();
+    gameOverfunc();
 });
 $( "#incorrect" ).click(function() {
     $(this).addClass("chosen");
-    $( "#next" ).text("Next");
+    $( "#next" ).html("<h2>Next</h2>");
     currentbutton="#incorrect";
     if (false==trueOrFalse){
         correct++;
@@ -88,7 +88,7 @@ $( "#incorrect" ).click(function() {
         gameOverfunc();
 });
 $( "#next" ).click(function() {
-    $( "#next" ).text("Skip");
+    $( "#next" ).html("<h2>Skip</h2>");
     if(currentquestioncount<dictlength){
         $('#correct').prop('disabled', false);
         $('#incorrect').prop('disabled', false);
@@ -108,9 +108,9 @@ $( "#next" ).click(function() {
 });
 function check(){
     if (trueOrFalse==currentchoice)
-    $(currentbutton).append(`<span id="correct" style="color: green; font-size:3rem; ">&#10004;</span> `);
+    $(currentbutton).append(`<span id="correct" style="color: green;" class:"fs-4">&#10004;</span> `);
     else
-    $(currentbutton).append(`<span id="correct" style="color: red; font-size:3rem; ">&#10008;</span> `);
+    $(currentbutton).append(`<span id="correct" style="color: red;" class:"fs-4">&#10008;</span> `);
 }
 // GAMEOVER MODAL
 function gameOverfunc(){
