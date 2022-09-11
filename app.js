@@ -61,7 +61,7 @@ function createMeaningSpan(meaning){
 }
 $( "#correct" ).click(function() {
     $(this).addClass("chosen");
-    $( "#next" ).text("Next");
+    $( "#next" ).html("<h2>Next</h2>");
     currentbutton="#correct";
     if (true==trueOrFalse){
         correct++;
@@ -71,11 +71,11 @@ $( "#correct" ).click(function() {
     $("#score").text("Score: " + correct.toString() + "/" + dictlength);
     check();
     if (currentquestioncount+1>=dictlength)
-        gameOverfunc();
+    gameOverfunc();
 });
 $( "#incorrect" ).click(function() {
     $(this).addClass("chosen");
-    $( "#next" ).text("Next");
+    $( "#next" ).html("<h2>Next</h2>");
     currentbutton="#incorrect";
     if (false==trueOrFalse){
         correct++;
@@ -88,7 +88,7 @@ $( "#incorrect" ).click(function() {
         gameOverfunc();
 });
 $( "#next" ).click(function() {
-    $( "#next" ).text("Skip");
+    $( "#next" ).html("<h2>Skip</h2>");
     if(currentquestioncount<dictlength){
         $('#correct').prop('disabled', false);
         $('#incorrect').prop('disabled', false);
