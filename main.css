@@ -63,3 +63,6 @@ body{
 .mt-7 {
     margin-top: 5rem!important;
 }
+#correctsign, #incorrectsign{
+    visibility: hidden;
+}

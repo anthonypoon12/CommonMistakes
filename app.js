@@ -92,8 +92,8 @@ $( "#next" ).click(function() {
     if(currentquestioncount<dictlength){
         $('#correct').prop('disabled', false);
         $('#incorrect').prop('disabled', false);
-        $('#correct').html("Correct");
-        $('#incorrect').html("Incorrect");
+        $('#correct').html(`<span id="incorrectsign" style="color: red;" class:"fs-4">&#10008;</span>Correct<span id="correctsign" style="color: green;" class:"fs-4">&#10004;</span>`);
+        $('#incorrect').html(`<span id="incorrectsign" style="color: red;" class:"fs-4">&#10008;</span>Incorrect<span id="correctsign" style="color: green;" class:"fs-4">&#10004;</span>`);
         $("#correct").removeClass("chosen");
         $("#incorrect").removeClass("chosen");
         currentquestioncount++;
@@ -108,9 +108,9 @@ $( "#next" ).click(function() {
 });
 function check(){
     if (trueOrFalse==currentchoice)
-    $(currentbutton).append(`<span id="correct" style="color: green;" class:"fs-4">&#10004;</span> `);
+        $(currentbutton).find("#correctsign").css("visibility","visible");
     else
-    $(currentbutton).append(`<span id="correct" style="color: red;" class:"fs-4">&#10008;</span> `);
+        $(currentbutton).find("#incorrectsign").css("visibility","visible");
 }
 // GAMEOVER MODAL
 function gameOverfunc(){
