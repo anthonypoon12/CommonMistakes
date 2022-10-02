@@ -141,6 +141,11 @@ function modalGameOver() {
     <h3>Restart</h3>
     </a>
     </button>
+    <button id="Continue" class="my-2 btn-modal">
+    <a href="feedback.html?dict=${DICTIONARY}">
+    <h3>See your stats!</h3>
+    </a>
+    </button>
     <button id="Menu" class="my-2 btn-modal">
     <a href="index.html">
     <h3>Back to menu</h3>
