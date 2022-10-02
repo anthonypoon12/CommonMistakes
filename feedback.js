@@ -8,22 +8,31 @@ function populateBodies(){
         let rightorwrong = listOfResponses[i]%2==0? "wrong" : "right";
         let choice = listOfResponses[i+1]=="false" ? "incorrect" : "correct";
         let bodyToAppend;
-        if ((rightorwrong=="wrong"&&choice=="incorrect") || (rightorwrong=="right" && choice=="correct"))
+        let userCorrect;
+        if ((rightorwrong=="wrong"&&choice=="incorrect") || (rightorwrong=="right" && choice=="correct")){
             bodyToAppend = "#correctbody";
-        else
+            userCorrect = true;
+        }
+        else{
             bodyToAppend = "#incorrectbody";
-        $(bodyToAppend).append(createGrid(i,rightorwrong, choice));
-        $(bodyToAppend).append("<br>");
+            userCorrect = false;
+        }
+        $(bodyToAppend).append(createGrid(i,rightorwrong, choice, userCorrect));
     }
 }
-function createGrid(i, rightorwrong, choice){//number that represents sentence (right and wrong are different numbers)
-    let grid = `<div class="row">
-    <div class="col-sm">
+function createGrid(i, rightorwrong, choice, userCorrect){//number that represents sentence (right and wrong are different numbers)
+    let correction="";
+    if(rightorwrong=="wrong"&&choice=="correct"){
+        correction = `<div class="col-12 fs-3 my-2 border rounded" style="background-color: lightgreen">${sentences[$(".btn-convert").text()][DICTIONARY][Math.floor(listOfResponses[i]/2)]["right"]}</div>`
+    }
+    let grid = `<div class="row my-2 rounded border">
+    <div class="col-sm border rounded ${userCorrect?"text-success":"text-danger"}">
     ${sentences[$(".btn-convert").text()][DICTIONARY][Math.floor(listOfResponses[i]/2)][rightorwrong]}
     </div>
     <div class="col-sm">
     ${choice}
     </div>
+    ${correction}
     </div>`;
   return grid;
 }
