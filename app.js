@@ -1,13 +1,14 @@
 "use strict"
 const params = new URLSearchParams(window.location.search);
 const DICTIONARY = params.get('dict');
-var correct = 0;
-var trueOrFalse = false;
+var correct = 0; //number of questions user got correct
+var trueOrFalse = false; //whether question is true or false
 var problemDiv;
 var currentchoice=false;
 var currentbutton="";
 var currentquestion;
 var currentquestioncount = 0;//starts at 0;
+var listOfResponses = []; //stored in local storage for final screen
 //Makes array of indexes for sentences
 const setOfSentences = [];
 const dictlength = Object.keys(sentences[$(".btn-convert").text()][DICTIONARY]).length;
@@ -48,7 +49,7 @@ function createProblemDiv(sentencetoDisplay, meaning){
     problemDiv.id = ('problem');
     problemDiv.classList.add('english');
     problemDiv.classList.add('border-bottom');
-    problemDiv.innerHTML = "<h1>" + sentencetoDisplay + "</h1>";
+    problemDiv.innerHTML = `<h1 id="sentenceInChinese">` + sentencetoDisplay + "</h1>";
     problemDiv.innerHTML = problemDiv.innerHTML + "<br>";
     problemDiv.appendChild(createMeaningSpan(meaning));
     return problemDiv;
@@ -111,11 +112,15 @@ function check(){
         $(currentbutton).find("#correctsign").css("visibility","visible");
     else
         $(currentbutton).find("#incorrectsign").css("visibility","visible");
+    // stores question and response to list, will send to local storage
+    listOfResponses.push([$("#sentenceInChinese").text(),trueOrFalse==currentchoice]);
 }
 // GAMEOVER MODAL
 function gameOverfunc(){
     clearTimer();
     modalGameOver();
+    // sends list of responses to local storage
+    localStorage.setItem(DICTIONARY,listOfResponses);
   }
 function modalGameOver() {
     console.log("Hi");
