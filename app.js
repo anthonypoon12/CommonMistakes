@@ -16,8 +16,13 @@ var problemContainer = document.getElementById("problemContainer");
 for (let i = 0 ; i < dictlength * 2; i++){
     setOfSentences.push(i);
 }
-//loads the first sentence
-window.addEventListener('load', loadSentence);
+// if user has already done exercise, skip to game over
+if (localStorage.getItem(DICTIONARY)!=null){
+    gameOverfunc();
+    alert("HELP");
+}
+else
+    loadSentence();
 $("#score").text("Score: " + correct.toString() + "/" + dictlength);
 function loadSentence(){ 
     $("#questions").text("Question: " + (dictlength-(setOfSentences.length/2) + 1).toString() + "/" + dictlength);
@@ -85,7 +90,7 @@ $( "#incorrect" ).click(function() {
     $('#correct').prop('disabled', true);
     $("#score").text("Score: " + correct.toString() + "/" + dictlength);
     check();
-    if (currentquestion+1>=dictlength)
+    if (currentquestioncount+1>=dictlength)
         gameOverfunc();
 });
 $( "#next" ).click(function() {
@@ -123,7 +128,6 @@ function gameOverfunc(){
     localStorage.setItem(DICTIONARY,listOfResponses);
   }
 function modalGameOver() {
-    console.log("Hi");
     let message = "Game Over";
     if (correct==dictlength){
         message = "You won!";
@@ -133,7 +137,7 @@ function modalGameOver() {
     <h2> Score: ${correct}/${dictlength} </h2>
     <h2> Time: ${$("#minutes").text()}:${$("#seconds").text()} </h2>
     <button id="Restart" class="my-2 btn-modal">
-    <a onclick="location.reload()">
+    <a onclick="localStorage.removeItem(DICTIONARY);location.reload()">
     <h3>Restart</h3>
     </a>
     </button>
