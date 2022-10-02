@@ -274,7 +274,7 @@ sentences = {
 			},
 			1:{
 				wrong: "他姓王。他也的朋友姓王。",
-				right: "他姓王。他也的朋友姓王。",
+				right: "他姓王。他的朋友也姓王。",
 				meaning: "His surname is Wang. His friend's surname is Wang.",
 			},
 			2:{
