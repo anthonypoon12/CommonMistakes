@@ -119,7 +119,7 @@ function check(){
     else
         $(currentbutton).find("#incorrectsign").css("visibility","visible");
     // stores question and response to list, will send to local storage
-    listOfResponses.push([specialnumber,trueOrFalse==currentchoice]);
+    listOfResponses.push([specialnumber,currentchoice]);
 }
 // GAMEOVER MODAL
 function gameOverfunc(){
