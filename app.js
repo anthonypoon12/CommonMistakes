@@ -1,28 +1,34 @@
 "use strict"
 const params = new URLSearchParams(window.location.search);
 const DICTIONARY = params.get('dict');
-var correct = 0;
-var trueOrFalse = false;
+var correct = 0; //number of questions user got correct
+var trueOrFalse = false; //whether question is true or false
 var problemDiv;
 var currentchoice=false;
+var specialnumber; //which number sentence (right and wrong are different numbers)
 var currentbutton="";
-var currentquestion;
+var currentquestion;//which question is this (right and wrong yield same number)
 var currentquestioncount = 0;//starts at 0;
+var listOfResponses = []; //stored in local storage for final screen
 //Makes array of indexes for sentences
 const setOfSentences = [];
-const dictlength = Object.keys(sentences[$(".btn-convert").text()][DICTIONARY]).length;
+const dictlength = Object.keys(sentences[$(".btn-convert").text()][DICTIONARY]).length - 1; //number of right and wrong sentences
 var problemContainer = document.getElementById("problemContainer");
 for (let i = 0 ; i < dictlength * 2; i++){
     setOfSentences.push(i);
 }
-//loads the first sentence
-window.addEventListener('load', loadSentence);
+// if user has already done exercise, skip to game over
+if (localStorage.getItem(DICTIONARY)!=null){
+    gameOverfunc();
+}
+else
+    loadSentence();
 $("#score").text("Score: " + correct.toString() + "/" + dictlength);
 function loadSentence(){ 
     $("#questions").text("Question: " + (dictlength-(setOfSentences.length/2) + 1).toString() + "/" + dictlength);
     problemContainer.innerHTML="";
     let index = Math.floor(Math.random()*setOfSentences.length);
-    let specialnumber = setOfSentences[index];
+    specialnumber = setOfSentences[index];
     currentquestion = Math.floor(specialnumber/2)
     let indexToRemoveFromSet=index;
     if(index%2==1)
@@ -48,7 +54,7 @@ function createProblemDiv(sentencetoDisplay, meaning){
     problemDiv.id = ('problem');
     problemDiv.classList.add('english');
     problemDiv.classList.add('border-bottom');
-    problemDiv.innerHTML = "<h1>" + sentencetoDisplay + "</h1>";
+    problemDiv.innerHTML = `<h1 id="sentenceInChinese">` + sentencetoDisplay + "</h1>";
     problemDiv.innerHTML = problemDiv.innerHTML + "<br>";
     problemDiv.appendChild(createMeaningSpan(meaning));
     return problemDiv;
@@ -84,7 +90,7 @@ $( "#incorrect" ).click(function() {
     $('#correct').prop('disabled', true);
     $("#score").text("Score: " + correct.toString() + "/" + dictlength);
     check();
-    if (currentquestion+1>=dictlength)
+    if (currentquestioncount+1>=dictlength)
         gameOverfunc();
 });
 $( "#next" ).click(function() {
@@ -111,14 +117,17 @@ function check(){
         $(currentbutton).find("#correctsign").css("visibility","visible");
     else
         $(currentbutton).find("#incorrectsign").css("visibility","visible");
+    // stores question and response to list, will send to local storage
+    listOfResponses.push([specialnumber,currentchoice]);
 }
 // GAMEOVER MODAL
 function gameOverfunc(){
     clearTimer();
     modalGameOver();
+    // sends list of responses to local storage
+    localStorage.setItem(DICTIONARY,listOfResponses);
   }
 function modalGameOver() {
-    console.log("Hi");
     let message = "Game Over";
     if (correct==dictlength){
         message = "You won!";
@@ -128,8 +137,13 @@ function modalGameOver() {
     <h2> Score: ${correct}/${dictlength} </h2>
     <h2> Time: ${$("#minutes").text()}:${$("#seconds").text()} </h2>
     <button id="Restart" class="my-2 btn-modal">
-    <a onclick="location.reload()">
+    <a onclick="localStorage.removeItem(DICTIONARY);location.reload()">
     <h3>Restart</h3>
+    </a>
+    </button>
+    <button id="Continue" class="my-2 btn-modal">
+    <a href="feedback.html?dict=${DICTIONARY}">
+    <h3>See your stats!</h3>
     </a>
     </button>
     <button id="Menu" class="my-2 btn-modal">
