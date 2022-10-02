@@ -93,6 +93,18 @@ sentences = {
 				right: "那家餐廳有點不乾淨。",
 				meaning: "That restuarant is a little dirty.",
 			},
+			"Notes":{
+				0:["Adjectives function as verbs in Chinese. Therefore, 是 cannot be used before adjectives. However, the word 很, a minimum modifier should be put before the adjective.",[]],
+				1:["A minimum modifier 很 is missing.",[]],
+				2:["多 alone cannot be put before an adjective followed by a noun. One has to use 很多.",[]],
+				3:["In the 比 construction, 很 cannot be used before the adjective.",[]],
+				4:["很 cannot be used before adj + 極了.",[]],
+				5:["很 cannot be used with the reduplicate form of an adjective such as 乾乾淨淨. The correct form is: 很乾淨.",[]],
+				6:["The word ‘energetic’ is 有精神. 很 can be added in front of 有精神. For example, 興趣 (interest), 有興趣 (interested), 很有興趣 (very interested).",[]],
+				7:["In this construction, ‘大' or words in positive connotation should appear first. For example, 不高不矮, 不多不少, 不胖不瘦, 不冷不熱, 不快不慢.",[]],
+				8:["The negation marker 不 should go before the verb 是. For example, 他是好學生, 他不是好學生. It is OK to say 好學生 or 壞學生. The expression 不好學生 is wrong. ",[]],
+				9:["The word to express distance 近 or 遠 should be used with 離.",[]],
+			},
 		},
 		"Errors in Measure Words": {
 			0:{
@@ -186,6 +198,19 @@ sentences = {
 				right: "他拿了一些蛋糕。",
 				meaning: "He took some cakes.",
 			},
+			"Notes":{
+				0:["The measure word for animals is 隻.",[]],
+				1:["Measure words such as 隻 or 個 must be used with a number or a determiner, as in 一隻狗, 這隻狗. 'Your dog' in Chinese is: 你的狗 not 你隻狗",[]],
+				2:["After the number 一, the measure word should be used.",[]],
+				3:["The measure word for books is: 本",[]],
+				4:["After the number 二十, a measure word should be used.",[]],
+				5:["After the number 三, a measure word should be used.",[]],
+				6:["年 cannot be used with 個.",[]],
+				7:["Frequency expressions should be put between the verb and the object.",[]],
+				8:["For 比 construction,  the expressions ‘a bit’ or ‘more’ should go after the adjective.",[]],
+				9:["Expressions ‘a bit’ should appear between the verb and the object. ",[]],
+				10:["一些 meaning ‘some’ should be used before a noun. 有些 can only be used with undesirable adjectives, such as 蛋糕有些貴,",[]],
+			},
 		},
 		"Errors in Conjunctions": {
 			0:{
@@ -217,6 +242,9 @@ sentences = {
 				wrong: "他要我問你如果你去體育館跟他。",
 				right: "他要我問你跟不跟他去體育館。",
 				meaning: "He wants me to ask if you follow him to the gym.",
+			},
+			"Notes":{
+				0:["雖然 and  但是 are used together to mean ‘although’",[]],
 			},
 		},
 		"Errors in Verbs": {
@@ -265,6 +293,10 @@ sentences = {
 				right: "我姓王。",
 				meaning: "My surname is Wang.",
 			},
+			"Notes":{
+				0:["‘To teach’ as a profession and ‘to talk’ as a general activity require the verb-object form. ",[]],
+				1:["The modifier in a verb-object construction should be put in between the verb and object, not after the object.  ",[]],
+			},
 		},
 		"Errors in Adverbs": {
 			0:{
@@ -286,6 +318,11 @@ sentences = {
 				wrong: "我一叫他請我吃飯，就他說沒錢。",
 				right: "我一叫他請我吃飯，就他說沒錢。",
 				meaning: "When I asked him to treat me to dinner, he said he had no money",
+			},
+			"Notes":{
+				0:["都 and 就 are adverbs. They should be put before the verb and after the subject.",[]],
+				1:["有點 can only be used with adjectives that are undesirable. Therefore, 不 must be used. You can also say: 那家餐廳算(suan4, can be considered) 乾淨 or 那家餐廳有點髒.",[]],
+				2:["一點 cannot be used before an adjective. ",[]],
 			},
 		},
 		"Errors in Nouns (Time, Place, Localizer)": {
@@ -319,6 +356,10 @@ sentences = {
 				right: "他在哪兒？他在裏家。",
 				meaning: "Where is he? He is at home.",
 			},
+			"Notes":{
+				0:["Word order: place word before verb.",[]],
+				1:["Word order: localizer goes after the noun.",[]],
+			},
 		},
 		"Errors in Prepositions": {
 			0:{
@@ -335,6 +376,9 @@ sentences = {
 				wrong: "除了英文，以外我也會說中文。",
 				right: "除了英文以外，我也會說中文。",
 				meaning: "Besides English, I can also speak Chinese.",
+			},
+			"Notes":{
+				0:["Word order: a prepositional phrase should go before the verb.",[]],
 			},
 		},
 		"Errors in Particles": {
@@ -363,6 +407,11 @@ sentences = {
 				right: "他以前很喜歡她，可是現在不喜歡了。",
 				meaning: "He used to like her very much, but now he doesn't.",
 			},
+			"Notes":{
+				0:["In Chinese, modifier precedes modified (i.e. the noun).  的 should be put before the noun.",[]],
+				1:["過 should be used after 從來沒.",[]],
+				2:["喜歡 is not an action verb. 了 should not be used even though it refers to the past.",[]],
+			},
 		},
 		"Errors in Pronouns (Question Words, Demonstrative Pronoun)": {
 			0:{
@@ -379,6 +428,10 @@ sentences = {
 				wrong: "他在這。",
 				right: "他在這裏。",
 				meaning: "He is here.",
+			},
+			"Notes":{
+				0:["‘All’ is expressed by a question word. The word order is: S + 什麼都 + verb. Similarly, S + 哪兒都 + verb.",[]],
+				1:["It is better to say: 這裡 unless there is a retroflex ending 兒. When you write, you have to write out both characters: 這兒.",[]],
 			},
 		},
 	},
