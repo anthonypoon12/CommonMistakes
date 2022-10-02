@@ -22,10 +22,15 @@ function populateBodies(){
 }
 function createGrid(i, rightorwrong, choice, userCorrect){//number that represents sentence (right and wrong are different numbers)
     let correction="";
+    let notes = "";
+    if (!userCorrect){
+        notes = `<div class="row fs-3 border border-2 rounded"><h1>Notes:</h1></div>`;
+    }
     if(rightorwrong=="wrong"&&choice=="correct"){
         correction = `<div class="col-12 fs-3 border border-2 rounded text-success">${sentences[$(".btn-convert").text()][DICTIONARY][Math.floor(listOfResponses[i]/2)]["right"]}</div>`
     }
-    let grid = `<div class="row my-2 rounded border border-2 p-1">
+    let grid = `${notes}
+    <div class="row my-2 rounded border border-2 p-1">
     <div class="col-sm border border-2 ${userCorrect?"text-success":"text-danger"}">
     ${sentences[$(".btn-convert").text()][DICTIONARY][Math.floor(listOfResponses[i]/2)][rightorwrong]}
     </div>
