@@ -88,22 +88,15 @@ sentences = {
 				right: "我家離學校很近。",
 				meaning: "My home is very close to the school.",
 			},
-			16:{
-				wrong: "那家餐廳有點乾淨。",
-				right: "那家餐廳有點不乾淨。",
-				meaning: "That restuarant is a little dirty.",
-			},
 			"Notes":{
-				0:["Adjectives function as verbs in Chinese. Therefore, 是 cannot be used before adjectives. However, the word 很, a minimum modifier should be put before the adjective.",[]],
-				1:["A minimum modifier 很 is missing.",[]],
-				2:["多 alone cannot be put before an adjective followed by a noun. One has to use 很多.",[]],
-				3:["In the 比 construction, 很 cannot be used before the adjective.",[]],
-				4:["很 cannot be used before adj + 極了.",[]],
-				5:["很 cannot be used with the reduplicate form of an adjective such as 乾乾淨淨. The correct form is: 很乾淨.",[]],
-				6:["The word ‘energetic’ is 有精神. 很 can be added in front of 有精神. For example, 興趣 (interest), 有興趣 (interested), 很有興趣 (very interested).",[]],
-				7:["In this construction, ‘大' or words in positive connotation should appear first. For example, 不高不矮, 不多不少, 不胖不瘦, 不冷不熱, 不快不慢.",[]],
-				8:["The negation marker 不 should go before the verb 是. For example, 他是好學生, 他不是好學生. It is OK to say 好學生 or 壞學生. The expression 不好學生 is wrong. ",[]],
-				9:["The word to express distance 近 or 遠 should be used with 離.",[]],
+				0:["Adjectives function as verbs in Chinese. Therefore, 是 cannot be used before adjectives. However, the word 很, a minimum modifier should be put before the adjective.",[0,1,2,3,4,5,6]],
+				1:["A minimum modifier 很 is missing. 多 alone cannot be put before an adjective followed by a noun. One has to use 很多.",[7,8]],
+				2:["In the 比 construction, 很 cannot be used before the adjective.",[9]],
+				3:["很 cannot be used before adj + 極了. 很 cannot be used with the reduplicate form of an adjective such as 乾乾淨淨. The correct form is: 很乾淨.",[10,11]],
+				4:["The word ‘energetic’ is 有精神. 很 can be added in front of 有精神. For example, 興趣 (interest), 有興趣 (interested), 很有興趣 (very interested).",[12]],
+				5:["In this construction, ‘大' or words in positive connotation should appear first. For example, 不高不矮, 不多不少, 不胖不瘦, 不冷不熱, 不快不慢.",[13]],
+				6:["The negation marker 不 should go before the verb 是. For example, 他是好學生, 他不是好學生. It is OK to say 好學生 or 壞學生. The expression 不好學生 is wrong. ",[14]],
+				7:["The word to express distance 近 or 遠 should be used with 離.",[15]],
 			},
 		},
 		"Errors in Measure Words": {
@@ -119,97 +112,87 @@ sentences = {
 				meaning: "Is your dog a big dog or a small dog?",
 			},
 			2:{
-				wrong: "我家有兩個貓。一是大，另一是小。",
-				right: "我家有兩隻貓。一隻大，另隻是小。",
-				meaning: "I have two cats in my house. One is big, the other is small.",
+				wrong: "我家有兩個貓。",
+				right: "我家有兩隻貓。",
+				meaning: "I have two cats in my house.",
 			},
 			3:{
+				wrong: "一是大，另一是小。",
+				right: "一隻大，另隻是小。",
+				meaning: "One(cat) is big, the other is small.",
+			},
+			4:{
 				wrong: "我有三個中文書",
 				right: "我有三本中文書",
 				meaning: "I have three Chinese books.",
 			},
-			4:{
+			5:{
 				wrong: "你有多少錢？我有二十錢。",
 				right: "你有多少錢？我有二十塊錢。",
 				meaning: "How much money do you have? I have twenty dollars.",
 			},
-			5:{
+			6:{
 				wrong: "我有三中國朋友。",
 				right: "我有三個中國朋友。",
 				meaning: "I have three Chinese friends.",
 			},
-			6:{
+			7:{
 				wrong: "我在高中學了三個年中文。",
 				right: "我在高中學了三年中文。",
 				meaning: "I learned three years of Chinese in high school.",
 			},
-			7:{
+			8:{
 				wrong: "我一個星期上中文課一次。",
 				right: "我一個星期上一次中文課。",
 				meaning: "I attend Chinese class once a week.",
 			},
-			8:{
+			9:{
 				wrong: "他一個月一次吃中國飯。",
 				right: "他一個月吃一次中國飯。",
 				meaning: "He eats Chinese food once a month.",
 			},
-			9:{
+			10:{
 				wrong: "今天比昨天一點冷。",
 				right: "今天比昨天冷一點。",
 				meaning: "Today is a little colder than yesterday.",
 			},
-			10:{
+			11:{
 				wrong: "昨天冷得要命，今天一點兒暖和了。",
 				right: "昨天冷得要命，今天暖和一點兒了。",
 				meaning: "Yesterday was terribly cold, today it's a little warmer.",
 			},
-			11:{
+			12:{
 				wrong: "這家餐廳比那家餐廳一點貴。",
 				right: "這家餐廳比那家餐廳貴一點。",
 				meaning: "This restaurant is a bit more expensive than that restaurant.",
 			},
-			12:{
+			13:{
 				wrong: "昨天下了雨一點兒。",
 				right: "昨天下了一點兒雨。",
 				meaning: "It rained a little yesterday.",
 			},
-			13:{
+			14:{
 				wrong: "我會說中文一點兒。",
 				right: "我會說一點兒中文。",
 				meaning: "I can speak a little Chinese.",
 			},
-			14:{
-				wrong: "這件衣服一點貴。",
-				right: "這件衣服有點貴。",
-				meaning: "This dress is a bit expensive.",
-			},
 			15:{
-				wrong: "我的朋友一點兒不舒服。",
-				right: "我的朋友有一點兒不舒服。",
-				meaning: "My friend is a little uncomfortable.",
-			},
-			16:{
-				wrong: "中文教室一點不乾淨。",
-				right: "中文教室一點也不乾淨。",
-				meaning: "The Chinese classroom is not clean at all.",
-			},
-			17:{
 				wrong: "他拿了有些蛋糕。",
 				right: "他拿了一些蛋糕。",
 				meaning: "He took some cakes.",
 			},
 			"Notes":{
-				0:["The measure word for animals is 隻.",[]],
-				1:["Measure words such as 隻 or 個 must be used with a number or a determiner, as in 一隻狗, 這隻狗. 'Your dog' in Chinese is: 你的狗 not 你隻狗",[]],
-				2:["After the number 一, the measure word should be used.",[]],
-				3:["The measure word for books is: 本",[]],
-				4:["After the number 二十, a measure word should be used.",[]],
-				5:["After the number 三, a measure word should be used.",[]],
-				6:["年 cannot be used with 個.",[]],
-				7:["Frequency expressions should be put between the verb and the object.",[]],
-				8:["For 比 construction,  the expressions ‘a bit’ or ‘more’ should go after the adjective.",[]],
-				9:["Expressions ‘a bit’ should appear between the verb and the object. ",[]],
-				10:["一些 meaning ‘some’ should be used before a noun. 有些 can only be used with undesirable adjectives, such as 蛋糕有些貴,",[]],
+				0:["The measure word for animals is 隻.",[0,1,2,3]],
+				1:["Measure words such as 隻 or 個 must be used with a number or a determiner, as in 一隻狗, 這隻狗. 'Your dog' in Chinese is: 你的狗 not 你隻狗",[0,1,2,3,4,5,6,7,8,9]],
+				2:["After the number 一, the measure word should be used.",[3,4,5,6,7,8,9]],
+				3:["The measure word for books is: 本",[4]],
+				4:["After the number 二十, a measure word should be used.",[5]],
+				5:["After the number 三, a measure word should be used.",[6]],
+				6:["年 cannot be used with 個.",[7]],
+				7:["Frequency expressions should be put between the verb and the object.",[8,9]],
+				8:["For 比 construction,  the expressions ‘a bit’ or ‘more’ should go after the adjective.",[10,11,12]],
+				9:["Expressions ‘a bit’ should appear between the verb and the object. ",[13,14]],
+				10:["一些 meaning ‘some’ should be used before a noun. 有些 can only be used with undesirable adjectives, such as 蛋糕有些貴,",[15]],
 			},
 		},
 		"Errors in Conjunctions": {
@@ -233,18 +216,8 @@ sentences = {
 				right: "因為他是大學生，所以他的朋友也是大學生。",
 				meaning: "Because he is a college student, his friends are also college students.",
 			},
-			4:{
-				wrong: "他的屋子又整齊又乾淨。我不知道如果他住在那兒。",
-				right: "他的屋子又整齊又乾淨。我不知道他是不是住在那兒。",
-				meaning: "His house was neat and clean. I don't know if he lives there.",
-			},
-			5:{
-				wrong: "他要我問你如果你去體育館跟他。",
-				right: "他要我問你跟不跟他去體育館。",
-				meaning: "He wants me to ask if you follow him to the gym.",
-			},
 			"Notes":{
-				0:["雖然 and  但是 are used together to mean ‘although’",[]],
+				0:["雖然 and  但是 are used together to mean ‘although’",[0,1,2,3]],
 			},
 		},
 		"Errors in Verbs": {
@@ -286,16 +259,11 @@ sentences = {
 			7:{
 				wrong: "我昨天睡覺八個鐘頭。",
 				right: "我昨天睡八個鐘頭覺。",
-				meaning: "I slept eight hours yesterday.",
-			},
-			7:{
-				wrong: "我的姓是王。",
-				right: "我姓王。",
-				meaning: "My surname is Wang.",
+				meaning: "Yesterday I slept for 8 hours.",
 			},
 			"Notes":{
-				0:["‘To teach’ as a profession and ‘to talk’ as a general activity require the verb-object form. ",[]],
-				1:["The modifier in a verb-object construction should be put in between the verb and object, not after the object.  ",[]],
+				0:["‘To teach’ as a profession and ‘to talk’ as a general activity require the verb-object form. ",[0,1,2,3]],
+				1:["The modifier in a verb-object construction should be put in between the verb and object, not after the object.  ",[4,5,6,7]],
 			},
 		},
 		"Errors in Adverbs": {
@@ -319,10 +287,30 @@ sentences = {
 				right: "我一叫他請我吃飯，就他說沒錢。",
 				meaning: "When I asked him to treat me to dinner, he said he had no money",
 			},
+			4:{
+				wrong: "那家餐廳有點乾淨。",
+				right: "那家餐廳有點不乾淨。",
+				meaning: "That restaurant is a bit unclean.",
+			},
+			5:{
+				wrong: "這件衣服一點貴。",
+				right: "這件衣服有點貴。",
+				meaning: "This dress is a bit expensive.",
+			},
+			6:{
+				wrong: "我的朋友一點兒不舒服。",
+				right: "我的朋友有一點兒不舒服。",
+				meaning: "My friend is a little uncomfortable.",
+			},
+			7:{
+				wrong: "中文教室一點不乾淨。",
+				right: "中文教室一點也不乾淨。",
+				meaning: "The Chinese classroom is not clean at all.",
+			},
 			"Notes":{
-				0:["都 and 就 are adverbs. They should be put before the verb and after the subject.",[]],
-				1:["有點 can only be used with adjectives that are undesirable. Therefore, 不 must be used. You can also say: 那家餐廳算(suan4, can be considered) 乾淨 or 那家餐廳有點髒.",[]],
-				2:["一點 cannot be used before an adjective. ",[]],
+				0:["都 and 就 are adverbs. They should be put before the verb and after the subject.",[0,1,2,3]],
+				1:["有點 can only be used with adjectives that are undesirable. Therefore, 不 must be used. You can also say: 那家餐廳算(suan4, can be considered) 乾淨 or 那家餐廳有點髒.",[4]],
+				2:["一點 cannot be used before an adjective. ",[5,6,7]],
 			},
 		},
 		"Errors in Nouns (Time, Place, Localizer)": {
@@ -347,18 +335,13 @@ sentences = {
 				meaning: "He also teaches French at this school.",
 			},
 			4:{
-				wrong: "學校是我們的宿舍旁邊。",
-				right: "學校旁邊是我們的宿舍。",
-				meaning: "Next to the school is our dormitory.",
-			},
-			5:{
 				wrong: "他在哪兒？他在裏家。",
 				right: "他在哪兒？他在裏家。",
 				meaning: "Where is he? He is at home.",
 			},
 			"Notes":{
-				0:["Word order: place word before verb.",[]],
-				1:["Word order: localizer goes after the noun.",[]],
+				0:["Word order: place word before verb.",[0,1,2,3]],
+				1:["Word order: localizer goes after the noun.",[4]],
 			},
 		},
 		"Errors in Prepositions": {
@@ -372,13 +355,8 @@ sentences = {
 				right: "我們怎麼從這兒去加拿大？",
 				meaning: "How do we get to Canada from here?",
 			},
-			2:{
-				wrong: "除了英文，以外我也會說中文。",
-				right: "除了英文以外，我也會說中文。",
-				meaning: "Besides English, I can also speak Chinese.",
-			},
 			"Notes":{
-				0:["Word order: a prepositional phrase should go before the verb.",[]],
+				0:["Word order: a prepositional phrase should go before the verb.",[0,1]],
 			},
 		},
 		"Errors in Particles": {
@@ -393,24 +371,19 @@ sentences = {
 				meaning: "I can't eat what I like.",
 			},
 			2:{
-				wrong: "他說中文說的很好。",
-				right: "他說中文說得很好。",
-				meaning: "He speaks Chinese very well.",
-			},
-			3:{
 				wrong: "我從來沒學義大利文。我不會說義大利文。",
 				right: "我從來沒學過義大利文。我不會說義大利文。",
 				meaning: "I have never learned Italian. I don't speak Italian.",
 			},
-			4:{
+			3:{
 				wrong: "他以前很喜歡了她，可是現在不喜歡了。",
 				right: "他以前很喜歡她，可是現在不喜歡了。",
 				meaning: "He used to like her very much, but now he doesn't.",
 			},
 			"Notes":{
-				0:["In Chinese, modifier precedes modified (i.e. the noun).  的 should be put before the noun.",[]],
-				1:["過 should be used after 從來沒.",[]],
-				2:["喜歡 is not an action verb. 了 should not be used even though it refers to the past.",[]],
+				0:["In Chinese, modifier precedes modified (i.e. the noun).  的 should be put before the noun.",[0,1]],
+				1:["過 should be used after 從來沒.",[2]],
+				2:["喜歡 is not an action verb. 了 should not be used even though it refers to the past.",[3]],
 			},
 		},
 		"Errors in Pronouns (Question Words, Demonstrative Pronoun)": {
@@ -430,8 +403,23 @@ sentences = {
 				meaning: "He is here.",
 			},
 			"Notes":{
-				0:["‘All’ is expressed by a question word. The word order is: S + 什麼都 + verb. Similarly, S + 哪兒都 + verb.",[]],
-				1:["It is better to say: 這裡 unless there is a retroflex ending 兒. When you write, you have to write out both characters: 這兒.",[]],
+				0:["‘All’ is expressed by a question word. The word order is: S + 什麼都 + verb. Similarly, S + 哪兒都 + verb.",[0,1]],
+				1:["It is better to say: 這裡 unless there is a retroflex ending 兒. When you write, you have to write out both characters: 這兒.",[2]],
+			},
+		},
+		"Errors in 'if'": {
+			0:{
+				wrong: "他的屋子又整齊又乾淨。我不知道如果他住在那兒。",
+				right: "他的屋子又整齊又乾淨。我不知道他是不是住在那兒。",
+				meaning: "His house was neat and clean. I don't know if he lives there.",
+			},
+			1:{
+				wrong: "他要我問你如果你去體育館跟他。",
+				right: "他要我問你跟不跟他去體育館。",
+				meaning: "He wants me to ask if you want to follow him to the gym.",
+			},
+			"Notes":{
+				0:["It is ungrammatical to put 如果 after S + 不知道, A question construction should be used after 不知道.",[0,1]],
 			},
 		},
 	},
