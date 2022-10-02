@@ -5,13 +5,14 @@ var correct = 0; //number of questions user got correct
 var trueOrFalse = false; //whether question is true or false
 var problemDiv;
 var currentchoice=false;
+var specialnumber; //which number sentence (right and wrong are different numbers)
 var currentbutton="";
-var currentquestion;
+var currentquestion;//which question is this (right and wrong yield same number)
 var currentquestioncount = 0;//starts at 0;
 var listOfResponses = []; //stored in local storage for final screen
 //Makes array of indexes for sentences
 const setOfSentences = [];
-const dictlength = Object.keys(sentences[$(".btn-convert").text()][DICTIONARY]).length;
+const dictlength = Object.keys(sentences[$(".btn-convert").text()][DICTIONARY]).length; //number of right and wrong sentences
 var problemContainer = document.getElementById("problemContainer");
 for (let i = 0 ; i < dictlength * 2; i++){
     setOfSentences.push(i);
@@ -28,7 +29,7 @@ function loadSentence(){
     $("#questions").text("Question: " + (dictlength-(setOfSentences.length/2) + 1).toString() + "/" + dictlength);
     problemContainer.innerHTML="";
     let index = Math.floor(Math.random()*setOfSentences.length);
-    let specialnumber = setOfSentences[index];
+    specialnumber = setOfSentences[index];
     currentquestion = Math.floor(specialnumber/2)
     let indexToRemoveFromSet=index;
     if(index%2==1)
@@ -118,7 +119,7 @@ function check(){
     else
         $(currentbutton).find("#incorrectsign").css("visibility","visible");
     // stores question and response to list, will send to local storage
-    listOfResponses.push([$("#sentenceInChinese").text(),trueOrFalse==currentchoice]);
+    listOfResponses.push([specialnumber,trueOrFalse==currentchoice]);
 }
 // GAMEOVER MODAL
 function gameOverfunc(){
