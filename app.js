@@ -12,7 +12,7 @@ var currentquestioncount = 0;//starts at 0;
 var listOfResponses = []; //stored in local storage for final screen
 //Makes array of indexes for sentences
 const setOfSentences = [];
-const dictlength = Object.keys(sentences[$(".btn-convert").text()][DICTIONARY]).length; //number of right and wrong sentences
+const dictlength = Object.keys(sentences[$(".btn-convert").text()][DICTIONARY]).length - 1; //number of right and wrong sentences
 var problemContainer = document.getElementById("problemContainer");
 for (let i = 0 ; i < dictlength * 2; i++){
     setOfSentences.push(i);
@@ -20,7 +20,6 @@ for (let i = 0 ; i < dictlength * 2; i++){
 // if user has already done exercise, skip to game over
 if (localStorage.getItem(DICTIONARY)!=null){
     gameOverfunc();
-    alert("HELP");
 }
 else
     loadSentence();
