@@ -19,7 +19,8 @@ for (let i = 0 ; i < dictlength * 2; i++){
 }
 // if user has already done exercise, skip to game over
 if (localStorage.getItem(DICTIONARY)!=null){
-    gameOverfunc();
+    clearTimer();
+    modalGameOver();
 }
 else
     loadSentence();
