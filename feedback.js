@@ -24,11 +24,12 @@ function createGrid(i, rightorwrong, choice, userCorrect){//number that represen
     let correction="";
     let notes = "";
     if (!userCorrect){
-        notes = `<div class="row fs-3 border border-2 rounded"><h1>Notes:</h1></div>`;
+        let notestext="";
         Object.keys(sentences["Simplified"][DICTIONARY]["Notes"]).forEach(function(item){
-            if (sentences["Simplified"][DICTIONARY]["Notes"][item][1].includes(Math.floor(i/2)))
-                console.log(i,sentences["Simplified"][DICTIONARY]["Notes"][item][0]);
+            if (sentences["Simplified"][DICTIONARY]["Notes"][item][1].includes(Math.floor(listOfResponses[i]/2)))
+                notestext+=(listOfResponses[i],sentences["Simplified"][DICTIONARY]["Notes"][item][0]);
         });
+        notes = `<div class="row fs-3 border border-2 rounded"><h1>Notes: ${notestext}</h1></div>`;
     }
     if(rightorwrong=="wrong"&&choice=="correct"){
         correction = `<div class="col-12 fs-3 border border-2 rounded text-success">${sentences[$(".btn-convert").text()][DICTIONARY][Math.floor(listOfResponses[i]/2)]["right"]}</div>`
