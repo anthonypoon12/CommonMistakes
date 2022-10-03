@@ -26,7 +26,8 @@ function createGrid(i, rightorwrong, choice, userCorrect){//number that represen
     if (!userCorrect){
         notes = `<div class="row fs-3 border border-2 rounded"><h1>Notes:</h1></div>`;
         Object.keys(sentences["Simplified"][DICTIONARY]["Notes"]).forEach(function(item){
-            console.log(sentences["Simplified"][DICTIONARY]["Notes"][item]);
+            if (sentences["Simplified"][DICTIONARY]["Notes"][item][1].includes(Math.floor(i/2)))
+                console.log(i,sentences["Simplified"][DICTIONARY]["Notes"][item][0]);
         });
     }
     if(rightorwrong=="wrong"&&choice=="correct"){
