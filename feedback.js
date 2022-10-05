@@ -26,10 +26,10 @@ function createGrid(i, rightorwrong, choice, userCorrect){//number that represen
     if (!userCorrect){
         let notestext="";
         Object.keys(sentences["Simplified"][DICTIONARY]["Notes"]).forEach(function(item){
-            if (sentences["Simplified"][DICTIONARY]["Notes"][item][1].includes(Math.floor(listOfResponses[i]/2)))
-                notestext+=(listOfResponses[i],sentences["Simplified"][DICTIONARY]["Notes"][item][0]);
+            if (sentences["Simplified"][DICTIONARY]["Notes"][item][1].includes(Math.floor(listOfResponses[i]/2))){
+                notestext+=(`<li class="list-group-item">` + sentences["Simplified"][DICTIONARY]["Notes"][item][0] + "</li>");}
         });
-        notes = `<div class="row fs-3 border border-2 rounded"><h1>Notes: ${notestext}</h1></div>`;
+        notes = `<div class="row fs-3 border border-2 rounded"><h2>Notes: </h2><span class="font-weight-normal"><ul class="list-group-flush"> ${notestext}</ul></span></div>`;
     }
     if(rightorwrong=="wrong"&&choice=="correct"){
         correction = `<div class="col-12 fs-3 border border-2 rounded text-success">${sentences[$(".btn-convert").text()][DICTIONARY][Math.floor(listOfResponses[i]/2)]["right"]}</div>`
