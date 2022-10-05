@@ -61,11 +61,12 @@
         <div class="accordion" id="accordionExample">
           <div class="card">
             <div class="card-header" id="headingOne">
-              <h5 class="mb-0">
-                <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#Correct" aria-expanded="true" aria-controls="collapseOne">
-                  Correct
-                </button>
-              </h5>
+                <div class="row">
+                  <div class="col-6" data-bs-toggle="collapse" data-bs-target="#Correct" aria-expanded="true" aria-controls="collapseOne">
+                    Correct
+                  </div>
+                  <div class="col-6" data-bs-toggle="collapse" data-bs-target="#Correct" aria-expanded="true" aria-controls="collapseOne">Your Responses:</div>
+                </div>
             </div>
             <div id="Correct" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
               <div class="card-body" id="correctbody">
@@ -74,11 +75,12 @@
           </div>
           <div class="card">
             <div class="card-header" id="headingTwo">
-              <h5 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Incorrect" aria-expanded="false" aria-controls="collapseTwo">
-                  Incorrect
-                </button>
-              </h5>
+                <div class="row">
+                  <div class="col-6" data-bs-toggle="collapse" data-bs-target="#Incorrect" aria-expanded="false" aria-controls="collapseTwo">
+                    Incorrect
+                  </button>
+                </div>
+                <div class="col-6" data-bs-toggle="collapse" data-bs-target="#Incorrect" aria-expanded="false" aria-controls="collapseTwo"> Your Responses:</div>
             </div>
             <div id="Incorrect" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
               <div class="card-body" id="incorrectbody">
