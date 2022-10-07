@@ -25,6 +25,7 @@ if (localStorage.getItem(DICTIONARY)!=null){
 else
     loadSentence();
 $("#score").text("Score: " + correct.toString() + "/" + dictlength);
+
 function loadSentence(){ 
     $("#questions").text("Question: " + (dictlength-(setOfSentences.length/2) + 1).toString() + "/" + dictlength);
     problemContainer.innerHTML="";
@@ -48,17 +49,31 @@ function loadSentence(){
         sentencetoDisplay=sentence.right;
         trueOrFalse = true;
     }
-    $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning));
+    $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning, specialnumber));
+    $(function () { // initizalizes tooltips
+        $('[data-toggle="tooltip"]').tooltip(); 
+      })
 }
-function createProblemDiv(sentencetoDisplay, meaning){
+function createProblemDiv(sentencetoDisplay, meaning, specialnumber){
+    let note = getNotes(specialnumber);
     problemDiv = document.createElement('div');
     problemDiv.id = ('problem');
     problemDiv.classList.add('english');
     problemDiv.classList.add('border-bottom');
-    problemDiv.innerHTML = `<h1 id="sentenceInChinese">` + sentencetoDisplay + "</h1>";
+    problemDiv.innerHTML = `<h1 id="sentenceInChinese" tabindex="0" data-toggle="tooltip" title="${note}">` + sentencetoDisplay + "</h1>";
     problemDiv.innerHTML = problemDiv.innerHTML + "<br>";
     problemDiv.appendChild(createMeaningSpan(meaning));
     return problemDiv;
+}
+function getNotes(specialnumber){
+    let tradsimp = localStorage.getItem("Simplified")=="true"?"Simplified":"Traditional";
+    let notes = "";
+    Object.keys(sentences[tradsimp][DICTIONARY]["Notes"]).forEach(function(item){
+        if (sentences[tradsimp][DICTIONARY]["Notes"][item][1].includes(Math.floor(specialnumber/2))){
+            notes+=(sentences[tradsimp][DICTIONARY]["Notes"][item][0] + "\n");
+        }
+    });
+    return notes;
 }
 function createMeaningSpan(meaning){
     let meaningSpan = document.createElement('h1');
@@ -156,7 +171,6 @@ function modalGameOver() {
 }
 function reloadSentence(){
     let sentence = sentences[$(".btn-convert").text()][DICTIONARY][currentquestion];
-    console.log($(".btn-convert").text());
     let meaning=sentence.meaning;
     let sentencetoDisplay="";
     if (trueOrFalse)
@@ -164,5 +178,8 @@ function reloadSentence(){
     else
     sentencetoDisplay=sentence.wrong;
     $('#problemContainer').text("");
-    $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning));
+    $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning, specialnumber));
+    $(function () { // initizalizes tooltips
+        $('[data-toggle="tooltip"]').tooltip(); 
+      })
 }
