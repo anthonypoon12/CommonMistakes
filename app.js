@@ -12,7 +12,7 @@ var currentquestioncount = 0;//starts at 0;
 var listOfResponses = []; //stored in local storage for final screen
 //Makes array of indexes for sentences
 const setOfSentences = [];
-const dictlength = Object.keys(sentences[$(".btn-convert").text()][DICTIONARY]).length - 1; //number of right and wrong sentences
+const dictlength = Object.keys(sentences[simpOrTrad()][DICTIONARY]).length - 1; //number of right and wrong sentences
 var problemContainer = document.getElementById("problemContainer");
 for (let i = 0 ; i < dictlength * 2; i++){
     setOfSentences.push(i);
@@ -38,7 +38,7 @@ function loadSentence(){
     if (indexToRemoveFromSet !== -1) {
         setOfSentences.splice(indexToRemoveFromSet, 2);
     }
-    let sentence = sentences[$(".btn-convert").text()][DICTIONARY][currentquestion];
+    let sentence = sentences[simpOrTrad()][DICTIONARY][currentquestion];
     let meaning=sentence.meaning;
     let sentencetoDisplay="";
     if (specialnumber%2==0){
@@ -65,12 +65,11 @@ function createProblemDiv(sentencetoDisplay, meaning, specialnumber){
     problemDiv.appendChild(createMeaningSpan(meaning));
     return problemDiv;
 }
-function getNotes(specialnumber){
-    let tradsimp = localStorage.getItem("Simplified")=="true"?"Simplified":"Traditional";
+function getNotes(specialnumber){;
     let notes = "";
-    Object.keys(sentences[tradsimp][DICTIONARY]["Notes"]).forEach(function(item){
-        if (sentences[tradsimp][DICTIONARY]["Notes"][item][1].includes(Math.floor(specialnumber/2))){
-            notes+=(sentences[tradsimp][DICTIONARY]["Notes"][item][0] + "\n");
+    Object.keys(sentences[simpOrTrad()][DICTIONARY]["Notes"]).forEach(function(item){
+        if (sentences[simpOrTrad()][DICTIONARY]["Notes"][item][1].includes(Math.floor(specialnumber/2))){
+            notes+=(sentences[simpOrTrad()][DICTIONARY]["Notes"][item][0] + "\n");
         }
     });
     return notes;
@@ -170,7 +169,7 @@ function modalGameOver() {
     `);
 }
 function reloadSentence(){
-    let sentence = sentences[$(".btn-convert").text()][DICTIONARY][currentquestion];
+    let sentence = sentences[simpOrTrad()][DICTIONARY][currentquestion];
     let meaning=sentence.meaning;
     let sentencetoDisplay="";
     if (trueOrFalse)

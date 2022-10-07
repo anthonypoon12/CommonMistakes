@@ -155,3 +155,6 @@ function createSentExample(freq, currentEx, modalTrad) {
   $("#chineseSentEx").append(example);
   $(".sentPinyin").hide();
 }
+function simpOrTrad(){
+  return localStorage.getItem("Simplified")=="true"?"Simplified":"Traditional";
+}
