@@ -126,7 +126,7 @@ $( "#next" ).click(function() {
         $('#incorrect').prop('disabled', true);
     }
     else
-    loadSentence();
+        loadSentence();
 });
 function check(){
     if (trueOrFalse==currentchoice)
@@ -174,9 +174,9 @@ function reloadSentence(){
     let meaning=sentence.meaning;
     let sentencetoDisplay="";
     if (trueOrFalse)
-    sentencetoDisplay=sentence.right;
+        sentencetoDisplay=sentence.right;
     else
-    sentencetoDisplay=sentence.wrong;
+        sentencetoDisplay=sentence.wrong;
     $('#problemContainer').text("");
     $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning, specialnumber));
     $(function () { // initizalizes tooltips
