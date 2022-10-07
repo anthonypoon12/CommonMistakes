@@ -23,7 +23,7 @@ function populateBodies(){
 function createGrid(i, rightorwrong, choice, userCorrect){//number that represents sentence (right and wrong are different numbers)
     let correction="";
     let notes = "";
-    let lang = localStorage.getItem("Simplified")=="true"?"Traditional":"Simplified";
+    let lang = localStorage.getItem("Simplified")=="false"?"Traditional":"Simplified";
     if (!userCorrect){
         let notestext="";
         Object.keys(sentences[lang][DICTIONARY]["Notes"]).forEach(function(item){
