@@ -145,30 +145,11 @@ function gameOverfunc(){
     localStorage.setItem(DICTIONARY,listOfResponses);
   }
 function modalGameOver() {
-    let message = "Game Over";
-    if (correct==dictlength){
-        message = "You won!";
-    }
-    $("#modalending").html(`
-    <h1> ${message} </h2>
-    <h2> Score: ${correct}/${dictlength} </h2>
-    <h2> Time: ${$("#minutes").text()}:${$("#seconds").text()} </h2>
-    <button id="Restart" class="my-2 btn-modal">
-    <a onclick="localStorage.removeItem(DICTIONARY);location.reload()">
-    <h3>Restart</h3>
-    </a>
-    </button>
-    <button id="Continue" class="my-2 btn-modal">
-    <a href="feedback.html?dict=${DICTIONARY}">
-    <h3>See your stats!</h3>
-    </a>
-    </button>
-    <button id="Menu" class="my-2 btn-modal">
-    <a href="index.html">
-    <h3>Back to menu</h3>
-    </a>
-    </button>
-    `);
+    var myModal = new bootstrap.Modal($("#gameOverModal"));
+    myModal.show();
+    $("#modalseconds").text($("#seconds").text());
+    $("#modalminutes").text($("#minutes").text());
+    $("#feedbackButton").prop("href",`feedback.html?dict=${DICTIONARY}`);
 }
 function reloadSentence(){
     let sentence = sentences[simpOrTrad()][DICTIONARY][currentquestion];
@@ -183,4 +164,8 @@ function reloadSentence(){
     $(function () { // initizalizes tooltips
         $('[data-toggle="tooltip"]').tooltip(); 
       })
+}
+function restart(){
+    localStorage.removeItem(DICTIONARY);
+    location.reload();
 }
