@@ -60,5 +60,6 @@ function reloadSentence(){//this is the same function name as app.js to reload t
     location.reload();
 }
 function restart(){
+    localStorage.removeItem(DICTIONARY);
     window.location.href = `main.html?dict=${DICTIONARY}`;
 }

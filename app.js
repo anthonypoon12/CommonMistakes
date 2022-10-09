@@ -17,7 +17,7 @@ var problemContainer = document.getElementById("problemContainer");
 for (let i = 0 ; i < dictlength * 2; i++){
     setOfSentences.push(i);
 }
-sessionStorage.setItem("fromMain","true");
+// sent to feedback page for modal
 if (localStorage.getItem(DICTIONARY)!=null){
     var myModal = new bootstrap.Modal($("#gameOverModal"));
     myModal.show();
@@ -171,5 +171,6 @@ function restart(){
     location.reload();
 }
 function openFeedback(){
+    sessionStorage.setItem("fromMain","true");
     window.location.href = `feedback.html?dict=${DICTIONARY}`;
 }
