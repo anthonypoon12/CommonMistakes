@@ -56,6 +56,7 @@ function createGrid(i, rightorwrong, choice, userCorrect){//number that represen
   return grid;
 }
 function reloadSentence(){//this is the same function name as app.js to reload that specific sentence, simpTrad uses this function to switch scripts
+    sessionStorage.setItem("fromMain","true");
     location.reload();
 }
 function restart(){
