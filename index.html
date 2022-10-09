@@ -30,7 +30,7 @@
         var buttons="";
         Object.keys(sentences["Traditional"]).forEach(function(item){
             buttons +=`
-        <div class="col-7 rounded sections text-center my-2"
+        <div class="col-7 rounded sections text-center my-2" style="cursor: pointer"
         id="${item}"
         onclick="buttonValue(this.id)">
           <h1>${item}</h1>
@@ -44,7 +44,11 @@
       function buttonValue(btnID) {
         const params = new URLSearchParams();
         params.append('dict', btnID);
-        window.location.href = `main.html?${params.toString()}`;
+        if (localStorage.getItem(btnID)!=null){
+          window.location.href = `feedback.html?${params.toString()}`;
+        }
+        else
+          window.location.href = `main.html?${params.toString()}`;
       }
     </script>
   </body>

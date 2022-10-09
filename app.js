@@ -12,18 +12,22 @@ var currentquestioncount = 0;//starts at 0;
 var listOfResponses = []; //stored in local storage for final screen
 //Makes array of indexes for sentences
 const setOfSentences = [];
-const dictlength = Object.keys(sentences[$(".btn-convert").text()][DICTIONARY]).length - 1; //number of right and wrong sentences
+const dictlength = Object.keys(sentences[simpOrTrad()][DICTIONARY]).length - 1; //number of right and wrong sentences
 var problemContainer = document.getElementById("problemContainer");
 for (let i = 0 ; i < dictlength * 2; i++){
     setOfSentences.push(i);
 }
-// if user has already done exercise, skip to game over
+// sent to feedback page for modal
 if (localStorage.getItem(DICTIONARY)!=null){
-    gameOverfunc();
+    var myModal = new bootstrap.Modal($("#gameOverModal"));
+    myModal.show();
+    $("#gameOverModalLabel").text("You've tried this exercise before!");
+    $("#gameOverModalLabel").text("You've tried this exercise before!");
+    $("#time").html("");
 }
-else
-    loadSentence();
+loadSentence();
 $("#score").text("Score: " + correct.toString() + "/" + dictlength);
+
 function loadSentence(){ 
     $("#questions").text("Question: " + (dictlength-(setOfSentences.length/2) + 1).toString() + "/" + dictlength);
     problemContainer.innerHTML="";
@@ -36,7 +40,7 @@ function loadSentence(){
     if (indexToRemoveFromSet !== -1) {
         setOfSentences.splice(indexToRemoveFromSet, 2);
     }
-    let sentence = sentences[$(".btn-convert").text()][DICTIONARY][currentquestion];
+    let sentence = sentences[simpOrTrad()][DICTIONARY][currentquestion];
     let meaning=sentence.meaning;
     let sentencetoDisplay="";
     if (specialnumber%2==0){
@@ -47,17 +51,30 @@ function loadSentence(){
         sentencetoDisplay=sentence.right;
         trueOrFalse = true;
     }
-    $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning));
+    $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning, specialnumber));
+    $(function () { // initizalizes tooltips
+        $('[data-toggle="tooltip"]').tooltip(); 
+      })
 }
-function createProblemDiv(sentencetoDisplay, meaning){
+function createProblemDiv(sentencetoDisplay, meaning, specialnumber){
+    let note = getNotes(specialnumber);
     problemDiv = document.createElement('div');
     problemDiv.id = ('problem');
     problemDiv.classList.add('english');
     problemDiv.classList.add('border-bottom');
-    problemDiv.innerHTML = `<h1 id="sentenceInChinese">` + sentencetoDisplay + "</h1>";
+    problemDiv.innerHTML = `<h1 id="sentenceInChinese" tabindex="0" data-toggle="tooltip" title="${note}">` + sentencetoDisplay + "</h1>";
     problemDiv.innerHTML = problemDiv.innerHTML + "<br>";
     problemDiv.appendChild(createMeaningSpan(meaning));
     return problemDiv;
+}
+function getNotes(specialnumber){;
+    let notes = "";
+    Object.keys(sentences[simpOrTrad()][DICTIONARY]["Notes"]).forEach(function(item){
+        if (sentences[simpOrTrad()][DICTIONARY]["Notes"][item][1].includes(Math.floor(specialnumber/2))){
+            notes+=(sentences[simpOrTrad()][DICTIONARY]["Notes"][item][0] + "\n");
+        }
+    });
+    return notes;
 }
 function createMeaningSpan(meaning){
     let meaningSpan = document.createElement('h1');
@@ -109,8 +126,10 @@ $( "#next" ).click(function() {
         $('#correct').prop('disabled', true);
         $('#incorrect').prop('disabled', true);
     }
-    else
-    loadSentence();
+    else{
+        loadSentence();
+        listOfResponses.push([specialnumber,"N/A"]);
+    }
 });
 function check(){
     if (trueOrFalse==currentchoice)
@@ -128,40 +147,30 @@ function gameOverfunc(){
     localStorage.setItem(DICTIONARY,listOfResponses);
   }
 function modalGameOver() {
-    let message = "Game Over";
-    if (correct==dictlength){
-        message = "You won!";
-    }
-    $("#modalending").html(`
-    <h1> ${message} </h2>
-    <h2> Score: ${correct}/${dictlength} </h2>
-    <h2> Time: ${$("#minutes").text()}:${$("#seconds").text()} </h2>
-    <button id="Restart" class="my-2 btn-modal">
-    <a onclick="localStorage.removeItem(DICTIONARY);location.reload()">
-    <h3>Restart</h3>
-    </a>
-    </button>
-    <button id="Continue" class="my-2 btn-modal">
-    <a href="feedback.html?dict=${DICTIONARY}">
-    <h3>See your stats!</h3>
-    </a>
-    </button>
-    <button id="Menu" class="my-2 btn-modal">
-    <a href="index.html">
-    <h3>Back to menu</h3>
-    </a>
-    </button>
-    `);
+    var myModal = new bootstrap.Modal($("#gameOverModal"));
+    myModal.show();
+    $("#modalseconds").text($("#seconds").text());
+    $("#modalminutes").text($("#minutes").text());
 }
 function reloadSentence(){
-    let sentence = sentences[$(".btn-convert").text()][DICTIONARY][currentquestion];
-    console.log($(".btn-convert").text());
+    let sentence = sentences[simpOrTrad()][DICTIONARY][currentquestion];
     let meaning=sentence.meaning;
     let sentencetoDisplay="";
     if (trueOrFalse)
-    sentencetoDisplay=sentence.right;
+        sentencetoDisplay=sentence.right;
     else
-    sentencetoDisplay=sentence.wrong;
+        sentencetoDisplay=sentence.wrong;
     $('#problemContainer').text("");
-    $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning));
+    $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning, specialnumber));
+    $(function () { // initizalizes tooltips
+        $('[data-toggle="tooltip"]').tooltip(); 
+      })
+}
+function restart(){
+    localStorage.removeItem(DICTIONARY);
+    location.reload();
+}
+function openFeedback(){
+    sessionStorage.setItem("fromMain","true");
+    window.location.href = `feedback.html?dict=${DICTIONARY}`;
 }
