@@ -1,12 +1,16 @@
 "use strict"
 const params = new URLSearchParams(window.location.search);
 const DICTIONARY = params.get('dict');
-var listOfResponses = localStorage.getItem(DICTIONARY).split(",");
-populateBodies();
+//this means they backarrowed into the page
+if (localStorage.getItem(DICTIONARY)==null){
+    window.location.href = `index.html`;
+}
 if (sessionStorage.getItem("fromMain")==null){
     var myModal = new bootstrap.Modal($("#beenHereModal"));
     myModal.show();
 }
+var listOfResponses = localStorage.getItem(DICTIONARY).split(",");
+populateBodies();
 sessionStorage.removeItem("fromMain");
 function populateBodies(){
     for (let i = 0; i < listOfResponses.length;i=i+2){
