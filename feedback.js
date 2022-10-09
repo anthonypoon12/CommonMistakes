@@ -19,10 +19,10 @@ function populateBodies(){
         if (listOfResponses[i+1]=="N/A")
             choice = "N/A";
         else
-            choice = listOfResponses[i+1]=="false" ? "incorrect" : "correct";
+            choice = listOfResponses[i+1]=="false" ? "No" : "Yes";
         let bodyToAppend;
         let userCorrect;
-        if ((rightorwrong=="wrong"&&choice=="incorrect") || (rightorwrong=="right" && choice=="correct")){
+        if ((rightorwrong=="wrong"&&choice=="No") || (rightorwrong=="right" && choice=="Yes")){
             bodyToAppend = "#correctbody";
             userCorrect = true;
         }
@@ -44,7 +44,7 @@ function createGrid(i, rightorwrong, choice, userCorrect){//number that represen
         });
         notes = `<div class="col-12 fs-4 border border-2 rounded my-1"><h2>Notes: </h2><span class="font-weight-normal"><ul class="list-group-flush"> ${notestext}</ul></span></div>`;
     }
-    if(rightorwrong=="wrong"&&choice=="correct"){
+    if(rightorwrong=="wrong"&&choice=="Yes"){
         correction = `<div class="col-12 fs-3 border border-2 rounded text-success">${sentences[simpOrTrad()][DICTIONARY][Math.floor(listOfResponses[i]/2)]["right"]}</div>`
     }
     let grid = `

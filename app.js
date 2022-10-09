@@ -111,7 +111,10 @@ $( "#incorrect" ).click(function() {
         gameOverfunc();
 });
 $( "#next" ).click(function() {
-    $( "#next" ).html("<h2>Skip</h2>");
+    if ($("#next").html()=="<h2>Skip</h2>")
+        listOfResponses.push([specialnumber,"N/A"]);
+    else
+        $( "#next" ).html("<h2>Skip</h2>");
     if(currentquestioncount<dictlength){
         $('#correct').prop('disabled', false);
         $('#incorrect').prop('disabled', false);
@@ -128,7 +131,6 @@ $( "#next" ).click(function() {
     }
     else{
         loadSentence();
-        listOfResponses.push([specialnumber,"N/A"]);
     }
 });
 function check(){
