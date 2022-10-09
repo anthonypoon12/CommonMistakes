@@ -44,7 +44,11 @@
       function buttonValue(btnID) {
         const params = new URLSearchParams();
         params.append('dict', btnID);
-        window.location.href = `main.html?${params.toString()}`;
+        if (localStorage.getItem(btnID)!=null){
+          window.location.href = `feedback.html?${params.toString()}`;
+        }
+        else
+          window.location.href = `main.html?${params.toString()}`;
       }
     </script>
   </body>

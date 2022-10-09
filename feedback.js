@@ -3,6 +3,11 @@ const params = new URLSearchParams(window.location.search);
 const DICTIONARY = params.get('dict');
 var listOfResponses = localStorage.getItem(DICTIONARY).split(",");
 populateBodies();
+if (sessionStorage.getItem("fromMain")==null){
+    var myModal = new bootstrap.Modal($("#beenHereModal"));
+    myModal.show();
+}
+sessionStorage.removeItem("fromMain");
 function populateBodies(){
     for (let i = 0; i < listOfResponses.length;i=i+2){
         let rightorwrong = listOfResponses[i]%2==0? "wrong" : "right";
@@ -52,4 +57,7 @@ function createGrid(i, rightorwrong, choice, userCorrect){//number that represen
 }
 function reloadSentence(){//this is the same function name as app.js to reload that specific sentence, simpTrad uses this function to switch scripts
     location.reload();
+}
+function restart(){
+    window.location.href = `main.html?dict=${DICTIONARY}`;
 }

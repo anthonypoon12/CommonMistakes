@@ -90,7 +90,22 @@
         </div>
       <!--  -->
     </div>
-  <div class="modal-gameover col-8" id="modalending"></div>
+<!-- Modal For Past Users -->
+    <div class="modal fade" id="beenHereModal" tabindex="-1" aria-labelledby="beenHereModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">You have already completed this exercise!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <a type="button" class="btn btn-secondary" onclick="restart()">Restart</a>
+            <a type="button" class="btn btn-secondary" href="index.html">Return to Menu</a>
+            <a type="button" class="btn btn-primary" id="feedbackButton" data-bs-dismiss="modal">Continue</a>
+          </div>
+        </div>
+      </div>
+    </div>
   <!-- <script src="navbar.js"></script> -->
   <script src="simpTradConversion.js"></script>
   <script src="feedback.js"></script>

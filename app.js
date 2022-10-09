@@ -17,13 +17,15 @@ var problemContainer = document.getElementById("problemContainer");
 for (let i = 0 ; i < dictlength * 2; i++){
     setOfSentences.push(i);
 }
-// if user has already done exercise, skip to game over
+sessionStorage.setItem("fromMain","true");
 if (localStorage.getItem(DICTIONARY)!=null){
-    clearTimer();
-    modalGameOver();
+    var myModal = new bootstrap.Modal($("#gameOverModal"));
+    myModal.show();
+    $("#gameOverModalLabel").text("You've tried this exercise before!");
+    $("#gameOverModalLabel").text("You've tried this exercise before!");
+    $("#time").html("");
 }
-else
-    loadSentence();
+loadSentence();
 $("#score").text("Score: " + correct.toString() + "/" + dictlength);
 
 function loadSentence(){ 
@@ -149,7 +151,6 @@ function modalGameOver() {
     myModal.show();
     $("#modalseconds").text($("#seconds").text());
     $("#modalminutes").text($("#minutes").text());
-    $("#feedbackButton").prop("href",`feedback.html?dict=${DICTIONARY}`);
 }
 function reloadSentence(){
     let sentence = sentences[simpOrTrad()][DICTIONARY][currentquestion];
@@ -168,4 +169,7 @@ function reloadSentence(){
 function restart(){
     localStorage.removeItem(DICTIONARY);
     location.reload();
+}
+function openFeedback(){
+    window.location.href = `feedback.html?dict=${DICTIONARY}`;
 }
