@@ -115,8 +115,8 @@ $( "#next" ).click(function() {
     if(currentquestioncount<dictlength){
         $('#correct').prop('disabled', false);
         $('#incorrect').prop('disabled', false);
-        $('#correct').html(`<span id="incorrectsign" style="color: red;" class:"fs-4">&#10008;</span>Correct<span id="correctsign" style="color: green;" class:"fs-4">&#10004;</span>`);
-        $('#incorrect').html(`<span id="incorrectsign" style="color: red;" class:"fs-4">&#10008;</span>Incorrect<span id="correctsign" style="color: green;" class:"fs-4">&#10004;</span>`);
+        $('#correct').html(`<span id="incorrectsign" style="color: red;" class:"fs-4">&#10008;</span>Yes<span id="correctsign" style="color: green;" class:"fs-4">&#10004;</span>`);
+        $('#incorrect').html(`<span id="incorrectsign" style="color: red;" class:"fs-4">&#10008;</span>No<span id="correctsign" style="color: green;" class:"fs-4">&#10004;</span>`);
         $("#correct").removeClass("chosen");
         $("#incorrect").removeClass("chosen");
         currentquestioncount++;
