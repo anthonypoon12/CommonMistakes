@@ -124,8 +124,10 @@ $( "#next" ).click(function() {
         $('#correct').prop('disabled', true);
         $('#incorrect').prop('disabled', true);
     }
-    else
+    else{
         loadSentence();
+        listOfResponses.push([specialnumber,"N/A"]);
+    }
 });
 function check(){
     if (trueOrFalse==currentchoice)

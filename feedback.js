@@ -6,7 +6,11 @@ populateBodies();
 function populateBodies(){
     for (let i = 0; i < listOfResponses.length;i=i+2){
         let rightorwrong = listOfResponses[i]%2==0? "wrong" : "right";
-        let choice = listOfResponses[i+1]=="false" ? "incorrect" : "correct";
+        let choice;
+        if (listOfResponses[i+1]=="N/A")
+            choice = "N/A";
+        else
+            choice = listOfResponses[i+1]=="false" ? "incorrect" : "correct";
         let bodyToAppend;
         let userCorrect;
         if ((rightorwrong=="wrong"&&choice=="incorrect") || (rightorwrong=="right" && choice=="correct")){
