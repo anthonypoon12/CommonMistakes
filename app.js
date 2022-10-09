@@ -110,8 +110,10 @@ $( "#next" ).click(function() {
         $('#correct').prop('disabled', true);
         $('#incorrect').prop('disabled', true);
     }
-    else
-    loadSentence();
+    else{
+        loadSentence();
+        listOfResponses.push([specialnumber,"N/A"]);
+    }
 });
 function check(){
     if (trueOrFalse==currentchoice)
