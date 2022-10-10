@@ -45,16 +45,14 @@ function createGrid(i, rightorwrong, choice, userCorrect){//number that represen
         notes = `<div class="col-12 fs-4 border border-2 rounded my-1"><h2>Notes: </h2><span class="font-weight-normal"><ul class="list-group-flush"> ${notestext}</ul></span></div>`;
     }
     if(rightorwrong=="wrong"&&choice=="Yes"){
-        correction = `<div class="col-12 fs-3 border border-2 rounded text-success">${sentences[simpOrTrad()][DICTIONARY][Math.floor(listOfResponses[i]/2)]["right"]}</div>`
+        correction = `<div class="col-12 fs-3 border border-2 rounded text-success">The correct sentence is: ${sentences[simpOrTrad()][DICTIONARY][Math.floor(listOfResponses[i]/2)]["right"]}</div>`
     }
     let grid = `
-    <div class="row my-2 rounded border border-2 p-1" id="${i}">${notes}
+    <div class="row my-2 rounded border border-2 p-1" id="${i}">
     <div class="col-sm border border-2 ${userCorrect?"text-success":"text-danger"}">
     ${sentences[simpOrTrad()][DICTIONARY][Math.floor(listOfResponses[i]/2)][rightorwrong]}
     </div>
-    <div class="col-sm border border-2">
-    ${choice}
-    </div>
+    ${notes}
     ${correction}
     </div>`;
   return grid;
