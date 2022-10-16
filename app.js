@@ -44,9 +44,6 @@ function loadSentence(){
         trueOrFalse = true;
     }
     $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning, specialnumber));
-    $(function () { // initizalizes tooltips
-        $('[data-toggle="tooltip"]').tooltip(); 
-      })
 }
 function createProblemDiv(sentencetoDisplay, meaning, specialnumber){
     let note = getNotes(specialnumber);
@@ -54,7 +51,7 @@ function createProblemDiv(sentencetoDisplay, meaning, specialnumber){
     problemDiv.id = ('problem');
     problemDiv.classList.add('english');
     problemDiv.classList.add('border-bottom');
-    problemDiv.innerHTML = `<h1 id="sentenceInChinese" tabindex="0" data-toggle="tooltip" title="${note}">` + sentencetoDisplay + "</h1>";
+    problemDiv.innerHTML = `<h1 id="sentenceInChinese" tabindex="0">` + sentencetoDisplay + "</h1>";
     problemDiv.innerHTML = problemDiv.innerHTML + "<br>";
     problemDiv.appendChild(createMeaningSpan(meaning));
     return problemDiv;
@@ -155,9 +152,6 @@ function reloadSentence(){
         sentencetoDisplay=sentence.wrong;
     $('#problemContainer').text("");
     $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning, specialnumber));
-    $(function () { // initizalizes tooltips
-        $('[data-toggle="tooltip"]').tooltip(); 
-      })
 }
 function restart(){
     localStorage.removeItem(DICTIONARY);
