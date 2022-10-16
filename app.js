@@ -17,14 +17,6 @@ var problemContainer = document.getElementById("problemContainer");
 for (let i = 0 ; i < dictlength * 2; i++){
     setOfSentences.push(i);
 }
-// sent to feedback page for modal
-if (localStorage.getItem(DICTIONARY)!=null){
-    var myModal = new bootstrap.Modal($("#gameOverModal"));
-    myModal.show();
-    $("#gameOverModalLabel").text("You've tried this exercise before!");
-    $("#gameOverModalLabel").text("You've tried this exercise before!");
-    $("#time").html("");
-}
 loadSentence();
 $("#score").text("Score: " + correct.toString() + "/" + dictlength);
 
@@ -142,9 +134,10 @@ function check(){
 // GAMEOVER MODAL
 function gameOverfunc(){
     clearTimer();
-    modalGameOver();
+    // modalGameOver();
     // sends list of responses to local storage
     localStorage.setItem(DICTIONARY,listOfResponses);
+    openFeedback();
   }
 function modalGameOver() {
     var myModal = new bootstrap.Modal($("#gameOverModal"));
@@ -171,6 +164,5 @@ function restart(){
     location.reload();
 }
 function openFeedback(){
-    sessionStorage.setItem("fromMain","true");
     window.location.href = `feedback.html?dict=${DICTIONARY}`;
 }

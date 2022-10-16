@@ -56,55 +56,9 @@
       <button type="button" class="btn btn-primary btn-lg btn-convert">Traditional</button>
       <h1 class="text-center mt-7">Common Mistakes</h1>
       <div class="container">
-        <h2>Responses</h2>
-        <!--  -->
-        <div class="accordion" id="accordionExample">
-          <div class="card">
-            <div class="card-header" id="headingOne">
-                <div class="row">
-                  <div class="col-6" data-bs-toggle="collapse" data-bs-target="#Incorrect" aria-expanded="true" aria-controls="collapseOne">
-                    Incorrect
-                  </div>
-                  <div class="col-6" data-bs-toggle="collapse" data-bs-target="#Incorrect" aria-expanded="true" aria-controls="collapseOne">Your Responses:</div>
-                </div>
-            </div>
-            <div id="Incorrect" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="card-body py-0" id="incorrectbody">
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingTwo">
-                <div class="row">
-                  <div class="col-6" data-bs-toggle="collapse" data-bs-target="#Correct" aria-expanded="false" aria-controls="collapseTwo">
-                    Correct
-                  </div>
-                  <div class="col-6" data-bs-toggle="collapse" data-bs-target="#Correct" aria-expanded="false" aria-controls="collapseTwo"> Your Responses:</div>
-                </div>
-            </div>
-            <div id="Correct" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-              <div class="card-body py-0" id="correctbody">
-              </div>
-            </div>
-          </div>
-        </div>
-      <!--  -->
-    </div>
-<!-- Modal For Past Users -->
-    <div class="modal fade" id="beenHereModal" tabindex="-1" aria-labelledby="beenHereModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">You have already completed this exercise!</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <a type="button" class="btn btn-secondary" onclick="restart()">Restart</a>
-            <a type="button" class="btn btn-secondary" href="index.html">Return to Menu</a>
-            <a type="button" class="btn btn-primary" id="feedbackButton" data-bs-dismiss="modal">Continue</a>
-          </div>
-        </div>
-      </div>
+        <h2>Feedback</h2>
+        <ul class="list-group">
+        </ul>
     </div>
   <!-- <script src="navbar.js"></script> -->
   <script src="simpTradConversion.js"></script>
