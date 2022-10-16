@@ -47,6 +47,7 @@ function loadSentence(){
 }
 function createProblemDiv(sentencetoDisplay, meaning, specialnumber){
     let note = getNotes(specialnumber);
+    $("#notes").text(note);
     problemDiv = document.createElement('div');
     problemDiv.id = ('problem');
     problemDiv.classList.add('english');
