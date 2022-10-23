@@ -52,15 +52,6 @@
     <div class="container-xxl">
       <button type="button" class="btn btn-primary btn-lg btn-convert">Traditional</button>
       <h1 class="text-center mt-7">Common Mistakes</h1>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Hints
-        </button>
-        <div class="dropdown-menu p-1 text-muted">
-          <div id="notes" class="fs-4">
-          </div>
-        </div>
-      </div> 
       
       <h2 class="text-center mt-3" id="questions">Question:</h2>
       <h4 class="question_count text-center mt-3"></h4>
@@ -72,6 +63,16 @@
       <h2 class="text-center mt-3" id="mainquestion">
         Is this sentence correct?
       </h2>
+      
+      <div class="dropdown text-center">
+        <button class="btn btn-secondary dropdown-toggle fs-3 mb-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Hints
+        </button>
+        <div class="dropdown-menu p-1 text-muted">
+          <div id="notes" class="fs-4">
+          </div>
+        </div>
+      </div> 
       
       <div id="choiceContainer">
         <button id="correct" class="yesorno rounded fs-2 m-1"><span id="incorrectsign" style="color: red;" class:"fs-4">&#10008;</span>Yes<span id="correctsign" style="color: green;" class:"fs-4">&#10004;</span></button>
