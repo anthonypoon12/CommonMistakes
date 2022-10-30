@@ -20,8 +20,13 @@ function populateBodies(){
         if (choice=="N/A" || (rightorwrong=="wrong" && choice=="correct") || (rightorwrong=="right" && choice=="incorrect"))
             notes = getNotes(listOfResponses[i]);
         let userRightorWrong = "";
-        if (choice!="N/A")
-            userRightorWrong = `<br>You got it ${(rightorwrong=="wrong" && choice=="correct") || (rightorwrong=="right" && choice=="incorrect")? "wrong. 😔" : "right! 😎"}`;
+        if (choice!="N/A"){
+            userRightorWrong = "<br>";
+            if ((rightorwrong=="wrong" && choice=="correct") || (rightorwrong=="right" && choice=="incorrect"))
+                userRightorWrong += `You got it wrong 😔.  This is actually ${rightorwrong=="wrong" ? "an incorrect" : "a correct"} statement.`;
+            else
+             userRightorWrong = "Good Job! 😎";
+        }
         $("#accordion").append(
             `<div class="accordion-item">
             <h2 class="accordion-header" id="heading${i}">
