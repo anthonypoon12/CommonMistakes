@@ -26,7 +26,7 @@ function populateBodies(){
             `<div class="accordion-item">
             <h2 class="accordion-header" id="heading${i}">
               <button class="accordion-button fs-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${i}" aria-expanded="true" aria-controls="collapse${i}">
-              <span id="sentence${i}">${sentences[simpOrTrad()][DICTIONARY][Math.floor(listOfResponses[i]/2)][rightorwrong]}</span>
+              <span id="sentence${i}">${(i/2)+1}. ${sentences[simpOrTrad()][DICTIONARY][Math.floor(listOfResponses[i]/2)][rightorwrong]}</span>
               </button>
             </h2>
             <div id="collapse${i}" class="accordion-collapse collapse" aria-labelledby="heading${i}" data-bs-parent="#accordion">
