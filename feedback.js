@@ -15,7 +15,19 @@ function populateBodies(){
             choice = "N/A";
         else
             choice = listOfResponses[i+1]=="false" ? "incorrect" : "correct";
-        $("#listOfSentences").append(`<li class="list-group-item">${sentences[$(".btn-convert").text()][DICTIONARY][Math.floor(listOfResponses[i]/2)][rightorwrong]}</li>`);
+        $("#accordion").append(
+            `<div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              ${sentences[$(".btn-convert").text()][DICTIONARY][Math.floor(listOfResponses[i]/2)][rightorwrong]}
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body fs-5">
+                You chose ${listOfResponses[i+1]}
+              </div>
+            </div>`
+            );
     }
 }
 function reloadSentence(){//this is the same function name as app.js to reload that specific sentence, simpTrad uses this function to switch scripts
