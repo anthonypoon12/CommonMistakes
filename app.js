@@ -120,6 +120,10 @@ $( "#next" ).click(function() {
         $('#incorrect').prop('disabled', true);
     }
     else{
+        $("#hint").removeClass("show");
+        $("#notesdiv").removeClass("show");
+        $("#hint").attr("aria-expanded","false");
+        console.log("hi");
         loadSentence();
     }
 });
