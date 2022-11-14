@@ -14,8 +14,10 @@ var listOfResponses = []; //stored in local storage for final screen
 const setOfSentences = [];
 
 // If there is wrong URL, return to index and do alert
-if(!Object.keys(sentences[simpOrTrad()]).includes(DICTIONARY))
+if(!Object.keys(sentences[simpOrTrad()]).includes(DICTIONARY)){
+    localStorage.setItem("wrongURL","true");
     window.location.href = `index.html`;
+}
 
     const dictlength = Object.keys(sentences[simpOrTrad()][DICTIONARY]).length - 1; //number of right and wrong sentences
 var problemContainer = document.getElementById("problemContainer");
