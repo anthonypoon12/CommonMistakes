@@ -72,3 +72,7 @@ function getNotes(specialnumber){
     console.log(notes);
     return notes;
 }
+
+$("#redo").click(function(){
+    window.location.href = `main.html?dict=${DICTIONARY}`;
+});
