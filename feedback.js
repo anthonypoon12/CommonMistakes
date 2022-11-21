@@ -1,6 +1,13 @@
 "use strict"
 const params = new URLSearchParams(window.location.search);
 const DICTIONARY = params.get('dict');
+
+// If there is wrong URL, return to index and do alert
+if(!Object.keys(sentences[simpOrTrad()]).includes(DICTIONARY)){
+    localStorage.setItem("wrongURL","true");
+    window.location.href = `index.html`;
+}
+
 //this means they backarrowed into the page
 if (localStorage.getItem(DICTIONARY)==null){
     window.location.href = `index.html`;
