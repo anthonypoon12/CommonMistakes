@@ -12,6 +12,7 @@ function populateBodies(){
     for (let i = 0; i < listOfResponses.length;i=i+2){
         let rightorwrong = listOfResponses[i]%2==0? "wrong" : "right";// is the sentence right or wrong
         let choice;
+        let checkorx = "✗";
         if (listOfResponses[i+1]=="N/A")
             choice = "N/A";
         else
@@ -19,19 +20,22 @@ function populateBodies(){
         let notes = "";
         if (choice=="N/A" || (rightorwrong=="wrong" && choice=="correct") || (rightorwrong=="right" && choice=="incorrect"))
             notes = getNotes(listOfResponses[i]);
-        let userRightorWrong = "";
+            let userRightorWrong = "";
         if (choice!="N/A"){
             userRightorWrong = "<br>";
             if ((rightorwrong=="wrong" && choice=="correct") || (rightorwrong=="right" && choice=="incorrect"))
                 userRightorWrong += `You got it wrong 😔.  This is actually ${rightorwrong=="wrong" ? "an incorrect" : "a correct"} statement.`;
-            else
-             userRightorWrong = "Good Job! 😎";
+            else{
+                userRightorWrong = "Good Job! 😎";
+                checkorx = "✓";
+            }
         }
+        checkorx = `<span style="color:${checkorx=="✗" ? "red" : "green"}">${checkorx}</span>`;
         $("#accordion").append(
             `<div class="accordion-item">
             <h2 class="accordion-header" id="heading${i}">
               <button class="accordion-button fs-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${i}" aria-expanded="true" aria-controls="collapse${i}">
-              <span id="sentence${i}">${(i/2)+1}. ${sentences[simpOrTrad()][DICTIONARY][Math.floor(listOfResponses[i]/2)][rightorwrong]}</span>
+              <span id="sentence${i}">${checkorx} ${(i/2)+1}. ${sentences[simpOrTrad()][DICTIONARY][Math.floor(listOfResponses[i]/2)][rightorwrong]}</span>
               </button>
             </h2>
             <div id="collapse${i}" class="accordion-collapse collapse" aria-labelledby="heading${i}" data-bs-parent="#accordion">
