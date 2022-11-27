@@ -16,6 +16,10 @@
 </head>
   <body>
     <div class="title"><h3>Common Mistakes</h3></div>
+    <div id = "wrongURLAlert" class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Error 404: Page Not Found</strong><br> Please press one of the buttons below to access the exercise
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     <div class="container-fluid">
       <div class="row my-3 justify-content-center" id="buttoncont"></div>
     </div>
@@ -28,9 +32,14 @@
     ></script>
     <script>
         var buttons="";
+        var odd = "";
         Object.keys(sentences["Traditional"]).forEach(function(item){
+          if (odd=="") // makes the sections alternate between sections and sections1
+            odd = "1";
+          else
+            odd = "";
             buttons +=`
-        <div class="col-7 rounded sections text-center my-2" style="cursor: pointer"
+        <div class="col-7 rounded sections${odd} text-center my-2" style="cursor: pointer"
         id="${item}"
         onclick="buttonValue(this.id)">
           <h1>${item}</h1>
@@ -45,6 +54,11 @@
         const params = new URLSearchParams();
         params.append('dict', btnID);
         window.location.href = `main.html?${params.toString()}`;
+      }
+      if (localStorage.getItem("wrongURL")!="true")
+        $("#wrongURLAlert").hide();
+      else{
+        localStorage.removeItem("wrongURL");
       }
     </script>
   </body>

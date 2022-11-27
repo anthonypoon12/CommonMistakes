@@ -12,7 +12,14 @@ var currentquestioncount = 0;//starts at 0;
 var listOfResponses = []; //stored in local storage for final screen
 //Makes array of indexes for sentences
 const setOfSentences = [];
-const dictlength = Object.keys(sentences[simpOrTrad()][DICTIONARY]).length - 1; //number of right and wrong sentences
+
+// If there is wrong URL, return to index and do alert
+if(!Object.keys(sentences[simpOrTrad()]).includes(DICTIONARY)){
+    localStorage.setItem("wrongURL","true");
+    window.location.href = `index.html`;
+}
+
+    const dictlength = Object.keys(sentences[simpOrTrad()][DICTIONARY]).length - 1; //number of right and wrong sentences
 var problemContainer = document.getElementById("problemContainer");
 for (let i = 0 ; i < dictlength * 2; i++){
     setOfSentences.push(i);
