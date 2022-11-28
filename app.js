@@ -108,7 +108,7 @@ $( "#incorrect" ).click(function() {
         gameOverfunc();
 });
 $( "#next" ).click(function() {
-    if ($("#next").html()=="<h2>Skip</h2>")
+    if ($("#next").text().trim()=="Skip")
         listOfResponses.push([specialnumber,"N/A"]);
     else
         $( "#next" ).html("<h2>Skip</h2>");
@@ -130,7 +130,6 @@ $( "#next" ).click(function() {
         $("#hint").removeClass("show");
         $("#notesdiv").removeClass("show");
         $("#hint").attr("aria-expanded","false");
-        console.log("hi");
         loadSentence();
     }
 });
@@ -145,7 +144,6 @@ function check(){
 // GAMEOVER MODAL
 function gameOverfunc(){
     clearTimer();
-    // modalGameOver();
     // sends list of responses to local storage
     localStorage.setItem(DICTIONARY,listOfResponses);
     openFeedback();
