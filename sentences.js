@@ -269,7 +269,7 @@ sentences = {
 		"Errors in Adverbs": {
 			0:{
 				wrong: "都我的學生喜歡學中文。",
-				right: "都我的學生喜歡學中文。",
+				right: "我的學生都喜歡學中文。",
 				meaning: "All my students like to learn Chinese.",
 			},
 			1:{

@@ -1,17 +1,15 @@
 "use strict"
 const params = new URLSearchParams(window.location.search);
 const DICTIONARY = params.get('dict');
-var correct = 0; //number of questions user got correct
-var trueOrFalse = false; //whether question is true or false
-var problemDiv;
-var currentchoice=false;
-var specialnumber; //which number sentence (right and wrong are different numbers)
-var currentbutton="";
-var currentquestion;//which question is this (right and wrong yield same number)
-var currentquestioncount = 0;//starts at 0;
-var listOfResponses = []; //stored in local storage for final screen
-//Makes array of indexes for sentences
+let numberCorrectlyAnswered = 0; //number of questions user got correct
+let currentQuestionIsTrue; //whether question is true or false
+let currentChoice;
+let questionIndex; // which number sentence (this is not iterated in order)
+let currentChosenButton; // used for the check function
+let currentQuestionCount = 0;//starts at 0;
+const listOfResponses = []; //stored in local storage for final screen
 const setOfSentences = [];
+//Makes array of indexes for sentences
 
 // If there is wrong URL, return to index and do alert
 if(!Object.keys(sentences[simpOrTrad()]).includes(DICTIONARY)){
@@ -19,109 +17,108 @@ if(!Object.keys(sentences[simpOrTrad()]).includes(DICTIONARY)){
     window.location.href = `index.html`;
 }
 
-    const dictlength = Object.keys(sentences[simpOrTrad()][DICTIONARY]).length - 1; //number of right and wrong sentences
-var problemContainer = document.getElementById("problemContainer");
-for (let i = 0 ; i < dictlength * 2; i++){
+const dictlength = Object.keys(sentences[simpOrTrad()][DICTIONARY]).length - 1; //number of right and wrong sentences
+const problemContainer = document.getElementById("problemContainer");
+for (let i = 0 ; i < dictlength; i++){
     setOfSentences.push(i);
 }
 loadSentence();
-$("#score").text("Score: " + correct.toString() + "/" + dictlength);
+$("#score").text("Score: " + numberCorrectlyAnswered.toString() + "/" + dictlength);
 
 function loadSentence(){ 
-    $("#questions").text("Question: " + (dictlength-(setOfSentences.length/2) + 1).toString() + "/" + dictlength);
-    problemContainer.innerHTML="";
+    $("#questions").text("Question: " + (dictlength-(setOfSentences.length) + 1).toString() + "/" + dictlength);
+    $(problemContainer).html("");
+
     let index = Math.floor(Math.random()*setOfSentences.length);
-    specialnumber = setOfSentences[index];
-    currentquestion = Math.floor(specialnumber/2)
-    let indexToRemoveFromSet=index;
-    if(index%2==1)
-        indexToRemoveFromSet--;
-    if (indexToRemoveFromSet !== -1) {
-        setOfSentences.splice(indexToRemoveFromSet, 2);
-    }
-    let sentence = sentences[simpOrTrad()][DICTIONARY][currentquestion];
-    let meaning=sentence.meaning;
-    let sentencetoDisplay="";
-    if (specialnumber%2==0){
-        sentencetoDisplay=sentence.wrong;
-        trueOrFalse = false;
-    }
-    else{
-        sentencetoDisplay=sentence.right;
-        trueOrFalse = true;
-    }
-    $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning, specialnumber));
+    questionIndex = setOfSentences.pop(index);
+
+    currentQuestionIsTrue = !!Math.round(Math.random());
+    let rightOrWrong = currentQuestionIsTrue ? "right": "wrong";
+
+    let sentence = sentences[simpOrTrad()][DICTIONARY][questionIndex];
+    let meaning = sentence.meaning;
+    let sentencetoDisplay=sentence[rightOrWrong];
+
+    $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning, questionIndex));
 }
+
 function createProblemDiv(sentencetoDisplay, meaning, specialnumber){
     let note = getNotes(specialnumber);
     $("#notes").text(note);
-    problemDiv = document.createElement('div');
-    problemDiv.id = ('problem');
-    problemDiv.classList.add('english');
-    problemDiv.classList.add('border-bottom');
-    problemDiv.innerHTML = `<h1 id="sentenceInChinese" tabindex="0">` + sentencetoDisplay + "</h1>";
-    problemDiv.innerHTML = problemDiv.innerHTML + "<br>";
-    problemDiv.appendChild(createMeaningSpan(meaning));
+    let problemDiv = $("<div>")
+    .attr('id', 'problem')
+    .addClass('english border-bottom')
+    .append(
+        $("<h1>")
+        .attr('id', 'sentenceInChinese')
+        .attr('tabindex', '0')
+        .text(sentencetoDisplay)
+    )
+    .append("<br>")
+    .append(createMeaningSpan(meaning));
     return problemDiv;
 }
-function getNotes(specialnumber){;
-    let notes = "";
-    Object.keys(sentences[simpOrTrad()][DICTIONARY]["Notes"]).forEach(function(item){
-        if (sentences[simpOrTrad()][DICTIONARY]["Notes"][item][1].includes(Math.floor(specialnumber/2))){
-            notes+=(sentences[simpOrTrad()][DICTIONARY]["Notes"][item][0] + "\n");
-        }
-    });
+
+function getNotes(specialnumber){
+    const allDictionaryNotes = sentences[simpOrTrad()][DICTIONARY]["Notes"];
+
+    const notes = Object.keys(allDictionaryNotes)
+    .filter(item => allDictionaryNotes[item][1].includes(specialnumber))
+    .map(item => allDictionaryNotes[item][0])
+    .join("\n");
+
     return notes;
+
 }
 function createMeaningSpan(meaning){
-    let meaningSpan = document.createElement('h1');
-    meaningSpan.id = 'meaning';
-    meaningSpan.innerHTML = meaning;
-    return meaningSpan;
+    return $('<h1>').attr('id', 'meaning').html(meaning);
 }
+
 $( "#correct" ).click(function() {
     $(this).addClass("chosen");
     $( "#next" ).html("<h2>Next</h2>");
-    currentbutton="#correct";
-    if (true==trueOrFalse){
-        correct++;
+    currentChosenButton="#correct";
+    if (currentQuestionIsTrue){
+        numberCorrectlyAnswered++;
     }
-    currentchoice=true;
+    currentChoice=true;
     $('#incorrect').prop('disabled', true);
-    $("#score").text("Score: " + correct.toString() + "/" + dictlength);
+    $("#score").text("Score: " + numberCorrectlyAnswered.toString() + "/" + dictlength);
     check();
-    if (currentquestioncount+1>=dictlength)
-    gameOverfunc();
+    if (currentQuestionCount+1>=dictlength)
+        gameOverfunc();
 });
+
 $( "#incorrect" ).click(function() {
     $(this).addClass("chosen");
     $( "#next" ).html("<h2>Next</h2>");
-    currentbutton="#incorrect";
-    if (false==trueOrFalse){
-        correct++;
+    currentChosenButton="#incorrect";
+    if (!currentQuestionIsTrue){
+        numberCorrectlyAnswered++;
     }
-    currentchoice=false;
+    currentChoice=false;
     $('#correct').prop('disabled', true);
-    $("#score").text("Score: " + correct.toString() + "/" + dictlength);
+    $("#score").text("Score: " + numberCorrectlyAnswered.toString() + "/" + dictlength);
     check();
-    if (currentquestioncount+1>=dictlength)
+    if (currentQuestionCount+1>=dictlength)
         gameOverfunc();
 });
+
 $( "#next" ).click(function() {
     if ($("#next").text().trim()=="Skip")
-        listOfResponses.push([specialnumber,"N/A"]);
+        listOfResponses.push([questionIndex,"N/A", currentQuestionIsTrue]);
     else
         $( "#next" ).html("<h2>Skip</h2>");
-    if(currentquestioncount<dictlength){
+    if(currentQuestionCount<dictlength){
         $('#correct').prop('disabled', false);
         $('#incorrect').prop('disabled', false);
         $('#correct').html(`<span id="incorrectsign" style="color: red;" class:"fs-4">&#10008;</span>Yes<span id="correctsign" style="color: green;" class:"fs-4">&#10004;</span>`);
         $('#incorrect').html(`<span id="incorrectsign" style="color: red;" class:"fs-4">&#10008;</span>No<span id="correctsign" style="color: green;" class:"fs-4">&#10004;</span>`);
         $("#correct").removeClass("chosen");
         $("#incorrect").removeClass("chosen");
-        currentquestioncount++;
+        currentQuestionCount++;
     }
-    if (currentquestioncount>=dictlength){
+    if (currentQuestionCount>=dictlength){
         gameOverfunc();
         $('#correct').prop('disabled', true);
         $('#incorrect').prop('disabled', true);
@@ -134,36 +131,36 @@ $( "#next" ).click(function() {
     }
 });
 function check(){
-    if (trueOrFalse==currentchoice)
-        $(currentbutton).find("#correctsign").css("visibility","visible");
+    if (currentQuestionIsTrue==currentChoice)
+        $(currentChosenButton).find("#correctsign").css("visibility","visible");
     else
-        $(currentbutton).find("#incorrectsign").css("visibility","visible");
-    // stores question and response to list, will send to local storage
-    listOfResponses.push([specialnumber,currentchoice]);
+        $(currentChosenButton).find("#incorrectsign").css("visibility","visible");
+// stores question and response to list, will send to local storage
+    currentChosenButton = undefined;
+    listOfResponses.push([questionIndex,currentChoice, currentQuestionIsTrue]);
 }
 // GAMEOVER MODAL
 function gameOverfunc(){
     clearTimer();
     // sends list of responses to local storage
-    localStorage.setItem(DICTIONARY,listOfResponses);
+    localStorage.setItem(DICTIONARY,JSON.stringify(listOfResponses));
     openFeedback();
   }
 function modalGameOver() {
-    var myModal = new bootstrap.Modal($("#gameOverModal"));
+    let myModal = new bootstrap.Modal($("#gameOverModal"));
     myModal.show();
     $("#modalseconds").text($("#seconds").text());
     $("#modalminutes").text($("#minutes").text());
 }
 function reloadSentence(){
-    let sentence = sentences[simpOrTrad()][DICTIONARY][currentquestion];
+    let sentence = sentences[simpOrTrad()][DICTIONARY][questionIndex];
     let meaning=sentence.meaning;
     let sentencetoDisplay="";
-    if (trueOrFalse)
+    if (currentQuestionIsTrue)
         sentencetoDisplay=sentence.right;
     else
         sentencetoDisplay=sentence.wrong;
-    $('#problemContainer').text("");
-    $('#problemContainer').prepend(createProblemDiv(sentencetoDisplay, meaning, specialnumber));
+    $('#problemContainer').html(createProblemDiv(sentencetoDisplay, meaning, questionIndex));
 }
 function restart(){
     localStorage.removeItem(DICTIONARY);

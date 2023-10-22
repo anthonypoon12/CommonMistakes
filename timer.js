@@ -1,7 +1,7 @@
-var timer;
+let timer;
 $(document).ready(function () {
 
-    var second = 0;
+    let second = 0;
   
     function convert(val) {
       return val > 9 ? val : "0" + val;
