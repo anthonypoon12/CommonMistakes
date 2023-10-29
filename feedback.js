@@ -38,7 +38,15 @@ function populateBodies(){
             }
         }
 
-        checkorx = `<div style="color:${checkorx=="✗" ? "red" : "green"}" class="h-100 d-inline-block">${checkorx}</div>`;
+        let color = "gray";
+        if (choice != "N/A"){
+            if (checkorx=="✗")
+                color = "red";
+            else
+                color = "green";
+        }
+
+        checkorx = `<div style="color:${color}" class="h-100 d-inline-block">${checkorx}</div>`;
         $("#accordion").append(
             `<div class="accordion-item">
             <h2 class="accordion-header" id="heading${i}">
