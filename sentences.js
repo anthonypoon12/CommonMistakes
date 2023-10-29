@@ -54,36 +54,26 @@ sentences = {
 				meaning: "There are many Chinese students in my high school.",
 			},
 			9:{
-				wrong: "今天比昨天很冷。",
-				right: "今天比昨天冷。",
-				meaning: "Today is colder than yesterday.",
-			},
-			10:{
 				wrong: "餐廳的飯很難吃極了。",
 				right: "餐廳的飯難吃極了。",
 				meaning: "The food in the restaurant was terrible.",
 			},
-			11:{
+			10:{
 				wrong: "他的房間很乾乾淨淨。",
 				right: "他的房間乾乾淨淨的。",
 				meaning: "His room was very clean.",
 			},
-			12:{
-				wrong: "我現在有很多精神。",
-				right: "我現在很有精神。",
-				meaning: "I am in good spirits now.",
-			},
-			13:{
+			11:{
 				wrong: "他覺得他的屋子不小不大。",
 				right: "他覺得他的屋子不大不小。",
 				meaning: "He feels that his house is not big or small.",
 			},
-			14:{
+			12:{
 				wrong: "他是不好學生。",
 				right: "他不是好學生。",
 				meaning: "He is not a good student",
 			},
-			15:{
+			13:{
 				wrong: "我家近學校。",
 				right: "我家離學校很近。",
 				meaning: "My home is very close to the school.",
@@ -91,12 +81,12 @@ sentences = {
 			"Notes":{
 				0:["Adjectives function as verbs in Chinese. Therefore, 是 cannot be used before adjectives. However, the word 很, a minimum modifier should be put before the adjective.",[0,1,2,3,4,5,6]],
 				1:["A minimum modifier 很 is missing. 多 alone cannot be put before an adjective followed by a noun. One has to use 很多.",[7,8]],
-				2:["In the 比 construction, 很 cannot be used before the adjective.",[9]],
-				3:["很 cannot be used before adj + 極了. 很 cannot be used with the reduplicate form of an adjective such as 乾乾淨淨. The correct form is: 很乾淨.",[10,11]],
-				4:["The word ‘energetic’ is 有精神. 很 can be added in front of 有精神. For example, 興趣 (interest), 有興趣 (interested), 很有興趣 (very interested).",[12]],
-				5:["In this construction, ‘大' or words in positive connotation should appear first. For example, 不高不矮, 不多不少, 不胖不瘦, 不冷不熱, 不快不慢.",[13]],
-				6:["The negation marker 不 should go before the verb 是. For example, 他是好學生, 他不是好學生. It is OK to say 好學生 or 壞學生. The expression 不好學生 is wrong. ",[14]],
-				7:["The word to express distance 近 or 遠 should be used with 離.",[15]],
+				2:["In the 比 construction, 很 cannot be used before the adjective.",[]],
+				3:["很 cannot be used before adj + 極了. 很 cannot be used with the reduplicate form of an adjective such as 乾乾淨淨. The correct form is: 很乾淨.",[9,10]],
+				4:["The word ‘energetic’ is 有精神. 很 can be added in front of 有精神. For example, 興趣 (interest), 有興趣 (interested), 很有興趣 (very interested).",[]],
+				5:["In this construction, ‘大' or words in positive connotation should appear first. For example, 不高不矮, 不多不少, 不胖不瘦, 不冷不熱, 不快不慢.",[11]],
+				6:["The negation marker 不 should go before the verb 是. For example, 他是好學生, 他不是好學生. It is OK to say 好學生 or 壞學生. The expression 不好學生 is wrong. ",[12]],
+				7:["The word to express distance 近 or 遠 should be used with 離.",[13]],
 			},
 		},
 		"Errors in Measure Words": {
@@ -478,36 +468,26 @@ sentences = {
 				meaning: "There are many Chinese students in my high school.",
 			},
 			9:{
-				wrong: "今天比昨天很冷。",
-				right: "今天比昨天冷。",
-				meaning: "Today is colder than yesterday.",
-			},
-			10:{
 				wrong: "餐厅的饭很难吃极了。",
 				right: "餐厅的饭难吃极了。",
 				meaning: "The food in the restaurant was terrible.",
 			},
-			11:{
+			10:{
 				wrong: "他的房间很干干净净。",
 				right: "他的房间干干净净的。",
 				meaning: "His room was very clean.",
 			},
-			12:{
-				wrong: "我现在有很多精神。",
-				right: "我现在很有精神。",
-				meaning: "I am in good spirits now.",
-			},
-			13:{
+			11:{
 				wrong: "他觉得他的屋子不小不大。",
 				right: "他觉得他的屋子不大不小。",
 				meaning: "He feels that his house is not big or small.",
 			},
-			14:{
+			12:{
 				wrong: "他是不好学生。",
 				right: "他不是好学生。",
 				meaning: "He is not a good student",
 			},
-			15:{
+			13:{
 				wrong: "我家近学校。",
 				right: "我家离学校很近。",
 				meaning: "My home is very close to the school.",
@@ -515,12 +495,12 @@ sentences = {
 			"Notes":{
 				0:["Adjectives function as verbs in Chinese. Therefore, 是 cannot be used before adjectives. However, the word 很, a minimum modifier should be put before the adjective.",[0,1,2,3,4,5,6]],
 				1:["A minimum modifier 很 is missing. 多 alone cannot be put before an adjective followed by a noun. One has to use 很多.",[7,8]],
-				2:["In the 比 construction, 很 cannot be used before the adjective.",[9]],
-				3:["很 cannot be used before adj + 极了. 很 cannot be used with the reduplicate form of an adjective such as 干干净净. The correct form is: 很干净.",[10,11]],
-				4:["The word ‘energetic’ is 有精神. 很 can be added in front of 有精神. For example, 兴趣 (interest), 有兴趣 (interested), 很有兴趣 (very interested).",[12]],
-				5:["In this construction, ‘大' or words in positive connotation should appear first. For example, 不高不矮, 不多不少, 不胖不瘦, 不冷不热, 不快不慢.",[13]],
-				6:["The negation marker 不 should go before the verb 是. For example, 他是好学生, 他不是好学生. It is OK to say 好学生 or 坏学生. The expression 不好学生 is wrong. ",[14]],
-				7:["The word to express distance 近 or 远 should be used with 离.",[15]],
+				2:["In the 比 construction, 很 cannot be used before the adjective.",[]],
+				3:["很 cannot be used before adj + 极了. 很 cannot be used with the reduplicate form of an adjective such as 干干净净. The correct form is: 很干净.",[9,10]],
+				4:["The word ‘energetic’ is 有精神. 很 can be added in front of 有精神. For example, 兴趣 (interest), 有兴趣 (interested), 很有兴趣 (very interested).",[]],
+				5:["In this construction, ‘大' or words in positive connotation should appear first. For example, 不高不矮, 不多不少, 不胖不瘦, 不冷不热, 不快不慢.",[11]],
+				6:["The negation marker 不 should go before the verb 是. For example, 他是好学生, 他不是好学生. It is OK to say 好学生 or 坏学生. The expression 不好学生 is wrong. ",[12]],
+				7:["The word to express distance 近 or 远 should be used with 离.",[13]],
 			},
 		},
 		"Errors in Measure Words": {
