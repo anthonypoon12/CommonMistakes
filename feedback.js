@@ -17,29 +17,32 @@ populateBodies();
 
 function populateBodies(){
     for (let i = 0; i < listOfResponses.length;i++){
-        let rightorwrong = listOfResponses[i][2] ? "right": "wrong";// is the sentence right or wrong
-        let choice;
+        let correctAnswer = listOfResponses[i][2];// is the sentence right or wrong
+        let userChoice;
         let checkorx = "✗";
+
         if (listOfResponses[i][1]=="N/A")
-            choice = "N/A";
+            userChoice = null;
         else
-            choice = listOfResponses[i][1] == false ? "incorrect" : "correct";
+            userChoice = listOfResponses[i][1];
+
         let notes = "";
-        if (choice=="N/A" || (rightorwrong=="wrong" && choice=="correct") || (rightorwrong=="right" && choice=="incorrect"))
+        if (userChoice==null || (correctAnswer != userChoice))
             notes = getNotes(listOfResponses[i][0]);
-            let userRightorWrong = "";
-        if (choice!="N/A"){
-            userRightorWrong = "<br>";
-            if ((rightorwrong=="wrong" && choice=="correct") || (rightorwrong=="right" && choice=="incorrect"))
-                userRightorWrong += `You got it wrong 😔.  This is actually ${rightorwrong=="wrong" ? "an incorrect" : "a correct"} statement.`;
+            
+        let userCorrectnessMessage = "";
+        if (userChoice!=null){
+            userCorrectnessMessage = "<br>";
+            if ((correctAnswer != userChoice))
+                userCorrectnessMessage += `You got it wrong 😔.  This is actually ${correctAnswer ? "a correct" : "an incorrect"} statement.`;
             else{
-                userRightorWrong = "Good Job! 😎";
+                userCorrectnessMessage = "Good Job! 😎";
                 checkorx = "✓";
             }
         }
 
         let color = "gray";
-        if (choice != "N/A"){
+        if (userChoice != null){
             if (checkorx=="✗")
                 color = "red";
             else
@@ -51,14 +54,14 @@ function populateBodies(){
             `<div class="accordion-item">
             <h2 class="accordion-header" id="heading${i}">
               <button class="accordion-button fs-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${i}" aria-expanded="true" aria-controls="collapse${i}">
-              <span id="sentence${i}">${checkorx} ${i+1}. ${sentences[simpOrTrad()][DICTIONARY][listOfResponses[i][0]][rightorwrong]}</span>
+              ${checkorx} ${i+1}. <span id='sentence${i}' class='mx-2'>${sentences[simpOrTrad()][DICTIONARY][listOfResponses[i][0]][correctAnswer ? "right" : "wrong"]}</span>
               </button>
             </h2>
             <div id="collapse${i}" class="accordion-collapse collapse" aria-labelledby="heading${i}" data-bs-parent="#accordion">
               <div class="accordion-body fs-5">
-              ${choice=="N/A" ? "You skipped this question." :
+              ${userChoice==null ? "You skipped this question." :
                 `You chose ${listOfResponses[i][1]}.
-                ${userRightorWrong}`
+                ${userCorrectnessMessage}`
                 }
                 ${notes}
               </div>
@@ -69,13 +72,9 @@ function populateBodies(){
 
 function reloadSentence(){//this is the same function name as app.js to reload that specific sentence, simpTrad uses this function to switch scripts
     for (let i = 0; i < listOfResponses.length;i++){
-        let rightorwrong = listOfResponses[i][2]? "wrong" : "right";
-        let choice;
-        if (listOfResponses[i][1]=="N/A")
-            choice = "N/A";
-        else
-            choice = listOfResponses[i][1] == false ? "incorrect" : "correct";
-        $(`#sentence${i}`).text(sentences[simpOrTrad()][DICTIONARY][listOfResponses[i]][rightorwrong]);
+        let rightorwrong = listOfResponses[i][2]? "right" : "wrong";
+        $(`#sentence${i}`).text(sentences[simpOrTrad()][DICTIONARY][listOfResponses[i][0]][rightorwrong]);
+
     }
 }
 
