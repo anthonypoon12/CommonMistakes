@@ -48,8 +48,10 @@ function populateBodies(){
             </h2>
             <div id="collapse${i}" class="accordion-collapse collapse" aria-labelledby="heading${i}" data-bs-parent="#accordion">
               <div class="accordion-body fs-5">
-                You chose ${listOfResponses[i][1]}.
-                ${userRightorWrong}
+              ${choice=="N/A" ? "You skipped this question." :
+                `You chose ${listOfResponses[i][1]}.
+                ${userRightorWrong}`
+                }
                 ${notes}
               </div>
             </div>`
