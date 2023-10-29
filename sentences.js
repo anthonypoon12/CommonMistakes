@@ -313,7 +313,7 @@ sentences = {
 				2:["一點 cannot be used before an adjective. ",[5,6,7]],
 			},
 		},
-		"Errors in Nouns (Time, Place, Localizer)": {
+		"Errors in Word Order": {
 			0:{
 				wrong: "我工作在大學。",
 				right: "我在大學工作。",
@@ -737,7 +737,7 @@ sentences = {
 				2:["一点 cannot be used before an adjective. ",[5,6,7]],
 			},
 		},
-		"Errors in Nouns (Time, Place, Localizer)": {
+		"Errors in Word Order": {
 			0:{
 				wrong: "我工作在大学。",
 				right: "我在大学工作。",
