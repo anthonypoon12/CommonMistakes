@@ -63,7 +63,7 @@ function populateBodies(){
                 `You chose ${listOfResponses[i][1]}.
                 ${userCorrectnessMessage}`
                 }
-                ${notes}
+                <span id=note${i}>${notes}</span>
               </div>
             </div>`
             );
@@ -75,6 +75,8 @@ function reloadSentence(){//this is the same function name as app.js to reload t
         let rightorwrong = listOfResponses[i][2]? "right" : "wrong";
         $(`#sentence${i}`).text(sentences[simpOrTrad()][DICTIONARY][listOfResponses[i][0]][rightorwrong]);
 
+        if ((listOfResponses[i][1] != null) && (listOfResponses[i][1] != listOfResponses[i][2]))
+            $(`#note${i}`).text(getNotes(listOfResponses[i][0]))
     }
 }
 
