@@ -136,7 +136,7 @@ sentences = {
 				21:["It is ungrammatical to put 如果 after S + 不知道, A question construction should be used after 不知道.",[21]]
 			}
 		},
-		"Errors in Adjectives": {
+		"Group 1": {
 			0:{
 				wrong: "我的學生都是好。",
 				right: "我的學生都很好。",
@@ -235,7 +235,7 @@ sentences = {
 				7:["The word to express distance 近 or 遠 should be used with 離.",[15]],
 			},
 		},
-		"Errors in Measure Words": {
+		"Group 2": {
 			0:{
 				wrong: "你有機個狗？",
 				right: "你有機隻狗？",
@@ -331,7 +331,7 @@ sentences = {
 				10:["一些 meaning ‘some’ should be used before a noun. 有些 can only be used with undesirable adjectives, such as 蛋糕有些貴,",[15]],
 			},
 		},
-		"Errors in Conjunctions": {
+		"Group 3": {
 			0:{
 				wrong: "雖然我喜歡他，他不喜歡我。",
 				right: "雖然我喜歡他，但是他不喜歡我。",
@@ -356,7 +356,7 @@ sentences = {
 				0:["雖然 and  但是 are used together to mean ‘although’",[0,1,2,3]],
 			},
 		},
-		"Errors in Verbs": {
+		"Group 4": {
 			0:{
 				wrong: "雖然我是學生，但是我喜歡教。",
 				right: "雖然我是學生，但是我喜歡教書。",
@@ -402,7 +402,7 @@ sentences = {
 				1:["The modifier in a verb-object construction should be put in between the verb and object, not after the object.  ",[4,5,6,7]],
 			},
 		},
-		"Errors in Adverbs": {
+		"Group 5": {
 			0:{
 				wrong: "都我的學生喜歡學中文。",
 				right: "我的學生都喜歡學中文。",
@@ -449,7 +449,7 @@ sentences = {
 				2:["一點 cannot be used before an adjective. ",[5,6,7]],
 			},
 		},
-		"Errors in Word Order": {
+		"Group 6": {
 			0:{
 				wrong: "我工作在大學。",
 				right: "我在大學工作。",
@@ -480,7 +480,7 @@ sentences = {
 				1:["Word order: localizer goes after the noun.",[4]],
 			},
 		},
-		"Errors in Prepositions": {
+		"Group 7": {
 			0:{
 				wrong: "我不喜歡旅遊跟家人。",
 				right: "我不喜歡跟家人旅遊。",
@@ -495,7 +495,7 @@ sentences = {
 				0:["Word order: a prepositional phrase should go before the verb.",[0,1]],
 			},
 		},
-		"Errors in Particles": {
+		"Group 8": {
 			0:{
 				wrong: "我不能去地方我喜歡。",
 				right: "我不能去我喜歡的地方。",
@@ -522,7 +522,7 @@ sentences = {
 				2:["喜歡 is not an action verb. 了 should not be used even though it refers to the past.",[3]],
 			},
 		},
-		"Errors in Pronouns (Question Words, Demonstrative Pronoun)": {
+		"Group 9": {
 			0:{
 				wrong: "他喜歡吃什麼都。",
 				right: "他什麼都喜歡吃。",
@@ -543,7 +543,7 @@ sentences = {
 				1:["It is better to say: 這裡 unless there is a retroflex ending 兒. When you write, you have to write out both characters: 這兒.",[2]],
 			},
 		},
-		"Errors in 'if'": {
+		"Group 10": {
 			0:{
 				wrong: "他的屋子又整齊又乾淨。我不知道如果他住在那兒。",
 				right: "他的屋子又整齊又乾淨。我不知道他是不是住在那兒。",
@@ -696,7 +696,7 @@ sentences = {
 				21:["It is ungrammatical to put 如果 after S + 不知道, \nA question construction should be used after 不知道.",[21]]
 			}
 		},
-		"Errors in Adjectives": {
+		"Group 1": {
 			0:{
 				wrong: "我的学生都是好。",
 				right: "我的学生都很好。",
@@ -795,7 +795,7 @@ sentences = {
 				7:["The word to express distance 近 or 远 should be used with 离.",[15]],
 			},
 		},
-		"Errors in Measure Words": {
+		"Group 2": {
 			0:{
 				wrong: "你有机个狗？",
 				right: "你有机只狗？",
@@ -891,7 +891,7 @@ sentences = {
 				10:["一些 meaning ‘some’ should be used before a noun. 有些 can only be used with undesirable adjectives, such as 蛋糕有些贵,",[15]],
 			},
 		},
-		"Errors in Conjunctions": {
+		"Group 3": {
 			0:{
 				wrong: "虽然我喜欢他，他不喜欢我。",
 				right: "虽然我喜欢他，但是他不喜欢我。",
@@ -916,7 +916,7 @@ sentences = {
 				0:["虽然 and  但是 are used together to mean ‘although’",[0,1,2,3]],
 			},
 		},
-		"Errors in Verbs": {
+		"Group 4": {
 			0:{
 				wrong: "虽然我是学生，但是我喜欢教。",
 				right: "虽然我是学生，但是我喜欢教书。",
@@ -962,7 +962,7 @@ sentences = {
 				1:["The modifier in a verb-object construction should be put in between the verb and object, not after the object.  ",[4,5,6,7]],
 			},
 		},
-		"Errors in Adverbs": {
+		"Group 5": {
 			0:{
 				wrong: "都我的学生喜欢学中文。",
 				right: "都我的学生喜欢学中文。",
@@ -1009,7 +1009,7 @@ sentences = {
 				2:["一点 cannot be used before an adjective. ",[5,6,7]],
 			},
 		},
-		"Errors in Word Order": {
+		"Group 6": {
 			0:{
 				wrong: "我工作在大学。",
 				right: "我在大学工作。",
@@ -1040,7 +1040,7 @@ sentences = {
 				1:["Word order: localizer goes after the noun.",[4]],
 			},
 		},
-		"Errors in Prepositions": {
+		"Group 7": {
 			0:{
 				wrong: "我不喜欢旅游跟家人。",
 				right: "我不喜欢跟家人旅游。",
@@ -1055,7 +1055,7 @@ sentences = {
 				0:["Word order: a prepositional phrase should go before the verb.",[0,1]],
 			},
 		},
-		"Errors in Particles": {
+		"Group 8": {
 			0:{
 				wrong: "我不能去地方我喜欢。",
 				right: "我不能去我喜欢的地方。",
@@ -1082,7 +1082,7 @@ sentences = {
 				2:["喜欢 is not an action verb. 了 should not be used even though it refers to the past.",[3]],
 			},
 		},
-		"Errors in Pronouns (Question Words, Demonstrative Pronoun)": {
+		"Group 9": {
 			0:{
 				wrong: "他喜欢吃什么都。",
 				right: "他什么都喜欢吃。",
@@ -1103,7 +1103,7 @@ sentences = {
 				1:["It is better to say: 这里 unless there is a retroflex ending 儿. When you write, you have to write out both characters: 这儿.",[2]],
 			},
 		},
-		"Errors in 'if'": {
+		"Group 10": {
 			0:{
 				wrong: "他的屋子又整齐又干净。我不知道如果他住在那儿。",
 				right: "他的屋子又整齐又干净。我不知道他是不是住在那儿。",
