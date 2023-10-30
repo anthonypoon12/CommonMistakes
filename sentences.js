@@ -1,6 +1,142 @@
 sentences = {
 	Traditional:{
-		"Errors in Adjectives": {
+		"Learning Page": {
+			0: {
+				"wrong": "我上學在紐約。",
+				"right": "我在紐約上學。",
+				"meaning": "I went to school in New York."
+			},
+			1: {
+				"wrong": "我是老師。我教中文。我喜歡教。",
+				"right": "我是老師。我教中文。我喜歡教書。",
+				"meaning": "I am a teacher. I teach Chinese. I love teaching."
+			},
+			2: {
+				"wrong": "我喜歡吃飯中國。",
+				"right": "我喜歡吃中國飯。",
+				"meaning": "I like to eat Chinese food."
+			},
+			3: {
+				"wrong": "我的學生都是好。",
+				"right": "我的學生都很好。",
+				"meaning": "My students are all very good."
+			},
+			4: {
+				"wrong": "今天比昨天很冷。",
+				"right": "今天比昨天冷。",
+				"meaning": "today is colder than yesterday."
+			},
+			5: {
+				"wrong": "今天比昨天一點冷。",
+				"right": "今天比昨天冷一點。",
+				"meaning": "It's a little colder today than yesterday."
+			},
+			6: {
+				"wrong": "餐廳的飯很難吃極了。",
+				"right": "餐廳的飯難吃極了。",
+				"meaning": "The food in the restaurant is terrible."
+			},
+			7: {
+				"wrong": "我現在有很多精神。",
+				"right": "我現在很有精神。",
+				"meaning": "I'm very energetic now."
+			},
+			8: {
+				"wrong": "他覺得他的屋子不小不大。",
+				"right": "他覺得他的屋子不大不小。",
+				"meaning": "He feels that his house is neither big nor small."
+			},
+			9: {
+				"wrong": "他是不好學生。",
+				"right": "他不是好學生。",
+				"meaning": "He is not a good student."
+			},
+			10: {
+				"wrong": "我家近學校",
+				"right": "我家離學校很近",
+				"meaning": "My home is very close to the school"
+			},
+			11: {
+				"wrong": "你有幾個狗？",
+				"right": "你有幾隻狗？",
+				"meaning": "How many dogs do you have?"
+			},
+			12: {
+				"wrong": "我一個星期上中文課一次。",
+				"right": "我一個星期上一次中文課。",
+				"meaning": "I take Chinese class once a week."
+			},
+			13: {
+				"wrong": "他喜歡吃什麼都。",
+				"right": "他什麼都喜歡吃。",
+				"meaning": "He likes to eat everything."
+			},
+			14: {
+				"wrong": "他在這。",
+				"right": "他在這裏。",
+				"meaning": "He's here."
+			},
+			15: {
+				"wrong": "都我的學生喜歡學中文。",
+				"right": "我的學生都喜歡學中文。",
+				"meaning": "My students all love learning Chinese."
+			},
+			16: {
+				"wrong": "那家餐廳有點乾淨。",
+				"right": "那家餐廳有點不乾淨。",
+				"meaning": "The restaurant was a bit unclean."
+			},
+			17: {
+				"wrong": "我不喜歡去旅遊跟家人。",
+				"right": "我不喜歡跟家人去旅遊。",
+				"meaning": "I don't like traveling with my family."
+			},
+			18: {
+				"wrong": "雖然我喜歡他，他不喜歡我。",
+				"right": "雖然我喜歡他，但是他不喜歡我。",
+				"meaning": "Although I like him, he doesn't like me."
+			},
+			19: {
+				"wrong": "我不能去地方我最喜歡。",
+				"right": "我不能去我最喜歡的地方。",
+				"meaning": "I can't go to my favorite place."
+			},
+			20: {
+				"wrong": "他以前很喜歡了她，可是現在不喜歡了。",
+				"right": "他以前很喜歡她，可是現在不喜歡了。",
+				"meaning": "He used to like her very much, but not anymore."
+			},
+			21: {
+				"wrong": "他的屋子又整齊又乾淨。我不知道如果他住在那兒。",
+				"right": "他的屋子又整齊又乾淨。我不知道他是不是住在那兒。",
+				"meaning": "His house is neat and clean. I don't know if he lives there."
+			},
+			"Notes":{
+				0:["Word order: place word before verb.",[0]],
+				1:["‘To teach’ as a profession and ‘to talk’ as a general activity require the verb-object form.",[1]],
+				2:["The modifier in a verb-object construction should be put in between the verb and object, not after the object.",[2]],
+				3:["Adjectives function as verbs in Chinese. Therefore, 是 cannot be used before adjectives. However, the word 很, a minimum modifier should be put before the adjective.",[3]],
+				4:["In the 比 construction, 很 cannot be used before the adjective.",[4]],
+				5:["For 比 construction, the expressions ‘a bit’ or ‘more’ should go after the adjective.",[5]],
+				6:["很 cannot be used before adj + 極了.",[6]],
+				7:["The word ‘energetic’ is 有精神. 很 can be added in front of 有精神.",[7]],
+				8:["In this construction, ‘大' or words in positive connotation should appear first. For example, 不高不矮, 不多不少, 不胖不瘦, 不冷不熱, 不快不慢.",[8]],
+				9:["The negation marker 不 should go before the verb 是. For example, 他是好學生, 他不是好學生. It is OK to say 好學生 or 壞學生. The expression 不好學生 is wrong.",[9]],
+				10:["The word to express distance 近 or 遠 should be used with 離.",[10]],
+				11:["The measure word for animals is 隻.",[11]],
+				12:["Frequency expressions should be put between the verb and the object.",[12]],
+				13:["‘All’ is expressed by a question word. The word order is: S + 什麼都 + verb. Similarly, S + 哪兒都 + verb.",[13]],
+				14:["It is better to say: 這裏 unless there is a retroflex ending 兒. When you write, you have to write out both characters: 這兒.",[14]],
+				15:["都 and 就 are adverbs. They should be put before the verb and after the subject.",[15]],
+				16:["有點 can only be used with adjectives that are undesirable. Therefore, 不 must be used. You can also say: 那家餐廳算(suan4, can be considered) 乾淨 or 那家餐廳有點髒.",[16]],
+				17:["Word order: a prepositional phrase should go before the verb.",[17]],
+				18:["雖然 and 但是 are used together to mean ‘although’.",[18]],
+				19:["In Chinese, modifier precedes modified (i.e. the noun). 的 should be put before the noun.",[19]],
+				20:["喜歡 is not an action verb. 了 should not be used even though it refers to the past.",[20]],
+				21:["It is ungrammatical to put 如果 after S + 不知道, A question construction should be used after 不知道.",[21]]
+			}
+		},
+		"Group 1": {
 			0:{
 				wrong: "我的學生都是好。",
 				right: "我的學生都很好。",
@@ -54,26 +190,36 @@ sentences = {
 				meaning: "There are many Chinese students in my high school.",
 			},
 			9:{
+				wrong: "今天比昨天很冷。",
+				right: "今天比昨天冷。",
+				meaning: "Today is colder than yesterday.",
+			},
+			10:{
 				wrong: "餐廳的飯很難吃極了。",
 				right: "餐廳的飯難吃極了。",
 				meaning: "The food in the restaurant was terrible.",
 			},
-			10:{
+			11:{
 				wrong: "他的房間很乾乾淨淨。",
 				right: "他的房間乾乾淨淨的。",
 				meaning: "His room was very clean.",
 			},
-			11:{
+			12:{
+				wrong: "我現在有很多精神。",
+				right: "我現在很有精神。",
+				meaning: "I am in good spirits now.",
+			},
+			13:{
 				wrong: "他覺得他的屋子不小不大。",
 				right: "他覺得他的屋子不大不小。",
 				meaning: "He feels that his house is not big or small.",
 			},
-			12:{
+			14:{
 				wrong: "他是不好學生。",
 				right: "他不是好學生。",
 				meaning: "He is not a good student",
 			},
-			13:{
+			15:{
 				wrong: "我家近學校。",
 				right: "我家離學校很近。",
 				meaning: "My home is very close to the school.",
@@ -81,15 +227,15 @@ sentences = {
 			"Notes":{
 				0:["Adjectives function as verbs in Chinese. Therefore, 是 cannot be used before adjectives. However, the word 很, a minimum modifier should be put before the adjective.",[0,1,2,3,4,5,6]],
 				1:["A minimum modifier 很 is missing. 多 alone cannot be put before an adjective followed by a noun. One has to use 很多.",[7,8]],
-				2:["In the 比 construction, 很 cannot be used before the adjective.",[]],
-				3:["很 cannot be used before adj + 極了. 很 cannot be used with the reduplicate form of an adjective such as 乾乾淨淨. The correct form is: 很乾淨.",[9,10]],
-				4:["The word ‘energetic’ is 有精神. 很 can be added in front of 有精神. For example, 興趣 (interest), 有興趣 (interested), 很有興趣 (very interested).",[]],
-				5:["In this construction, ‘大' or words in positive connotation should appear first. For example, 不高不矮, 不多不少, 不胖不瘦, 不冷不熱, 不快不慢.",[11]],
-				6:["The negation marker 不 should go before the verb 是. For example, 他是好學生, 他不是好學生. It is OK to say 好學生 or 壞學生. The expression 不好學生 is wrong. ",[12]],
-				7:["The word to express distance 近 or 遠 should be used with 離.",[13]],
+				2:["In the 比 construction, 很 cannot be used before the adjective.",[9]],
+				3:["很 cannot be used before adj + 極了. 很 cannot be used with the reduplicate form of an adjective such as 乾乾淨淨. The correct form is: 很乾淨.",[10,11]],
+				4:["The word ‘energetic’ is 有精神. 很 can be added in front of 有精神. For example, 興趣 (interest), 有興趣 (interested), 很有興趣 (very interested).",[12]],
+				5:["In this construction, ‘大' or words in positive connotation should appear first. For example, 不高不矮, 不多不少, 不胖不瘦, 不冷不熱, 不快不慢.",[13]],
+				6:["The negation marker 不 should go before the verb 是. For example, 他是好學生, 他不是好學生. It is OK to say 好學生 or 壞學生. The expression 不好學生 is wrong. ",[14]],
+				7:["The word to express distance 近 or 遠 should be used with 離.",[15]],
 			},
 		},
-		"Errors in Measure Words": {
+		"Group 2": {
 			0:{
 				wrong: "你有機個狗？",
 				right: "你有機隻狗？",
@@ -185,7 +331,7 @@ sentences = {
 				10:["一些 meaning ‘some’ should be used before a noun. 有些 can only be used with undesirable adjectives, such as 蛋糕有些貴,",[15]],
 			},
 		},
-		"Errors in Conjunctions": {
+		"Group 3": {
 			0:{
 				wrong: "雖然我喜歡他，他不喜歡我。",
 				right: "雖然我喜歡他，但是他不喜歡我。",
@@ -210,7 +356,7 @@ sentences = {
 				0:["雖然 and  但是 are used together to mean ‘although’",[0,1,2,3]],
 			},
 		},
-		"Errors in Verbs": {
+		"Group 4": {
 			0:{
 				wrong: "雖然我是學生，但是我喜歡教。",
 				right: "雖然我是學生，但是我喜歡教書。",
@@ -256,7 +402,7 @@ sentences = {
 				1:["The modifier in a verb-object construction should be put in between the verb and object, not after the object.  ",[4,5,6,7]],
 			},
 		},
-		"Errors in Adverbs": {
+		"Group 5": {
 			0:{
 				wrong: "都我的學生喜歡學中文。",
 				right: "我的學生都喜歡學中文。",
@@ -303,7 +449,7 @@ sentences = {
 				2:["一點 cannot be used before an adjective. ",[5,6,7]],
 			},
 		},
-		"Errors in Word Order": {
+		"Group 6": {
 			0:{
 				wrong: "我工作在大學。",
 				right: "我在大學工作。",
@@ -334,7 +480,7 @@ sentences = {
 				1:["Word order: localizer goes after the noun.",[4]],
 			},
 		},
-		"Errors in Prepositions": {
+		"Group 7": {
 			0:{
 				wrong: "我不喜歡旅遊跟家人。",
 				right: "我不喜歡跟家人旅遊。",
@@ -349,7 +495,7 @@ sentences = {
 				0:["Word order: a prepositional phrase should go before the verb.",[0,1]],
 			},
 		},
-		"Errors in Particles": {
+		"Group 8": {
 			0:{
 				wrong: "我不能去地方我喜歡。",
 				right: "我不能去我喜歡的地方。",
@@ -376,7 +522,7 @@ sentences = {
 				2:["喜歡 is not an action verb. 了 should not be used even though it refers to the past.",[3]],
 			},
 		},
-		"Errors in Pronouns (Question Words, Demonstrative Pronoun)": {
+		"Group 9": {
 			0:{
 				wrong: "他喜歡吃什麼都。",
 				right: "他什麼都喜歡吃。",
@@ -397,7 +543,7 @@ sentences = {
 				1:["It is better to say: 這裡 unless there is a retroflex ending 兒. When you write, you have to write out both characters: 這兒.",[2]],
 			},
 		},
-		"Errors in 'if'": {
+		"Group 10": {
 			0:{
 				wrong: "他的屋子又整齊又乾淨。我不知道如果他住在那兒。",
 				right: "他的屋子又整齊又乾淨。我不知道他是不是住在那兒。",
@@ -414,7 +560,143 @@ sentences = {
 		},
 	},
 	Simplified:{
-		"Errors in Adjectives": {
+		"Learning Page": {
+			0: {
+				"wrong": "我上学在纽约。",
+				"right": "我在纽约上学。",
+				"meaning": "I went to school in New York."
+			},
+			1: {
+				"wrong": "我是老师。我教中文。我喜欢教。",
+				"right": "我是老师。我教中文。我喜欢教书。",
+				"meaning": "I am a teacher. I teach Chinese. I love teaching."
+			},
+			2: {
+				"wrong": "我喜欢吃饭中国。",
+				"right": "我喜欢吃中国饭。",
+				"meaning": "I like to eat Chinese food."
+			},
+			3: {
+				"wrong": "我的学生都是好。",
+				"right": "我的学生都很好。",
+				"meaning": "My students are all very good."
+			},
+			4: {
+				"wrong": "今天比昨天很冷。",
+				"right": "今天比昨天冷。",
+				"meaning": "today is colder than yesterday."
+			},
+			5: {
+				"wrong": "今天比昨天一点冷。",
+				"right": "今天比昨天冷一点。",
+				"meaning": "It's a little colder today than yesterday."
+			},
+			6: {
+				"wrong": "餐厅的饭很难吃极了。",
+				"right": "餐厅的饭难吃极了。",
+				"meaning": "The food in the restaurant is terrible."
+			},
+			7: {
+				"wrong": "我现在有很多精神。",
+				"right": "我现在很有精神。",
+				"meaning": "I'm very energetic now."
+			},
+			"8": {
+				"wrong": "他觉得他的屋子不小不大。",
+				"right": "他觉得他的屋子不大不小。",
+				"meaning": "He feels that his house is neither big nor small."
+			},
+			9: {
+				"wrong": "他是不好学生。",
+				"right": "他不是好学生。",
+				"meaning": "He is not a good student."
+			},
+			10: {
+				"wrong": "我家近学校",
+				"right": "我家离学校很近",
+				"meaning": "My home is very close to the school"
+			},
+			11: {
+				"wrong": "你有几个狗？",
+				"right": "你有几只狗？",
+				"meaning": "How many dogs do you have?"
+			},
+			12: {
+				"wrong": "我一个星期上中文课一次。",
+				"right": "我一个星期上一次中文课。",
+				"meaning": "I take Chinese class once a week."
+			},
+			13: {
+				"wrong": "他喜欢吃什么都。",
+				"right": "他什么都喜欢吃。",
+				"meaning": "He likes to eat everything."
+			},
+			14: {
+				"wrong": "他在这。",
+				"right": "他在这里。",
+				"meaning": "He's here."
+			},
+			15: {
+				"wrong": "都我的学生喜欢学中文。",
+				"right": "我的学生都喜欢学中文。",
+				"meaning": "My students all love learning Chinese."
+			},
+			16: {
+				"wrong": "那家餐厅有点干净。",
+				"right": "那家餐厅有点不干净。",
+				"meaning": "The restaurant was a bit unclean."
+			},
+			17: {
+				"wrong": "我不喜欢去旅游跟家人。",
+				"right": "我不喜欢跟家人去旅游。",
+				"meaning": "I don't like traveling with my family."
+			},
+			18: {
+				"wrong": "虽然我喜欢他，他不喜欢我。",
+				"right": "虽然我喜欢他，但是他不喜欢我。",
+				"meaning": "Although I like him, he doesn't like me."
+			},
+			19: {
+				"wrong": "我不能去地方我最喜欢。",
+				"right": "我不能去我最喜欢的地方。",
+				"meaning": "I can't go to my favorite place."
+			},
+			20: {
+				"wrong": "他以前很喜欢了她，可是现在不喜欢了。",
+				"right": "他以前很喜欢她，可是现在不喜欢了。",
+				"meaning": "He used to like her very much, but not anymore."
+			},
+			21: {
+				"wrong": "他的屋子又整齐又干净。我不知道如果他住在那儿。",
+				"right": "他的屋子又整齐又干净。我不知道他是不是住在那儿。",
+				"meaning": "His house is neat and clean. I don't know if he lives there."
+			},
+			"Notes":{
+				0:["Word order: place word before verb.",[0]],
+				1:["‘To teach’ as a profession and ‘to talk’ as a general activity require the verb-object form.",[1]],
+				2:["The modifier in a verb-object construction should be put in between the verb and object, not after the object.",[2]],
+				3:["Adjectives function as verbs in Chinese. Therefore, 是 cannot be used before adjectives. However, the word 很, a minimum modifier should be put before the adjective.",[3]],
+				4:["In the 比 construction, 很 cannot be used before the adjective.",[4]],
+				5:["For 比 construction, the expressions ‘a bit’ or ‘more’ should go after the adjective.",[5]],
+				6:["很 cannot be used before adj + 极了.",[6]],
+				7:["The word ‘energetic’ is 有精神. 很 can be added in front of 有精神.",[7]],
+				8:["In this construction, ‘大' or words in positive connotation should appear first. For example, 不高不矮, 不多不少, 不胖不瘦, 不冷不热, 不快不慢.",[8]],
+				9:["The negation marker 不 should go before the verb 是. For example, 他是好学生, 他不是好学生. It is OK to say 好学生 or 坏学生. The expression 不好学生 is wrong.",[9]],
+				10:["The word to express distance 近 or 远 should be used with 离.",[10]],
+				11:["The measure word for animals is 只.",[11]],
+				12:["Frequency expressions should be put between the verb and the object.",[12]],
+				13:["‘All’ is expressed by a question word. The word order is: S + 什么都 + verb. Similarly, S + 哪儿都 + verb.",[13]],
+				14:["It is better to say: 这里 unless there is a retroflex ending 儿. When you write, you have to write out both characters: 这儿.",[14]],
+				15:["都 and 就 are adverbs. They should be put before the verb and after the subject.",[15]],
+				16:["有点 can only be used with adjectives that are undesirable. Therefore, 不 must be used. You can also say: 那家餐厅算(suan4, can be considered) 干净 or 那家餐厅有点脏.",[16]],
+				17:["Word order: a prepositional phrase should go before the verb.",[17]],
+				18:["虽然 and 但是 are used together to mean ‘although’.",[18]],
+				19:["In Chinese, modifier precedes modified (i.e. the noun). 的 should be put before the noun.",[19]],
+				20:["喜欢 is not an action verb. 了 should not be used even though it refers to the past.",[20]],
+				21:["It is ungrammatical to put 如果 after S + 不知道, \nA question construction should be used after 不知道.",[21]]
+			}
+		},
+		"Group 1": {
 			0:{
 				wrong: "我的学生都是好。",
 				right: "我的学生都很好。",
@@ -468,26 +750,36 @@ sentences = {
 				meaning: "There are many Chinese students in my high school.",
 			},
 			9:{
+				wrong: "今天比昨天很冷。",
+				right: "今天比昨天冷。",
+				meaning: "Today is colder than yesterday.",
+			},
+			10:{
 				wrong: "餐厅的饭很难吃极了。",
 				right: "餐厅的饭难吃极了。",
 				meaning: "The food in the restaurant was terrible.",
 			},
-			10:{
+			11:{
 				wrong: "他的房间很干干净净。",
 				right: "他的房间干干净净的。",
 				meaning: "His room was very clean.",
 			},
-			11:{
+			12:{
+				wrong: "我现在有很多精神。",
+				right: "我现在很有精神。",
+				meaning: "I am in good spirits now.",
+			},
+			13:{
 				wrong: "他觉得他的屋子不小不大。",
 				right: "他觉得他的屋子不大不小。",
 				meaning: "He feels that his house is not big or small.",
 			},
-			12:{
+			14:{
 				wrong: "他是不好学生。",
 				right: "他不是好学生。",
 				meaning: "He is not a good student",
 			},
-			13:{
+			15:{
 				wrong: "我家近学校。",
 				right: "我家离学校很近。",
 				meaning: "My home is very close to the school.",
@@ -495,15 +787,15 @@ sentences = {
 			"Notes":{
 				0:["Adjectives function as verbs in Chinese. Therefore, 是 cannot be used before adjectives. However, the word 很, a minimum modifier should be put before the adjective.",[0,1,2,3,4,5,6]],
 				1:["A minimum modifier 很 is missing. 多 alone cannot be put before an adjective followed by a noun. One has to use 很多.",[7,8]],
-				2:["In the 比 construction, 很 cannot be used before the adjective.",[]],
-				3:["很 cannot be used before adj + 极了. 很 cannot be used with the reduplicate form of an adjective such as 干干净净. The correct form is: 很干净.",[9,10]],
-				4:["The word ‘energetic’ is 有精神. 很 can be added in front of 有精神. For example, 兴趣 (interest), 有兴趣 (interested), 很有兴趣 (very interested).",[]],
-				5:["In this construction, ‘大' or words in positive connotation should appear first. For example, 不高不矮, 不多不少, 不胖不瘦, 不冷不热, 不快不慢.",[11]],
-				6:["The negation marker 不 should go before the verb 是. For example, 他是好学生, 他不是好学生. It is OK to say 好学生 or 坏学生. The expression 不好学生 is wrong. ",[12]],
-				7:["The word to express distance 近 or 远 should be used with 离.",[13]],
+				2:["In the 比 construction, 很 cannot be used before the adjective.",[9]],
+				3:["很 cannot be used before adj + 极了. 很 cannot be used with the reduplicate form of an adjective such as 干干净净. The correct form is: 很干净.",[10,11]],
+				4:["The word ‘energetic’ is 有精神. 很 can be added in front of 有精神. For example, 兴趣 (interest), 有兴趣 (interested), 很有兴趣 (very interested).",[12]],
+				5:["In this construction, ‘大' or words in positive connotation should appear first. For example, 不高不矮, 不多不少, 不胖不瘦, 不冷不热, 不快不慢.",[13]],
+				6:["The negation marker 不 should go before the verb 是. For example, 他是好学生, 他不是好学生. It is OK to say 好学生 or 坏学生. The expression 不好学生 is wrong. ",[14]],
+				7:["The word to express distance 近 or 远 should be used with 离.",[15]],
 			},
 		},
-		"Errors in Measure Words": {
+		"Group 2": {
 			0:{
 				wrong: "你有机个狗？",
 				right: "你有机只狗？",
@@ -599,7 +891,7 @@ sentences = {
 				10:["一些 meaning ‘some’ should be used before a noun. 有些 can only be used with undesirable adjectives, such as 蛋糕有些贵,",[15]],
 			},
 		},
-		"Errors in Conjunctions": {
+		"Group 3": {
 			0:{
 				wrong: "虽然我喜欢他，他不喜欢我。",
 				right: "虽然我喜欢他，但是他不喜欢我。",
@@ -624,7 +916,7 @@ sentences = {
 				0:["虽然 and  但是 are used together to mean ‘although’",[0,1,2,3]],
 			},
 		},
-		"Errors in Verbs": {
+		"Group 4": {
 			0:{
 				wrong: "虽然我是学生，但是我喜欢教。",
 				right: "虽然我是学生，但是我喜欢教书。",
@@ -670,7 +962,7 @@ sentences = {
 				1:["The modifier in a verb-object construction should be put in between the verb and object, not after the object.  ",[4,5,6,7]],
 			},
 		},
-		"Errors in Adverbs": {
+		"Group 5": {
 			0:{
 				wrong: "都我的学生喜欢学中文。",
 				right: "都我的学生喜欢学中文。",
@@ -717,7 +1009,7 @@ sentences = {
 				2:["一点 cannot be used before an adjective. ",[5,6,7]],
 			},
 		},
-		"Errors in Word Order": {
+		"Group 6": {
 			0:{
 				wrong: "我工作在大学。",
 				right: "我在大学工作。",
@@ -748,7 +1040,7 @@ sentences = {
 				1:["Word order: localizer goes after the noun.",[4]],
 			},
 		},
-		"Errors in Prepositions": {
+		"Group 7": {
 			0:{
 				wrong: "我不喜欢旅游跟家人。",
 				right: "我不喜欢跟家人旅游。",
@@ -763,7 +1055,7 @@ sentences = {
 				0:["Word order: a prepositional phrase should go before the verb.",[0,1]],
 			},
 		},
-		"Errors in Particles": {
+		"Group 8": {
 			0:{
 				wrong: "我不能去地方我喜欢。",
 				right: "我不能去我喜欢的地方。",
@@ -790,7 +1082,7 @@ sentences = {
 				2:["喜欢 is not an action verb. 了 should not be used even though it refers to the past.",[3]],
 			},
 		},
-		"Errors in Pronouns (Question Words, Demonstrative Pronoun)": {
+		"Group 9": {
 			0:{
 				wrong: "他喜欢吃什么都。",
 				right: "他什么都喜欢吃。",
@@ -811,7 +1103,7 @@ sentences = {
 				1:["It is better to say: 这里 unless there is a retroflex ending 儿. When you write, you have to write out both characters: 这儿.",[2]],
 			},
 		},
-		"Errors in 'if'": {
+		"Group 10": {
 			0:{
 				wrong: "他的屋子又整齐又干净。我不知道如果他住在那儿。",
 				right: "他的屋子又整齐又干净。我不知道他是不是住在那儿。",
